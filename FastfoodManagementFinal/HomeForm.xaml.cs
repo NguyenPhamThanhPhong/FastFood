@@ -23,6 +23,7 @@ namespace FastfoodManagementFinal
         public HomeForm()
         {
             InitializeComponent();
+            
         }
     }
 }

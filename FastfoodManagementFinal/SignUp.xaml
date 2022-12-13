@@ -17,7 +17,7 @@
     <Grid>
 
         <Image Source="/IMAGE/Đăng ký.png" />
-        <Image Source="/IMAGE/Thêm Ảnh.png" Margin="36,105,386,190" RenderTransformOrigin="0.606,0.649" />
+        <Image x:Name="image_avatar" Source="/IMAGE/Thêm Ảnh.png" Margin="36,105,386,190" RenderTransformOrigin="0.606,0.649" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
 
 
         <!--Tên ĐN-->
@@ -63,8 +63,48 @@
 
         </TextBox>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="178,127,255,273" Text="Quyền truy cập"/>
-        
+        <TextBlock Foreground="Black" 
+                   FontFamily="{StaticResource boldFont}" 
+                   FontSize="13" Margin="178,127,255,273" Text="Quyền truy cập"/>
+        <RadioButton
+                    x:Name="radio_button_nhanvien"
+                    Foreground="Black" 
+                   FontFamily="{StaticResource boldFont}" 
+                   FontSize="13" Margin="266,154,167,246" Checked="radio_button_nhanvien_Checked">
+            Quản lý
+        </RadioButton>
+        <RadioButton x:Name="radio_button_quanly" 
+                    Foreground="Black" 
+                   FontFamily="{StaticResource boldFont}" 
+                   FontSize="13" Margin="170,154,263,246" Checked="radio_button_quanly_Checked">
+            Nhân viên
+        </RadioButton>
+        <DatePicker x:Name="datepicker_NgaySinh"
+            Margin="178,261,210,0" 
+            VerticalAlignment="Top" 
+            Height="24" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged">
+        </DatePicker>
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" 
+                   FontSize="13" Margin="355,129,119,271" Text="Key"/>
+
+        <TextBox
+            x:Name="txtKey"
+            Width="155"
+            Height="32"
+            Margin="355,148,30,0"
+            BorderBrush="#e6ebf7"
+            Background="White"
+            Foreground="Black"
+            FontFamily="{StaticResource mainFont}"
+            FontSize="12"
+            
+            materialDesign:HintAssist.Foreground="White"
+            materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+            materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+            materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
+            BorderThickness="2"
+            VerticalAlignment="Top" CaretBrush="Gray" />
 
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="178,174,315,226" Text="Họ tên"/>
@@ -104,30 +144,12 @@
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
                                 BorderThickness="2"
-                                VerticalAlignment="Center" CaretBrush="Gray" >
+                                VerticalAlignment="Center" CaretBrush="Gray" KeyDown="txtĐK_Sex_KeyDown" >
 
         </TextBox>
 
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="178,236,292,164" Text="Ngày sinh"/>
-        <TextBox
-            x:Name="txtĐK_Date"
-                                Width="155"
-                                Height="33"
-                                Margin="175,257,210,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" >
-
-        </TextBox>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="355,236,151,164" Text="SĐT"/>
         <TextBox
@@ -145,7 +167,7 @@
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
                                 BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" >
+                                VerticalAlignment="Top" CaretBrush="Gray" KeyDown="txtĐK_Phone_KeyDown" >
 
         </TextBox>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="178,290,317,110" Text="Email"/>
@@ -187,7 +209,8 @@
 
         </TextBox>
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                  Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="12" Content="ĐĂNG KÝ" FontFamily="{StaticResource boldFont}" Margin="201,358,235,34"/>
+                  Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="12" Content="ĐĂNG KÝ" FontFamily="{StaticResource boldFont}" Margin="201,358,235,34" Click="Button_Click"/>
+
 
 
     </Grid>

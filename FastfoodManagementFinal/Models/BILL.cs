@@ -28,13 +28,16 @@ namespace FastfoodManagementFinal.Models
         {
 
         }
+
         public string Bill_ID { get; set; }
-        public string Bill_CustomerID_CustomerName { get; set; }
+        public string CustomerID { get; set; }
+        public string CustomerName { get; set; }
         public string StaffID { get; set; }
+        public string StaffName { get; set; }
         public DateTime Bill_Time { get; set; }
         public int Bill_Discount { get; set; }
         public int Bill_Total { get; set; }
         public List<Order> orders { get; set; }
-        public string Payment_status { get; set; }
+        //public string Payment_status { get; set; }
     }
 }

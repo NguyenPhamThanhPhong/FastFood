@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastfoodManagementFinal.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,5 +63,35 @@ namespace FastfoodManagementFinal.Models
         public string Phone_Number { get; set; }
         public string Email { get; set; }
         public string address { get; set; }
+        public int Insert_num (List<int> x) 
+        { 
+            for(int i=0;i<x.Count-1;i++) 
+            {
+                if (x[i+1] - 1 > x[i])
+                {
+                    return x[i] + 1;
+                }
+            }
+            return x.Count ;
+        }
+        //public string Create_staffID(string AccessRight)
+        //{
+        //    string ID = "";
+        //    if (AccessRight == "Nhân viên")
+        //    {
+        //        ID = "NV";
+        //    }
+        //    else
+        //        ID = "QL";
+
+        //    List<Account> acc = new List<Account>();
+            
+        //    acc = Xu_Ly_SQL.Select_all_Account();
+            
+        //    foreach(Account account in acc) 
+        //    {
+        //        int temp = int.Parse(account.StaffID.Remove(2));
+        //    }
+        //}
     }
 }
