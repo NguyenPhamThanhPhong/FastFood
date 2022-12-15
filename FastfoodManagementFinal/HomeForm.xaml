@@ -25,7 +25,24 @@
 
         <Image Source="/IMAGE/Sản phẩm bán.png" Margin="420,96,155,349" />
         <TextBlock x:Name="txtblock_today_sell_quantity" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="45" Text="0" Margin="535,148,201,376" RenderTransformOrigin="0.845,0.596"/>
+       
+        <Button HorizontalAlignment="Left" Margin="735,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B">
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
+            </Button.Background>
+            <Button Content="Button"/>
+        </Button>
 
+        <Button HorizontalAlignment="Left" Margin="670,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/IMAGE/settings-6-128.png"/>
+            </Button.Background>
+        </Button>
 
+        <Button HorizontalAlignment="Left" Margin="613,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B">
+            <Button.Background>
+                <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

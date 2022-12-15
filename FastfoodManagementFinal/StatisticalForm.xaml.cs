@@ -24,5 +24,11 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
         }
+
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            Setting setting = new Setting();
+            setting.ShowDialog();
+        }
     }
 }

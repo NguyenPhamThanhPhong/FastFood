@@ -120,13 +120,7 @@
 
 
 
-        <Button Style="{StaticResource MaterialDesignFlatButton}" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" materialDesign:ButtonAssist.CornerRadius="6"
-                            Width="auto" materialDesign:RippleAssist.Feedback="White" Margin="49,606,32,42">
-            <WrapPanel Width="170">
-                <Image Source="/IMAGE/logout-512.png"/>
-                <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="16" Text="   Đăng xuất" RenderTransformOrigin="0.906,0.449" Height="22"/>
-            </WrapPanel>
-        </Button>
+        
 
     </Grid>
 </Window>

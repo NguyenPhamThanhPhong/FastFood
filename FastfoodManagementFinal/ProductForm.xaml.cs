@@ -37,5 +37,11 @@ namespace FastfoodManagementFinal
             DetailSP detailSP = new DetailSP();
             detailSP.ShowDialog();
         }
+
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            Setting setting = new Setting();
+            setting.ShowDialog();
+        }
     }
 }

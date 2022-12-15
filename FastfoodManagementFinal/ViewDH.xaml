@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <Image Source="/IMAGE/Đơn hàng.png" Margin="35,-7,28,-2" Grid.ColumnSpan="2" />
         <Image Source="/IMAGE/Đơn hàng3.png" Margin="64,29,57,174" Grid.ColumnSpan="2" />
-        <Button x:Name="button_close" HorizontalAlignment="Left" Margin="34,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="1" Click="Button_Close_Click">
+        <Button HorizontalAlignment="Left" Margin="34,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>
@@ -180,8 +180,8 @@
         <ScrollViewer Grid.ColumnSpan="2" Margin="70,270,55,80" >
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="415"/>
-                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="430"/>
+                    <ColumnDefinition Width="15"/>
 
                 </Grid.ColumnDefinitions>
 
@@ -200,33 +200,75 @@
 
                 </Grid.RowDefinitions>
 
-                <Border CornerRadius="1" Height="18" Width="410" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="4,0,1,2"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="15,3,390,7" Text="1"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="Burger Tôm"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="45.000"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,3,145,7" Text="1"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
+                <Grid  Margin="4,0,1,0" Grid.Row="0">
 
-                <Border CornerRadius="1" Height="18" Width="410" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="4,1,1,1" Grid.Row="2"/>
+                    <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,3,393,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="Burger Tôm"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="45.000"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,3,145,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
+                </Grid>
+
+                <Grid  Margin="4,0,1,0" Grid.Row="2">
+
+                    <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,3,393,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="Burger Tôm"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="45.000"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,3,145,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
+                </Grid>
+
+                <Grid  Margin="4,0,1,0" Grid.Row="4">
+
+                    <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,3,393,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="Burger Tôm"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="45.000"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,3,145,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
+                </Grid>
+
+                <Grid  Margin="4,0,1,0" Grid.Row="6">
+
+                    <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,3,393,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="Burger Tôm"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="45.000"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,3,145,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
+                </Grid>
+
+                <Grid  Margin="4,0,1,0" Grid.Row="8">
+
+                    <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,3,393,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="Burger Tôm"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="45.000"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,3,145,7" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
+                </Grid>
+                <!--<Border CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="6,1,4,1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="15,4,390,6" Text="1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,4,308,1" Text="Burger Tôm" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,4,226,6" Text="45.000" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,4,145,6" Text="1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,4,37,6" Text="45.000" Grid.Row="2"/>
 
-                <Border CornerRadius="1" Height="18" Width="410" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="4,2,1,0" Grid.Row="4"/>
+                <Border CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="6,2,4,0" Grid.Row="4"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="15,5,390,5" Text="1" Grid.Row="4"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,5,308,0" Text="Burger Tôm" Grid.Row="4"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,5,226,5" Text="45.000" Grid.Row="4"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,5,145,5" Text="1" Grid.Row="4"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,5,37,5" Text="45.000" Grid.Row="4"/>
 
-                <Border CornerRadius="1" Height="18" Width="410" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="4,3,1,2" Grid.Row="6" Grid.RowSpan="2"/>
+                <Border CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="6,3,4,2" Grid.Row="6" Grid.RowSpan="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="15,6,390,4" Text="1" Grid.Row="6"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,6,308,2" Text="Burger Tôm" Grid.Row="6" Grid.RowSpan="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,6,226,4" Text="45.000" Grid.Row="6"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,6,145,4" Text="1" Grid.Row="6"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,6,37,4" Text="45.000" Grid.Row="6"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,6,37,4" Text="45.000" Grid.Row="6"/>-->
 
             </Grid>
 

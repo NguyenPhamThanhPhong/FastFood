@@ -27,6 +27,13 @@
 
 
         <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="25" Text="CÀI ĐẶT" Margin="242,8,121,394" />
+        <Button HorizontalAlignment="Left" Margin="25,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
+            </Button.Background>
+            <Button Content="Button"/>
+        </Button>
+
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="91,43,218,378" Text="THÔNG TIN CÁ NHÂN"/>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="227,78,174,342" Text="Họ và tên"/>
@@ -137,7 +144,7 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="107,338,257,82" Text="Tên đăng nhập"/>
         <TextBox
                                 Height="30"
-                                Margin="103,357,230,0"
+                                Margin="103,357,247,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -150,10 +157,10 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" RenderTransformOrigin="0.462,0.978" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="265,338,129,81" Text="Mật khẩu"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="247,338,147,81" Text="Mật khẩu"/>
         <TextBox
                                 Height="30"
-                                Margin="259,357,74,0"
+                                Margin="241,357,115,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -168,7 +175,7 @@
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}"
                 Height="30" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="10" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="421,357,98,53" Grid.ColumnSpan="2"/>
+                Background="#EA5C2B" FontSize="10" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="374,357,99,53" Grid.ColumnSpan="2" Click="Button_Click"/>
 
 
     </Grid>

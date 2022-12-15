@@ -23,5 +23,11 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ChangePass changePass = new ChangePass();
+            changePass.ShowDialog();
+        }
     }
 }

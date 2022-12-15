@@ -15,6 +15,24 @@
         <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="42" Text="NHẬP HÀNG" Margin="40,12,458,506" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="NHẬP HÀNG" Margin="38,14,465,509" RenderTransformOrigin="0.845,0.596"/>
 
+        <Button HorizontalAlignment="Left" Margin="735,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B">
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
+            </Button.Background>
+            <Button Content="Button"/>
+        </Button>
+
+        <Button HorizontalAlignment="Left" Margin="670,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/IMAGE/settings-6-128.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button HorizontalAlignment="Left" Margin="613,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B">
+            <Button.Background>
+                <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
+            </Button.Background>
+        </Button>
         <!--Tìm kiếm-->
         <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="45,78,632,476" RenderTransformOrigin="0.845,0.596"/>
 
@@ -31,7 +49,7 @@
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
                                 BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
+                                VerticalAlignment="Top" CaretBrush="#e6ebf7" />
 
         <Image Source="/IMAGE/search-13-48.png" Margin="218,114,523,443" />
 
@@ -69,18 +87,84 @@
 
                 </Grid.RowDefinitions>
 
-                <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" Grid.Column="1" Grid.ColumnSpan="2"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="33,15,84,12" Text="1" Grid.Column="1"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="30,15,373,12" Text="Trần Thanh Hiền" Grid.Column="2"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="251,15,210,12" Text="12/12/2022" Grid.Column="2"/>
-                <Button  HorizontalAlignment="Left" Margin="484,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Grid.Column="2" Click="Button_Click_1">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                    </Button.Background>
-                    <Button Content="Button"/>
-                </Button>
+                <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="0">
+                    <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
+                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                        </Button.Background>
+                        <Button Content="Button"/>
+                    </Button>
+                </Grid>
 
-                <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,1,8,4" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+                <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="2">
+                    <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
+                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                        </Button.Background>
+                        <Button Content="Button"/>
+                    </Button>
+                </Grid>
+
+                <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="4">
+                    <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
+                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                        </Button.Background>
+                        <Button Content="Button"/>
+                    </Button>
+                </Grid>
+
+                <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="6">
+                    <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
+                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                        </Button.Background>
+                        <Button Content="Button"/>
+                    </Button>
+                </Grid>
+
+                <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="8">
+                    <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
+                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                        </Button.Background>
+                        <Button Content="Button"/>
+                    </Button>
+                </Grid>
+
+                <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="10">
+                    <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
+                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
+                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                        </Button.Background>
+                        <Button Content="Button"/>
+                    </Button>
+                </Grid>
+                <!--<Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,1,8,4" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="33,16,84,11" Text="1" Grid.Column="1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="30,16,373,11" Text="Trần Thanh Hiền" Grid.Column="2" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="251,16,210,11" Text="12/12/2022" Grid.Column="2" Grid.Row="2"/>
@@ -134,7 +218,7 @@
                         <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
                     </Button.Background>
                     <Button Content="Button"/>
-                </Button>
+                </Button>-->
             </Grid>
 
 

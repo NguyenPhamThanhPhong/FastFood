@@ -28,5 +28,11 @@ namespace FastfoodManagementFinal
             txtblock_today_sales.Text = Xu_Ly_SQL.Select_today_sales().ToString() + "VND";
             txtblock_today_sell_quantity.Text = Xu_Ly_SQL.Select_today_sold_product().ToString();
         }
+
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            Setting setting = new Setting();
+            setting.ShowDialog();
+        }
     }
 }

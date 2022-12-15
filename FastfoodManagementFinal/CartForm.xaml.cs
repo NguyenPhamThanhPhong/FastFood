@@ -66,5 +66,11 @@ namespace FastfoodManagementFinal
             CreateHD createHD = new CreateHD();
             createHD.ShowDialog();
         }
+
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            Setting setting = new Setting();
+            setting.ShowDialog();
+        }
     }
 }
