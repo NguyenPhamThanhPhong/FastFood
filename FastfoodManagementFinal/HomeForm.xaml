@@ -16,15 +16,15 @@
         <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="45" Text="TRANG CHỦ" Margin="38,18,450,508" RenderTransformOrigin="0.845,0.596"/>
 
         <Image Source="/IMAGE/Số đơn bán ra.png" Margin="20,97,538,350" />
-        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="45" Text="0" Margin="140,148,592,374" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock x:Name="txtblock_today_order" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="45" Text="0" Margin="140,148,592,374" RenderTransformOrigin="0.845,0.596"/>
 
 
         <Image Source="/IMAGE/Doanh thu ngày.png" Margin="234,97,362,350" />
-        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="21" Text="0 VNĐ" Margin="319,172,374,374" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock x:Name="txtblock_today_sales" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="21" Text="0 VNĐ" Margin="319,172,374,374" RenderTransformOrigin="0.845,0.596"/>
 
 
         <Image Source="/IMAGE/Sản phẩm bán.png" Margin="420,96,155,349" />
-        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="45" Text="0" Margin="535,148,201,376" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock x:Name="txtblock_today_sell_quantity" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="45" Text="0" Margin="535,148,201,376" RenderTransformOrigin="0.845,0.596"/>
 
 
     </Grid>

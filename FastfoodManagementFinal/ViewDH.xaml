@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <Image Source="/IMAGE/Đơn hàng.png" Margin="35,-7,28,-2" Grid.ColumnSpan="2" />
         <Image Source="/IMAGE/Đơn hàng3.png" Margin="64,29,57,174" Grid.ColumnSpan="2" />
-        <Button HorizontalAlignment="Left" Margin="34,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="1">
+        <Button x:Name="button_close" HorizontalAlignment="Left" Margin="34,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="1" Click="Button_Close_Click">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>

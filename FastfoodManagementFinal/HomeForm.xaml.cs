@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastfoodManagementFinal.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,9 @@ namespace FastfoodManagementFinal
         public HomeForm()
         {
             InitializeComponent();
-            
+            txtblock_today_order.Text = Xu_Ly_SQL.Select_today_Orders().ToString();
+            txtblock_today_sales.Text = Xu_Ly_SQL.Select_today_sales().ToString() + "VND";
+            txtblock_today_sell_quantity.Text = Xu_Ly_SQL.Select_today_sold_product().ToString();
         }
     }
 }

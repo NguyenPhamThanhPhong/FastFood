@@ -12,6 +12,7 @@ namespace FastfoodManagementFinal.ViewModel
     {
         public static string ProductAvatar = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "ProductAvatar");
         public static string AccountAvatar = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "AccountAvatar");
+
         public static void LuuAnh(string path,string store_to,string ID)
         {
             FileInfo fileInfo = new FileInfo(path);

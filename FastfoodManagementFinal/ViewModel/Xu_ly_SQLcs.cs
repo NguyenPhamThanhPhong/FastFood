@@ -356,7 +356,8 @@ namespace FastfoodManagementFinal.ViewModel
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    s = reader.GetInt32(0);
+                    if(!reader.IsDBNull(0))
+                        s = reader.GetInt32(0);
                 }
                 con.Close();
             }
@@ -375,7 +376,8 @@ namespace FastfoodManagementFinal.ViewModel
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    s = reader.GetInt32(0);
+                    if (!reader.IsDBNull(0))
+                        s = reader.GetInt32(0);
                 }
                 con.Close();
             }
@@ -394,18 +396,104 @@ namespace FastfoodManagementFinal.ViewModel
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    s = reader.GetInt32(0);
+                    if (!reader.IsDBNull(0))
+                        s = reader.GetInt32(0);
                 }
                 con.Close();
             }
             return s;
         }
-        public static List<Product> Search_Product(string search_by, string sort_by, string parameter)
+        public static List<Product> Search_Product(string product_type, string sort_by, string parameter_search)
         {
-            List<Product> products = new List<Product>();
+            // product_type : all hoặc product.type
+            // sort_by: product.name hoặc product.price??
+            // vd: ProductPrice asc, ProductPrice dsc, ProductName
+            List<Product> p = new List<Product>();
+            string sql = "";
+            if ( product_type == "all")
+            sql = "select * from products where productName = '%"+parameter_search+"%' order by '"+sort_by+"'";
+            else
+            {
+                sql = "select * from products where ProductType = '"+product_type+"' and lower(productName) = lower('%" + parameter_search + "%') order by '" + sort_by + "'";
+            }
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                Product product = new Product();
+                product.ProductId = reader.GetString(0);
+                product.Name = reader.GetString(1);
+                product.Product_Type = reader.GetString(2);
+                product.Price = reader.GetInt32(3);
+                product.Remaining_quantity = reader.GetInt32(4);
+                product.description = reader.GetString(5);
+                product.Avatar = reader.GetString(6);
+                p.Add(product);
+            }
+            return p;
+        }
 
-
-            return products;
+        public static List<Bill> Search_bill_hoten(string search_by, string parameter)
+        {
+            string sql = "select b.BillID, b.StaffID, b.CustomerID, b.BillDate," +
+                    "b.Discount,b.Total,c.Fullname,s.FullName  " +
+                    "from BILL b inner join CUSTOMERS c ON b.CustomerID = c.CustomerID " +
+                                    "inner join STAFF s on b.StaffID = s.ID";
+            if (search_by == "hoten")
+            {
+                sql += "where c.fullname = '%" + parameter + "'%";
+            }
+            else if (search_by == "sdt")
+            {
+                sql += "where c.phone = '%" + parameter + "'%";
+            }
+            else if (search_by == "gia_up")
+            {
+                int gia = int.Parse(parameter);
+                sql += "where b.total >= '" + gia + "'";
+            }
+            else if (search_by == "gia_down")
+            {
+                int gia = int.Parse(parameter);
+                sql += "where b.total <= '" + gia + "'";
+            }
+            else if (search_by == "ngay_up")
+            {
+                DateTime d = DateTime.Parse(parameter);
+                sql += "where b.billDate >= '" + d + "'";
+            }
+            else if (search_by == "ngay_up")
+            {
+                DateTime d = DateTime.Parse(parameter);
+                sql += "where b.billDate <= '" + d + "'";
+            }
+            List<Bill> bills = new List<Bill>();
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Bill b = new Bill();
+                    b.Bill_ID = reader.GetString(0);
+                    b.StaffID = reader.GetString(1);
+                    b.CustomerID = reader.GetString(2);
+                    b.Bill_Time = reader.GetDateTime(3);
+                    b.Bill_Discount = reader.GetInt32(4);
+                    b.Bill_Total = reader.GetInt32(5);
+                    b.StaffName = reader.GetString(6);
+                    b.CustomerName = reader.GetString(7);
+                    b.orders = new List<Order>();
+                    bills.Add(b);
+                }
+                con.Close();
+            }
+            foreach (Bill b in bills)
+            {
+                b.orders = Select_all_Orders_specified_BillID(b.Bill_ID);
+            }
+            return bills;
         }
 
     }

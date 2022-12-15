@@ -36,7 +36,7 @@ namespace FastfoodManagementFinal
         private void Button_Click(object sender, RoutedEventArgs e)
         {
            // page.NavigationService.Navigate(new Page("passing a string to the constructor"));
-            HomeForm
+            //HomeForm
             PagesNavigation.Navigate(new System.Uri("HomeForm.xaml", UriKind.RelativeOrAbsolute));
         }
 

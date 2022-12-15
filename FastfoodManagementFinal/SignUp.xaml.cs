@@ -29,35 +29,35 @@ namespace FastfoodManagementFinal
             InitializeComponent();
             txtKey.Visibility = Visibility.Hidden;
         }
-        string Avatar_path = "";
+        string Avatar_path;
         SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=FastFood;Integrated Security=True");
         DateTime picked_date;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show(datepicker_NgaySinh.Text);
 
-            
-            if(txtKey.Visibility == Visibility.Visible && txtKey.Text =="" )
-            {
-                
-            }
-            if(txtĐK_TK.Text == "")
+            if (txtKey.Visibility == Visibility.Visible && txtKey.Text == "")
             {
 
             }
-            if(txtĐK_Pass.Text == "")
-            {
-                
-            }
-            if(txtĐK_Name.Text == "")
+            if (txtĐK_TK.Text == "")
             {
 
             }
-            if(txtĐK_Address.Text == "")
+            if (txtĐK_Pass.Text == "")
             {
 
             }
-            
+            if (txtĐK_Name.Text == "")
+            {
+
+            }
+            if (txtĐK_Address.Text == "")
+            {
+
+            }
+
             string access_right = "Nhân viên";
             if (radio_button_nhanvien.IsChecked == true)
             {
@@ -80,7 +80,7 @@ namespace FastfoodManagementFinal
             a.Email = txtĐK_Email.Text;
             a.address = txtĐK_Address.Text;
             Xu_Ly_SQL.Insert_Staff(a);
-            if (Avatar_path!="")
+            if (Avatar_path != "")
             {
                 Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.StaffID);
             }
