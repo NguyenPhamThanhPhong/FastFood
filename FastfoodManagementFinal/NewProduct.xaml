@@ -16,18 +16,19 @@
         Background="{x:Null}">
     <Grid>
         <materialDesign:Card UniformCornerRadius="7" materialDesign:ShadowAssist.ShadowDepth="Depth2"  Background="#F8FAFF" Margin="25,25,25,58">
-            <Button HorizontalAlignment="Left" Margin="421,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B">
+            <Button HorizontalAlignment="Left" Margin="421,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Click="Button_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
                 </Button.Background>
                 <Button Content="Button"/>
             </Button>
         </materialDesign:Card>
-        <Image Source="/IMAGE/Asset 3.png" Margin="45,102,335,152"/>
+        <Image x:Name="image_avatar" Source="/IMAGE/Asset 3.png" Margin="45,102,335,152" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
         <!--Mã SP-->
         <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26" Text="THÊM SẢN PHẨM" Margin="192,35,0,0"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="193,80,216,291" Text="Mã sản phẩm"/>
         <TextBox
+                                x:Name="txt_maSP"
                                 Height="30"
                                 Margin="191,99,185,0"
                                 BorderBrush="#e6ebf7"
@@ -45,6 +46,7 @@
         <!--Tên SP-->
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="337,80,70,291" Text="Tên sản phẩm"/>
         <TextBox
+                                x:Name="txt_tenSP"
                                 Height="30"
                                 Margin="333,99,43,0"
                                 BorderBrush="#e6ebf7"
@@ -62,6 +64,7 @@
         <!--Giá SP-->
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="193,140,215,232" Text="Giá sản phẩm"/>
         <TextBox
+                                x:Name="txt_giaSP"
                                 Height="30"
                                 Margin="191,159,185,0"
                                 BorderBrush="#e6ebf7"
@@ -79,6 +82,7 @@
         <!--Loại SP-->
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="337,140,69,233" Text="Loại sản phẩm"/>
         <TextBox
+                                x:Name="txt_loaiSP"
                                 Height="30"
                                 Margin="333,159,43,0"
                                 BorderBrush="#e6ebf7"
@@ -96,6 +100,7 @@
         <!--Số lượng-->
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="193,196,247,177" Text="Số lượng"/>
         <TextBox
+                                x:Name="txt_description"
                                 Height="59"
                                 Margin="333,215,43,0"
                                 BorderBrush="#e6ebf7"
@@ -113,6 +118,7 @@
         <!--SĐT-->
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="337,196,64,179" Text="Thông tin mô tả"/>
         <TextBox
+                                x:Name="txt_SoLuongCon"
                                 Height="30"
                                 Margin="191,215,185,0"
                                 BorderBrush="#e6ebf7"
@@ -130,7 +136,7 @@
         <!--Btn ĐK-->
         <Button x:Name="loginBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#F87D32"
-                Background="#FF6633" FontSize="18" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="194,272,186,86"/>
+                Background="#FF6633" FontSize="18" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="194,272,186,86" Click="loginBtn_Click"/>
     </Grid>
 </Window>
 

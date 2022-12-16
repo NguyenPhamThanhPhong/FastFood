@@ -409,28 +409,55 @@ namespace FastfoodManagementFinal.ViewModel
             // sort_by: product.name hoặc product.price??
             // vd: ProductPrice asc, ProductPrice dsc, ProductName
             List<Product> p = new List<Product>();
-            string sql = "";
-            if ( product_type == "all")
-            sql = "select * from products where productName = '%"+parameter_search+"%' order by '"+sort_by+"'";
+            string sql = "select * from products where lower(productName) like lower('%"+parameter_search+"%')";
+            if ( product_type == "Tất cả" || product_type =="")
+            sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%') order by "+sort_by+"";
             else
             {
-                sql = "select * from products where ProductType = '"+product_type+"' and lower(productName) = lower('%" + parameter_search + "%') order by '" + sort_by + "'";
+                sql = "select * from products where ProductType = N'"+product_type+"' and lower(productName) like lower(N'%" + parameter_search + "%') order by " + sort_by + "";
             }
-            SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while(reader.Read())
+            if(con.State != ConnectionState.Open)
             {
-                Product product = new Product();
-                product.ProductId = reader.GetString(0);
-                product.Name = reader.GetString(1);
-                product.Product_Type = reader.GetString(2);
-                product.Price = reader.GetInt32(3);
-                product.Remaining_quantity = reader.GetInt32(4);
-                product.description = reader.GetString(5);
-                product.Avatar = reader.GetString(6);
-                p.Add(product);
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product product = new Product();
+                    product.ProductId = reader.GetString(0);
+                    product.Name = reader.GetString(1);
+                    product.Product_Type = reader.GetString(2);
+                    product.Price = reader.GetInt32(3);
+                    product.Remaining_quantity = reader.GetInt32(4);
+                    product.description = reader.GetString(5);
+                    product.Avatar = reader.GetString(6);
+                    p.Add(product);
+                }
+                con.Close();
             }
             return p;
+        }
+        public static List<string> Select_distinct_ProductType()
+        {
+            List<string> p_type = new List<string>();
+            string sql = "select distinct lower(productType) from products";
+            
+            if(con.State != ConnectionState.Open)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!reader.IsDBNull(0))
+                    {
+                        p_type.Add(reader.GetString(0));
+                    }
+                }
+                con.Close();
+            }
+            
+            return p_type;
         }
 
         public static List<Bill> Search_bill_hoten(string search_by, string parameter)

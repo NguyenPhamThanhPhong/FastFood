@@ -11,15 +11,70 @@
       Title="Product_Form">
 
     <Page.Resources>
-
-        <Style TargetType="ScrollBar">
+        <Style x:Key="grid_food" TargetType="Grid">
+            <Setter Property="Height" Value="190"></Setter>
+            <Setter Property="Width" Value="165"></Setter>
+            <Setter Property="Margin" Value="0,3,5,7"></Setter>
 
         </Style>
 
+        <Style x:Key="image1" TargetType="Image">
+            <Setter Property="Source" Value="/IMAGE/white.png"></Setter>
+            <Setter Property="Margin" Value="2,-2,2,-9"></Setter>
+        </Style>
 
+        <Style x:Key="image2" TargetType="Image">
+            <Setter Property="Source" Value="/IMAGE/white.png"></Setter>
+            <Setter Property="Margin" Value="8,9,8,1"></Setter>
+        </Style>
+
+        <Style x:Key="image_food" TargetType="Image">
+            <!--<Setter Property="Source" Value="/IMAGE/burger_bulgogi-burger.png"></Setter>-->
+            <Setter Property="Margin" Value="22,17,24,80"></Setter>
+        </Style>
+        <Style x:Key="image_price" TargetType="Image">
+            <Setter Property="Source" Value="/IMAGE/Giá.png"></Setter>
+            <Setter Property="Margin" Value="32,140,90,29"></Setter>
+            <Setter Property="RenderTransformOrigin" Value="0.556,1.2630"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_foodname" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Margin" Value="36,109,24,60"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_price" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="8"></Setter>
+            <Setter Property="Margin" Value="39,145,92,32"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_chitiet" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="8"></Setter>
+            <Setter Property="Margin" Value="94,145,37,32"></Setter>
+        </Style>
+
+        <Style x:Key="button_chitiet" 
+               
+               BasedOn="{StaticResource MaterialDesignFlatMidBgButton}" 
+               TargetType="Button">
+            <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="10" ></Setter>
+            <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth0"></Setter>
+            <Setter Property="Width" Value="46"></Setter>
+            <Setter Property="Height" Value="22"></Setter>
+            <Setter Property="BorderBrush" Value="#F87D32"></Setter>
+            <Setter Property="Background" Value="#F87D32"></Setter>
+            <Setter Property="Margin" Value="86,140,33,28"></Setter>
+            <Setter Property="RenderTransformOrigin" Value="0.397,0.938"></Setter>
+        </Style>
     </Page.Resources>
 
-    <Grid Height="580" Width="765">
+    <Grid  Height="580" Width="765">
 
 
         <Grid Height="140" Margin="0,0,0,440">
@@ -47,19 +102,18 @@
             <!--Bộ lọc-->
             <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,669,41" RenderTransformOrigin="0.845,0.596"/>
             <ComboBox
-    
+            Text="Tất cả"
     x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
     Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" >
                 <ComboBoxItem Content="Tất cả"/>
-                <ComboBoxItem Content="Burger"/>
+                <!--<ComboBoxItem Content="Burger"/>
                 <ComboBoxItem Content="Cơm - Mỳ ý"/>
                 <ComboBoxItem Content="Gà rán"/>
                 <ComboBoxItem Content="Thức ăn nhanh"/>
-                <ComboBoxItem Content="Thức uống"/>
-
+                <ComboBoxItem Content="Thức uống"/>-->
             </ComboBox>
 
             <!--Sắp xếp-->
@@ -79,6 +133,7 @@
             <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="349,76,347,41" RenderTransformOrigin="0.845,0.596"/>
 
             <TextBox
+                                x:Name="txtbox_timkiem"
                                 Margin="340,101,213,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
@@ -89,11 +144,11 @@
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
-                                BorderThickness="2" CaretBrush="#e6ebf7" />
+                                BorderThickness="2" CaretBrush="#e6ebf7" TextChanged="TextBox_TextChanged" />
 
             <Image Source="/IMAGE/search-13-48.png" Margin="516,111,225,9" />
 
-            <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+            <Button x:Name="button_them" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
                 Height="39" BorderBrush="#EA5C2B"
                 Background="#EA5C2B" FontSize="14" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="627,101,60,0" RenderTransformOrigin="0.397,0.938" Click="Button_Click"/>
@@ -112,9 +167,13 @@
 
 
 
-        <Grid Margin="0,153,0,7"/>
+        <Grid  Margin="0,153,0,7"/>
         <ScrollViewer Margin="0,153,0,7">
-            <Grid>
+            <StackPanel x:Name="stack_panel_food" Orientation="Vertical">
+                
+            </StackPanel>
+            
+            <!--<Grid x:Name="tong">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30"/>
                     <ColumnDefinition Width="170"/>
@@ -134,8 +193,9 @@
                     <RowDefinition Height="200"/>
 
                 </Grid.RowDefinitions>
+                
 
-                <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="1">
+                --><!--<Grid x:Name="grid_product" Height="190" Width="165" Margin="0,3,5,7" Grid.Column="1">
                     <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
                     <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
                     <Image Source="/IMAGE/burger_bulgogi-burger.png" Margin="22,17,24,80" />
@@ -146,9 +206,9 @@
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
                 Width="46" Height="22" BorderBrush="#F87D32"
                 Background="#F87D32" Margin="86,140,33,28" RenderTransformOrigin="0.397,0.938"/>
-                    <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="94,145,37,32" Text="chi tiết"/>
+                    <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="94,145,37,32" Text="chi tiết"/>-->
 
-                </Grid>
+                <!--</Grid>--><!--
 
                 <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
                     <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
@@ -163,7 +223,7 @@
                 Background="#F87D32" Margin="86,140,33,28" RenderTransformOrigin="0.397,0.938"/>
                     <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="94,145,37,32" Text="chi tiết"/>
 
-                </Grid>
+                </Grid>-->
 
 
                 <!--<Grid Height="190" Width="165" Margin="2,3,3,7" Grid.Column="2">
@@ -339,7 +399,7 @@
 
 
 
-            </Grid>
+            <!--</Grid>-->
 
         </ScrollViewer>
 

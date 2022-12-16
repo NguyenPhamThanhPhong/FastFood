@@ -16,7 +16,7 @@ namespace FastfoodManagementFinal.ViewModel
         public static void LuuAnh(string path,string store_to,string ID)
         {
             FileInfo fileInfo = new FileInfo(path);
-            store_to = Path.Combine(store_to, ID + fileInfo.Name);
+            store_to = Path.Combine(store_to, ID);
             MessageBox.Show(store_to);
             if (fileInfo.Exists)
             {
@@ -30,7 +30,7 @@ namespace FastfoodManagementFinal.ViewModel
             { 
                 return fileInfo.FullName;
             }
-            return null;
+            return "";
         }
     }
 }
