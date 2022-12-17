@@ -58,6 +58,28 @@ namespace FastfoodManagementFinal.ViewModel
             return str;
 
         }
+        public static string chuan_hoa(string xau)
+        {
+            string kq = "";
+            xau = xau.Trim().ToLower();//Phải đổi sang Unicode thì sử dụng .ToLower() không bị lỗi font
+            for (int i = 0; i < xau.Length; i++)
+            {
+                if (i == 0)
+                    kq += xau[i].ToString().ToUpper();
+                else
+                    kq += xau[i];
+                if (xau[i] == ' ')
+                {
+                    while (xau[i] == ' ')
+                    {
+                        i++;
+                    }
+                    kq += xau[i].ToString().ToUpper();
+                }
+            }
+            return kq.ToString();
+
+        }
 
     }
 }

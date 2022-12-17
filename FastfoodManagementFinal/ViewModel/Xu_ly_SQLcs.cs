@@ -39,19 +39,43 @@ namespace FastfoodManagementFinal.ViewModel
         }
         public static void Insert_Customers(Customer c)
         {
-            if (con.State != ConnectionState.Open)
+            try
             {
-                con.Open();
-                string sql = "insert into customers (customerID, fullname, sex, phone, total, customerRank, customerAddress)" +
-                    "values ('" + c.CustomerID + "',N'" + c.CustomerName + "',N'" + c.CustomerSex + "'," +
-                    "'" + c.CustomerPhone + "','" + c.CustomerTotal + "',N'" + c.CustomerRank + "',N'" + c.Address + "')";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    string sql = "insert into customers (customerID, fullname, sex, phone, total, customerRank, customerAddress)" +
+                        "values ('" + c.CustomerID + "',N'" + c.CustomerName + "',N'" + c.CustomerSex + "'," +
+                        "'" + c.CustomerPhone + "','" + c.CustomerTotal + "',N'" + c.CustomerRank + "',N'" + c.Address + "')";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
+                    MessageBox.Show("đã tồn tại ID");
+                }
+                else
+                    MessageBox.Show("Thất bại, vui lòng điền thông tin hợp lệ!!");
+            }
+
         }
         public static void Insert_Import(Import i)
         {
+            try
+            {
+
+            }
+            catch(SqlException ex)
+            {
+                if(ex.Number == 2627)
+                {
+                    MessageBox.Show("đã tồn tại ID");
+                }
+            }
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -167,6 +191,7 @@ namespace FastfoodManagementFinal.ViewModel
                     c.Address = reader.GetString(6);
                     customers.Add(c);
                 }
+
                 con.Close();
             }
             return customers;
@@ -456,10 +481,60 @@ namespace FastfoodManagementFinal.ViewModel
                 }
                 con.Close();
             }
-            
             return p_type;
         }
-
+        public static List<Customer> Search_customer(string search_by,string parameter)
+        {
+            List<Customer> customers = new List<Customer>();
+            string sql = "select * from customers " +
+                "where lower(" + search_by + ") like lower(N'%" + parameter + "%')";
+            //if (search_by!=""&&search_by!="Tất cả")
+            //{
+            //    sql = "select * from customers " +
+            //    "where lower(" + search_by + ") like lower('" + parameter + "')";
+            //}
+            
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Customer c = new Customer();
+                    c.CustomerID = reader.GetString(0);
+                    c.CustomerName = reader.GetString(1);
+                    c.CustomerSex = reader.GetString(2);
+                    c.CustomerPhone = reader.GetString(3);
+                    c.CustomerTotal = reader.GetInt32(4);
+                    c.CustomerRank = reader.GetString(5);
+                    c.Address = reader.GetString(6);
+                    customers.Add(c);
+                }
+                con.Close();
+            }
+            return customers;
+        }
+        public static bool Delete_customer(string customerID) 
+        {
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    string sql = "delete customers where customerID = '" + customerID + "'";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("xóa thất bại!");
+                return false;
+            }
+        }
         public static List<Bill> Search_bill_hoten(string search_by, string parameter)
         {
             string sql = "select b.BillID, b.StaffID, b.CustomerID, b.BillDate," +

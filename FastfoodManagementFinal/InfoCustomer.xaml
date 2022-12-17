@@ -22,7 +22,7 @@
             <ColumnDefinition Width="113*"/>
         </Grid.ColumnDefinitions>
         <Image Source="/IMAGE/Khách hàng.png" Margin="35,-7,28,-2" Grid.ColumnSpan="2" />
-        <Button HorizontalAlignment="Left" Margin="451,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.ColumnSpan="2">
+        <Button HorizontalAlignment="Left" Margin="451,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.ColumnSpan="2" Click="Button_Click_1">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>
@@ -34,6 +34,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="131,58,238,365" Text="Mã KH"/>
         <TextBox
+                                x:Name="txtbox_maKH"
                                 Height="34"
                                 Margin="126,79,182,0"
                                 BorderBrush="#e6ebf7"
@@ -50,6 +51,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="306,58,111,362" Text="Họ tên"/>
         <TextBox
+                                x:Name="txtbox_tenKH"
                                 Height="34"
                                 Margin="300,79,8,0"
                                 BorderBrush="#e6ebf7"
@@ -62,10 +64,11 @@
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,5,0,0"
                                 BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
+                                VerticalAlignment="Top" CaretBrush="Gray" KeyDown="txtbox_tenKH_KeyDown" />
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="131,132,276,289" Text="Giới tính"/>
         <TextBox
+                                x:Name="txtbox_sdt"
                                 Height="34"
                                 Margin="300,152,8,0"
                                 BorderBrush="#e6ebf7"
@@ -83,6 +86,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="307,132,66,289" Text="Số điện thoại"/>
         <TextBox
+                                x:Name="txtbox_gioitinh"
                                 Height="34"
                                 Margin="126,152,182,0"
                                 BorderBrush="#e6ebf7"
@@ -100,6 +104,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="131,204,267,217" Text="Doanh số"/>
         <TextBox
+                                x:Name="txtbox_doanhso"
                                 Height="34"
                                 Margin="126,223,182,0"
                                 BorderBrush="#e6ebf7"
@@ -117,6 +122,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="307,204,102,217" Text="Cấp bậc"/>
         <TextBox
+                                x:Name="txtbox_capbac"
                                 Height="34"
                                 Margin="300,223,8,0"
                                 BorderBrush="#e6ebf7"
@@ -133,6 +139,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="131,276,287,145" Text="Địa chỉ"/>
         <TextBox
+                                x:Name="txtbox_diachi"
                                 Height="62"
                                 Margin="126,297,8,0"
                                 BorderBrush="#e6ebf7"
@@ -147,9 +154,32 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="12" Content="CẬP NHẬT" FontFamily="{StaticResource boldFont}" Margin="251,377,123,31"/>
-
+        <Button x:Name="button_them"
+            Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                materialDesign:ButtonAssist.CornerRadius="10" 
+                 materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                 BorderBrush="#EA5C2B" Background="#EA5C2B" 
+                 FontSize="12" Content="Thêm" 
+                 FontFamily="{StaticResource boldFont}" 
+                 Margin="368,377,7,31" Click="Button_them_Click"/>
+        <Button x:Name="button_capnhat" 
+            Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                materialDesign:ButtonAssist.CornerRadius="10" 
+                 materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                 BorderBrush="#EA5C2B" Background="#EA5C2B" 
+                 FontSize="12" Content="CẬP NHẬT" 
+                 FontFamily="{StaticResource boldFont}" 
+                 Margin="251,377,123,31" Click="Button_capnhat_Click"/>
+        
+        <Button x:Name="button_xoa"
+                Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                 materialDesign:ButtonAssist.CornerRadius="10" 
+                 materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                 BorderBrush="#EA5C2B" Background="#EA5C2B" 
+                 FontSize="12" Content="XÓA" 
+                 FontFamily="{StaticResource boldFont}" 
+                 Margin="126,377,248,31" 
+                 Click="Button_xoa_Click"/>
 
 
     </Grid>
