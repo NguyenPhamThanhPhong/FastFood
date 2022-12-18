@@ -31,6 +31,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="222,65,262,357" Text="Mã ND"/>
         <TextBox
+                                x:Name="txtbox_maNV"
                                 Height="32"
                                 Margin="218,84,224,0"
                                 BorderBrush="#e6ebf7"
@@ -47,6 +48,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="380,65,104,357" Text="Họ và tên"/>
         <TextBox
+                                x:Name="txtbox_tenNV"
                                 Height="32"
                                 Margin="376,84,66,0"
                                 BorderBrush="#e6ebf7"
@@ -64,6 +66,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="222,130,295,292" Text="Giới tính"/>
         <TextBox
+                                x:Name="txtbox_GioiTinh"
                                 Height="32"
                                 Margin="218,149,224,0"
                                 BorderBrush="#e6ebf7"
@@ -80,6 +83,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="380,130,137,292" Text="Chức vụ"/>
         <TextBox
+                                x:Name="combobox_ChucVu"
                                 Height="30"
                                 Margin="376,149,66,0"
                                 BorderBrush="#e6ebf7"
@@ -96,6 +100,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="222,192,293,230" Text="Ngày sinh"/>
         <TextBox
+                                x:Name="txtbox_ngaysinh"
                                 Height="32"
                                 Margin="218,212,224,0"
                                 BorderBrush="#e6ebf7"
@@ -112,6 +117,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="380,192,168,230" Text="SĐT"/>
         <TextBox
+                                x:Name="txtbox_sdt"
                                 Height="32"
                                 Margin="376,212,66,0"
                                 BorderBrush="#e6ebf7"
@@ -128,6 +134,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="222,254,317,168" Text="Email"/>
         <TextBox
+                                x:Name="txtbox_email"
                                 Height="32"
                                 Margin="218,273,224,0"
                                 BorderBrush="#e6ebf7"
@@ -144,6 +151,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="380,254,155,168" Text="Địa chỉ"/>
         <TextBox
+                                x:Name="txtbox_diachi"
                                 Height="81"
                                 Margin="376,273,66,0"
                                 BorderBrush="#e6ebf7"

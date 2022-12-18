@@ -26,7 +26,6 @@ namespace FastfoodManagementFinal.Models
         }
         public string Bill_ID { get; set; }
         public string Order_ID { get; set; }
-        public string Order_Name { get; set; }
         public string Order_Product_ID { get; set; }
         public string Order_Product_Name { get;set; }
         public int Order_Product_Price { get; set; }

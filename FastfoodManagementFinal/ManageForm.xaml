@@ -12,10 +12,86 @@
 
     <Page.Resources>
 
-        <Style TargetType="ScrollBar">
+        <Style TargetType="ScrollBar"></Style>
 
+        <Style x:Key="grid_NV" TargetType="Grid">
+            <Setter Property="Height" Value="170"></Setter>
+            <Setter Property="Width" Value="320"></Setter>
+            <Setter Property="Margin" Value="4,5,6,5"></Setter>
         </Style>
 
+        <Style x:Key="image" TargetType="Image">
+            <Setter Property="Source" Value="/IMAGE/Quản lý.png"></Setter>
+            <Setter Property="Margin" Value="-8,-8,-8,-9"></Setter>
+        </Style>
+
+        <Style x:Key="image_NV" TargetType="Image">
+            <Setter Property="Margin" Value="18,24,208,59"></Setter>
+        </Style>
+
+        <Style x:Key="image_MaMV" TargetType="Image">
+            <Setter Property="Source" Value="/IMAGE/Giá.png"></Setter>
+            <Setter Property="Margin" Value="18,24,208,59"></Setter>
+            <Setter Property="RenderTransformOrigin" Value="0.556,1.263"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_MaNV" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Margin" Value="49,122,244,36"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_TenNV" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="10"></Setter>
+            <Setter Property="Margin" Value="127,33,68,121"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_SĐT" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Margin" Value="127,33,68,121"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_ĐC" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Margin" Value="127,33,68,121"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_SĐTNV" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
+            <Setter Property="FontSize" Value="10"></Setter>
+            <Setter Property="Margin" Value="162,58,79,96"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_ĐCNV" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
+            <Setter Property="FontSize" Value="10"></Setter>
+            <Setter Property="Margin" Value="162,80,16,60"></Setter>
+        </Style>
+
+        <Style x:Key="button_viewdetailNV" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="Margin" Value="278,16,0,0"></Setter>
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="Height" Value="24"></Setter>
+            <Setter Property="Width" Value="28"></Setter>
+            <Setter Property="BorderBrush" Value="#00711B1B"></Setter>
+            <Setter Property="RenderTransformOrigin" Value="4.667,1.717"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="/IMAGE/eye-2-128.png"></ImageBrush>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
 
     </Page.Resources>
 

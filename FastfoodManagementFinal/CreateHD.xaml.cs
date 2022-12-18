@@ -23,5 +23,10 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
         }
+        DateTime picked_date = DateTime.Today;
+        private void datepicker_NgaySinh_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            picked_date = (DateTime)(((DatePicker)sender).SelectedDate);
+        }
     }
 }

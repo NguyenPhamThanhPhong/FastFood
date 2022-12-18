@@ -78,20 +78,17 @@
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="380,156,137,266" Text="Chức vụ"/>
-        <TextBox
-                                Height="30"
-                                Margin="376,175,66,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
+        <ComboBox
+    
+    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
+    IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
+    ItemsSource="{Binding ShortStringList}"
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="380,176,56,0" VerticalAlignment="Top" Height="31" >
+            <ComboBoxItem Content="Quản lý"/>
+            <ComboBoxItem Content="Nhân viên"/>
+
+        </ComboBox>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="222,218,293,204" Text="Ngày sinh"/>
         <TextBox

@@ -67,7 +67,15 @@ namespace FastfoodManagementFinal.ViewModel
         {
             try
             {
-
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    string sql = "insert into import values" +
+                        " ('" + i.ImportID + "','" + i.AdminID + "','" + i.ImportDate + "')";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
             }
             catch(SqlException ex)
             {
@@ -76,15 +84,7 @@ namespace FastfoodManagementFinal.ViewModel
                     MessageBox.Show("đã tồn tại ID");
                 }
             }
-            if (con.State != ConnectionState.Open)
-            {
-                con.Open();
-                string sql = "insert into import values" +
-                    " ('" + i.ImportID + "','" + i.AdminID + "','" + i.ImportDate + "')";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+
         }
         public static void Insert_ImportProducts(ImportProduct ip)
         {
@@ -106,7 +106,7 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 con.Open();
                 string sql = "insert into orders values" +
-                    " ('" + o.Order_Product_ID + "','" + o.Bill_ID + "','" + o.Order_Product_ID + "'," +
+                    " ('" + o.Order_ID + "','" + o.Bill_ID + "','" + o.Order_Product_ID + "'," +
                     "'" + o.Order_Sell_Quantity + "','" + o.Order_Product_Price + "'," +
                     "'" + o.Order_Discount + "','" + o.Order_Total + "')";
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -515,6 +515,31 @@ namespace FastfoodManagementFinal.ViewModel
             }
             return customers;
         }
+        public static void Update_Customers(Customer c)
+        {
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    string sql = "update customers set " +
+                        "fullname = N'" + c.CustomerName + "',sex= N'" + c.CustomerSex + "', " +
+                        "phone = '" + c.CustomerPhone + "', total = '" + c.CustomerTotal + "'," +
+                        " customerRank = N'" + c.CustomerRank + "', customerAddress = N'" + c.Address + "' " +
+                        "where customerID='"+c.CustomerID+"'";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                    MessageBox.Show("lỗi:"+ex.ToString()+" \n " +
+                        "Thất bại, vui lòng điền thông tin hợp lệ!!");
+                return;
+            }
+
+        }
         public static bool Delete_customer(string customerID) 
         {
             try
@@ -535,6 +560,7 @@ namespace FastfoodManagementFinal.ViewModel
                 return false;
             }
         }
+
         public static List<Bill> Search_bill_hoten(string search_by, string parameter)
         {
             string sql = "select b.BillID, b.StaffID, b.CustomerID, b.BillDate," +

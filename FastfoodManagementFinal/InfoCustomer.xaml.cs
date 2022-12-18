@@ -98,18 +98,19 @@ namespace FastfoodManagementFinal
                 Customer c = new Customer();
                 c.CustomerID = txtbox_maKH.Text;
                 c.CustomerName = Xu_ly_chuoi.chuan_hoa(txtbox_tenKH.Text);
-                c.CustomerPhone = txtbox_sdt.Text;
+                c.CustomerPhone = txtbox_sdt.Text.Trim(); ;
                 c.CustomerSex = Xu_ly_chuoi.chuan_hoa( txtbox_gioitinh.Text);
                 c.CustomerRank = Xu_ly_chuoi.chuan_hoa(txtbox_capbac.Text);
-                c.CustomerTotal = int.Parse(txtbox_doanhso.Text);
-                c.Address = txtbox_diachi.Text;
+                c.CustomerTotal = int.Parse(txtbox_doanhso.Text.Trim());
+                c.Address = txtbox_diachi.Text.Trim();
                 c.CustomerBills = new List<Bill>();
-                Xu_Ly_SQL.Insert_Customers(c);
+                Xu_Ly_SQL.Update_Customers(c);
             }
         }
         private void Button_xoa_Click(object sender, RoutedEventArgs e)
         {
             Xu_Ly_SQL.Delete_customer(txtbox_maKH.Text.Trim());
+            this.Close();
         }
 
 
