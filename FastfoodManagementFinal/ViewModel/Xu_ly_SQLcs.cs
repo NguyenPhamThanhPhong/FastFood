@@ -560,6 +560,58 @@ namespace FastfoodManagementFinal.ViewModel
                 return false;
             }
         }
+        public static void Update_Staff(Account a)
+        {
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    string sql = "update staff set " +
+                        "avatar = '"+a.Avatar+"',acessRight = '"+a.AccessRight+"'," +
+                        "fullname = '"+a.Name+"',sex = '"+a.Sex+"', dob = '"+a.DateOfBirth+"'," +
+                        "phone = '"+a.Phone_Number+"',email='"+a.Email+"',addr = '"+a.address+"'" +
+                        " where ID='"+a.StaffID+"'";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("lỗi:" + ex.ToString() + " \n " +
+                    "Thất bại, vui lòng điền thông tin hợp lệ!!");
+                return;
+            }
+
+        }
+        public static bool Delete_Staff(string ID)
+        {
+            string sql = "delete from staff where ID = '" + ID + "'";
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    int check = cmd.ExecuteNonQuery();
+                    if(check==1)
+                    {
+                        con.Close();
+                        return true;
+                    }
+                    con.Close();
+                }
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("xóa thất bại!");
+                return false;
+            }
+
+        }
+        
 
         public static List<Bill> Search_bill_hoten(string search_by, string parameter)
         {

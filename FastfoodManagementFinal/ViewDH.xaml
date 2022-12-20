@@ -15,8 +15,8 @@
         AllowsTransparency="True"
         Background="{x:Null}">
 
-
     <Grid>
+            <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="468*"/>
             <ColumnDefinition Width="113*"/>
@@ -285,5 +285,8 @@
         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="398,400,19,25" Text="150.000"/>
 
     </Grid>
+    </Grid>
+
+
 </Window>
 

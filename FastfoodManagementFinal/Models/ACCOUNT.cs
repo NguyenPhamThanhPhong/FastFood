@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FastfoodManagementFinal.Models
 {
@@ -73,6 +74,44 @@ namespace FastfoodManagementFinal.Models
                 }
             }
             return x.Count ;
+        }
+        public bool Is_valid()
+        {
+            int try_parse;
+            if(Name.Trim()==""|| AccessRight.Trim()=="" ||
+                Username.Trim()=="" || Pass ==""|| Sex.Trim()==""||
+                Phone_Number.Trim()=="")
+            {
+                MessageBox.Show("điền đủ thông tin, please!");
+                return false;
+            }
+            if(Xu_ly_chuoi.Is_Vietnamese(Username))
+            {
+                MessageBox.Show("user name không được chứa kí tự tiếng Việt (Unicode)");
+                return false;
+            }
+            if(Name.Any(char.IsDigit))
+            {
+                MessageBox.Show("tên không được chứa số");
+                return false;
+            }
+            else if (Sex.Any(char.IsDigit))
+            {
+                MessageBox.Show("giới tính sai định dạng");
+                return false;
+            }
+            
+            else if (int.TryParse(Phone_Number.Trim(), out try_parse)==false)
+            {
+                MessageBox.Show("Số điện thoại phải là số!");
+                return false;
+            }
+            else if(DateOfBirth >= DateTime.Today)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ (phải bé hơn ngày hôm nay)");
+                return false;
+            }
+            return true;
         }
         //public string Create_staffID(string AccessRight)
         //{

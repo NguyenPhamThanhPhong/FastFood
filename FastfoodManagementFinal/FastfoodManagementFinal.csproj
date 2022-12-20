@@ -187,6 +187,7 @@
       <DependentUpon>ViewDH.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\FileUtil.cs" />
     <Compile Include="ViewModel\Grid_don_hang.cs" />
     <Compile Include="ViewModel\Grid_San_Pham.cs" />
     <Compile Include="ViewModel\iSQL_command.cs" />

@@ -53,7 +53,6 @@ namespace FastfoodManagementFinal
         //}
         private bool check_du_lieu()
         {
-            bool check = true;
             int test;
             if(txtbox_maKH.Text=="" || txtbox_tenKH.Text=="" || txtbox_sdt.Text=="")
             {

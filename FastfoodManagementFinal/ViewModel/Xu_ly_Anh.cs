@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -17,17 +18,22 @@ namespace FastfoodManagementFinal.ViewModel
         {
             FileInfo fileInfo = new FileInfo(path);
             store_to = Path.Combine(store_to, ID);
-            MessageBox.Show(store_to);
+            
+
             if (fileInfo.Exists)
             {
+                MessageBox.Show(path);
+                MessageBox.Show(store_to);
                 File.Copy(fileInfo.FullName, store_to, true);
             }
         }
         public static string GetAnh(string directory, string filename)
         {
             FileInfo fileInfo = new FileInfo(Path.Combine(directory,filename));
-            if(fileInfo.Exists) 
-            { 
+            
+
+            if (fileInfo.Exists)
+            {
                 return fileInfo.FullName;
             }
             return "";

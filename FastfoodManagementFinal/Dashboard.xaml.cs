@@ -2,6 +2,8 @@
 using FastfoodManagementFinal.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +31,12 @@ namespace FastfoodManagementFinal
             logged_in_acc = a;
             txtBlock_Acc_Name.Text = logged_in_acc.Name;
             txtBlock_AccessRight.Text = logged_in_acc.AccessRight;
-            logged_in_avatar.Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar,a.Avatar)));
+            //MessageBox.Show(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
+            if(new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar,a.Avatar)).Exists)
+            {
+                logged_in_avatar.Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)));
+            }
+
         }
         public string abc = "abc";
 

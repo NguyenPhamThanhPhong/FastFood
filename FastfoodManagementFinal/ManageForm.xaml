@@ -166,7 +166,10 @@
 
         <Grid Margin="0,153,0,7"/>
         <ScrollViewer Margin="0,153,0,7">
-            <Grid>
+            <StackPanel x:Name="stack_panel_quanly">
+                
+            </StackPanel>
+            <!--<Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="350"/>
@@ -295,97 +298,9 @@
                         <Button Content="Button"/>
                     </Button>
                 </Grid>
-                <!--<Grid Height="170" Width="320" Margin="4,15,26,15" Grid.Column="3">
-                    <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
-                    <Image Source="/IMAGE/Hình Hiền.png" Margin="18,24,208,59" />
-                    <Image Source="/IMAGE/Giá.png" Margin="37,118,234,29" RenderTransformOrigin="0.556,1.263" />
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="49,122,244,36" Text="NV01"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,68,121" Text="Trần Thanh Hiền"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,79,96" Text="0398285020"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,16,60"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run Text="TP. Hồ Chí Minh"/></TextBlock>
-                    <Button  HorizontalAlignment="Left" Margin="276,16,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="eye2_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                        </Button.Background>
-                        <Button Content="Button"/>
-                    </Button>
-                </Grid>
+               
 
-                <Grid Height="170" Width="320" Margin="14,15,16,15" Grid.Column="1" Grid.Row="2">
-                    <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
-                    <Image Source="/IMAGE/Hình Hiền.png" Margin="18,24,208,59" />
-                    <Image Source="/IMAGE/Giá.png" Margin="37,118,234,29" RenderTransformOrigin="0.556,1.263" />
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="49,122,244,36" Text="NV01"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,68,121" Text="Trần Thanh Hiền"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,79,96" Text="0398285020"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,16,60"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run Text="TP. Hồ Chí Minh"/></TextBlock>
-                    <Button  HorizontalAlignment="Left" Margin="278,16,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="eye3_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                        </Button.Background>
-                        <Button Content="Button"/>
-                    </Button>
-                </Grid>
-
-                <Grid Height="170" Width="320" Margin="4,15,26,15" Grid.Column="3" Grid.Row="2">
-                    <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
-                    <Image Source="/IMAGE/Hình Hiền.png" Margin="18,24,208,59" />
-                    <Image Source="/IMAGE/Giá.png" Margin="37,118,234,29" RenderTransformOrigin="0.556,1.263" />
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="49,122,244,36" Text="NV01"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,68,121" Text="Trần Thanh Hiền"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,79,96" Text="0398285020"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,16,60"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run Text="TP. Hồ Chí Minh"/></TextBlock>
-                    <Button  HorizontalAlignment="Left" Margin="276,16,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="eye4_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                        </Button.Background>
-                        <Button Content="Button"/>
-                    </Button>
-                </Grid>
-
-                <Grid Height="170" Width="320" Margin="14,15,16,15" Grid.Column="1" Grid.Row="4">
-                    <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
-                    <Image Source="/IMAGE/Hình Hiền.png" Margin="18,24,208,59" />
-                    <Image Source="/IMAGE/Giá.png" Margin="37,118,234,29" RenderTransformOrigin="0.556,1.263" />
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="49,122,244,36" Text="NV01"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,68,121" Text="Trần Thanh Hiền"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,79,96" Text="0398285020"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,16,60"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run Text="TP. Hồ Chí Minh"/></TextBlock>
-                    <Button  HorizontalAlignment="Left" Margin="278,16,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="eye5_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                        </Button.Background>
-                        <Button Content="Button"/>
-                    </Button>
-                </Grid>
-
-                <Grid Height="170" Width="320" Margin="4,15,26,15" Grid.Column="3" Grid.Row="4">
-                    <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
-                    <Image Source="/IMAGE/Hình Hiền.png" Margin="18,24,208,59" />
-                    <Image Source="/IMAGE/Giá.png" Margin="37,118,234,29" RenderTransformOrigin="0.556,1.263" />
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="49,122,244,36" Text="NV01"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,68,121" Text="Trần Thanh Hiền"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
-                    <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,79,96" Text="0398285020"/>
-                    <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,16,60"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run Text="TP. Hồ Chí Minh"/></TextBlock>
-                    <Button  HorizontalAlignment="Left" Margin="274,16,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="eye6_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                        </Button.Background>
-                        <Button Content="Button"/>
-                    </Button>
-                </Grid>-->
-
-            </Grid>
+            </Grid>-->
 
         </ScrollViewer>
 

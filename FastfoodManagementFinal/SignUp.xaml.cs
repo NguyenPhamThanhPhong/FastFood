@@ -28,6 +28,7 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
             txtKey.Visibility = Visibility.Hidden;
+            datepicker_NgaySinh.SelectedDate = DateTime.Now;
         }
         string Avatar_path;
         SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=FastFood;Integrated Security=True");
@@ -68,8 +69,8 @@ namespace FastfoodManagementFinal
                 access_right = "Quản lý";
             }
             Account a = new Account();
-            a.StaffID = "NV05";
-            a.Avatar = a.StaffID + new FileInfo(Avatar_path).Name;
+            a.StaffID = "NV012";
+            a.Avatar = a.StaffID + new FileInfo(Avatar_path).Extension;
             a.AccessRight = access_right;
             a.Username = txtĐK_TK.Text;
             a.Pass = txtĐK_Pass.Text;
@@ -79,11 +80,15 @@ namespace FastfoodManagementFinal
             a.Phone_Number = txtĐK_Phone.Text;
             a.Email = txtĐK_Email.Text;
             a.address = txtĐK_Address.Text;
-            Xu_Ly_SQL.Insert_Staff(a);
-            if (Avatar_path != "")
+            if(a.Is_valid())
             {
-                Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.StaffID);
+                Xu_Ly_SQL.Insert_Staff(a);
+                if (Avatar_path != "")
+                {
+                    Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.Avatar);
+                }
             }
+            
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

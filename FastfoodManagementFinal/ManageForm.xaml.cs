@@ -2,6 +2,7 @@
 using FastfoodManagementFinal.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -26,54 +27,81 @@ namespace FastfoodManagementFinal
         public ManageForm()
         {
             InitializeComponent();
+            Load_stack_panel(List_acc);
+
         }
-        //private Grid Load_Grid(Account acc)
-        //{
-        //    //Grid g = new Grid();
-        //    //g.Style = (Style)this.Resources["grid_NV"];
-        //    //Image i1 = new Image();
-        //    //i1.Style = (Style)this.Resources["image"];
-        //    //Image i2 = new Image();
-        //    //i2.Style = (Style)this.Resources["image_NV"];
-        //    //Image i3 = new Image();
-        //    //i3.Style = (Style)this.Resources["image_MaMV"];
-        //    //TextBlock t1 = new TextBlock();
-        //    //t1.Style = (Style)this.Resources["txtblock_MaNV"];
-        //    //t1.Text = ten;
-
-        //    //TextBlock t2 = new TextBlock();
-        //    //t2.Style = (Style)this.Resources["txtblock_TenNV"];
-
-        //    //TextBlock t3 = new TextBlock();
-        //    //t3.Style = (Style)this.Resources["txtblock_SĐT"];
-            
-        //    //TextBlock t4 = new TextBlock();
-        //    //t3.Style = (Style)this.Resources["txtblock_ĐC"];
-
-
+        List<Account> List_acc = Xu_Ly_SQL.Select_all_Account();
+        private void Load_stack_panel(List<Account> accounts)
+        {
+            this.stack_panel_quanly.Children.Clear();
+            foreach(Account a in accounts)
+            {
+                Grid g = Load_Grid(a);
+                stack_panel_quanly.Children.Add(g);
+            }
+        }
+        private Grid Load_Grid(Account acc)
+        {
+            Grid g = new Grid();
+            g.Style = (Style)this.Resources["grid_NV"];
+            Image i1 = new Image();
+            i1.Style = (Style)this.Resources["image"];
+            Image i2 = new Image();
+            i2.Style = (Style)this.Resources["image_NV"];
+            if (Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar,acc.Avatar ) != "")
+            {
+                i2.Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, acc.Avatar)));
+            }
 
 
-        //    //if (Xu_ly_Anh.GetAnh(Xu_ly_Anh.ProductAvatar, avt_food) != "")
-        //    //{ i3.Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.ProductAvatar, avt_food))); }
+            Image i3 = new Image();
+            i3.Style = (Style)this.Resources["image_MaMV"];
 
-            
+            TextBlock t1 = new TextBlock();
+            t1.Style = (Style)this.Resources["txtblock_MaNV"];
+            t1.Text = acc.StaffID.ToString();
 
-        //    //a2.Text = gia.ToString();
-        //    //TextBlock a3 = new TextBlock();
-        //    //a3.Style = (Style)this.Resources["txtblock_chitiet"];
-        //    //a3.Text = "chi tiết";
-        //    //Button b = new Button();
-        //    //b.Style = (Style)this.Resources["button_chitiet"];
-        //    //g.Children.Add(i1);
-        //    //g.Children.Add(i2);
-        //    //g.Children.Add(i3);
-        //    //g.Children.Add(i4);
-        //    //g.Children.Add(b);
-        //    //g.Children.Add(a1);
-        //    //g.Children.Add(a2);
-        //    //g.Children.Add(a3);
-        //    //return g;
-        //}
+            TextBlock t2 = new TextBlock();
+            t2.Style = (Style)this.Resources["txtblock_TenNV"];
+            t2.Text = acc.Name.ToString();
+
+            TextBlock t3 = new TextBlock();
+            t3.Style = (Style)this.Resources["txtblock_SĐT"];
+
+            TextBlock t4 = new TextBlock();
+            t4.Style = (Style)this.Resources["txtblock_ĐC"];
+
+            TextBlock t5 = new TextBlock();
+            t5.Style = (Style)this.Resources["txtblock_SĐTNV"];
+            t5.Text = acc.Phone_Number.ToString();
+
+            TextBlock t6 = new TextBlock();
+            t6.Style = (Style)this.Resources["txtblock_ĐCNV"];
+            t6.Text = acc.address.ToString();
+
+            Button button = new Button();
+            button.Style = (Style)this.Resources["button_viewdetailNV"];
+            button.Click += eye_Click;
+
+
+
+            g.Children.Add(i1);
+            g.Children.Add(i2);
+            g.Children.Add(i3);
+            g.Children.Add(t1);
+            g.Children.Add(t2);
+            g.Children.Add(t3);
+            g.Children.Add(t4);
+            g.Children.Add(t5);
+            g.Children.Add(t6);
+            g.Children.Add(button);
+            return g;
+        }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -81,39 +109,52 @@ namespace FastfoodManagementFinal
             viewNV.ShowDialog();
         }
 
-        private void eye1_Click(object sender, RoutedEventArgs e)
+        private void eye_Click(object sender, RoutedEventArgs e)
         {
-            InfoNV infoNV = new InfoNV();
-            infoNV.ShowDialog();
+            var p = VisualTreeHelper.GetParent(e.Source as Button);
+            TextBlock tt = (TextBlock)VisualTreeHelper.GetChild(p, 3);
+            Image i2 = (Image)VisualTreeHelper.GetChild(p, 1);
+
+            i2.Source = new BitmapImage(new Uri("C:\\Users\\anhng\\OneDrive\\Máy tính\\ảnh\\fast-food-transparent-png-pictures-icons-and-png-18.png"));
+
+            foreach (Account a in List_acc)
+            {
+                if(a.StaffID == tt.Text)
+                {
+                    InfoNV ff = new InfoNV(a);
+                    ff.ShowDialog();
+                    break;
+                }
+            }
         }
 
-        private void eye2_Click(object sender, RoutedEventArgs e)
-        {
-            InfoNV infoNV = new InfoNV();
-            infoNV.ShowDialog();
-        }
+        //private void eye2_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InfoNV infoNV = new InfoNV();
+        //    infoNV.ShowDialog();
+        //}
 
-        private void eye3_Click(object sender, RoutedEventArgs e)
-        {
-            InfoNV infoNV = new InfoNV();
-            infoNV.ShowDialog();
-        }
+        //private void eye3_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InfoNV infoNV = new InfoNV();
+        //    infoNV.ShowDialog();
+        //}
 
-        private void eye4_Click(object sender, RoutedEventArgs e)
-        {
-            InfoNV infoNV = new InfoNV();
-            infoNV.ShowDialog();
-        }
-        private void eye5_Click(object sender, RoutedEventArgs e)
-        {
-            InfoNV infoNV = new InfoNV();
-            infoNV.ShowDialog();
-        }
-        private void eye6_Click(object sender, RoutedEventArgs e)
-        {
-            InfoNV infoNV = new InfoNV();
-            infoNV.ShowDialog();
-        }
+        //private void eye4_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InfoNV infoNV = new InfoNV();
+        //    infoNV.ShowDialog();
+        //}
+        //private void eye5_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InfoNV infoNV = new InfoNV();
+        //    infoNV.ShowDialog();
+        //}
+        //private void eye6_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InfoNV infoNV = new InfoNV();
+        //    infoNV.ShowDialog();
+        //}
 
         private void Setting_Click(object sender, RoutedEventArgs e)
         {

@@ -41,6 +41,37 @@ namespace FastfoodManagementFinal.ViewModel
 
         "ÝỲỴỶỸ"
 };
+        private static readonly string[] Vietnamese_accent = new string[]
+{
+
+        "áàạảãâấầậẩẫăắằặẳẵ",
+
+        "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
+
+        "éèẹẻẽêếềệểễ",
+
+        "ÉÈẸẺẼÊẾỀỆỂỄ",
+
+        "óòọỏõôốồộổỗơớờợởỡ",
+
+        "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
+
+        "úùụủũưứừựửữ",
+
+        "ÚÙỤỦŨƯỨỪỰỬỮ",
+
+        "íìịỉĩ",
+
+        "ÍÌỊỈĨ",
+
+        "đ",
+
+        "Đ",
+
+        "ýỳỵỷỹ",
+
+        "ÝỲỴỶỸ"
+};
         public static string Sang_chuoi_khong_dau(string str)
         {
 
@@ -57,6 +88,22 @@ namespace FastfoodManagementFinal.ViewModel
             }
             return str;
 
+        }
+        public static bool Is_Vietnamese(string str)
+        {
+            for (int i = 0; i < Vietnamese_accent.Length; i++)
+
+            {
+
+                for (int j = 0; j < Vietnamese_accent[i].Length; j++)
+                {
+                    if (str.Contains(Vietnamese_accent[i][j]))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
         public static string chuan_hoa(string xau)
         {

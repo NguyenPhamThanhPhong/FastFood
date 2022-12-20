@@ -18,7 +18,7 @@
 
     <Grid>
 
-        <Image Source="/IMAGE/Nhân viên.png" Margin="35,-5,28,-4" />
+        <Image  Source="/IMAGE/Nhân viên.png" Margin="35,-5,28,-4" />
         <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="27" Text="THÔNG TIN NHÂN VIÊN" Margin="139,13,136,394" />
         <Button HorizontalAlignment="Left" Margin="506,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B">
             <Button.Background>
@@ -27,13 +27,13 @@
             <Button Content="Button"/>
         </Button>
 
-        <Image Source="/IMAGE/Asset 3.png" Margin="40,116,355,203" />
+        <Image x:Name="image_avatar" Source="/IMAGE/Asset 3.png" Margin="40,116,355,203" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="222,65,262,357" Text="Mã ND"/>
         <TextBox
                                 x:Name="txtbox_maNV"
                                 Height="32"
-                                Margin="218,84,224,0"
+                                Margin="218,83,224,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -83,7 +83,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="380,130,137,292" Text="Chức vụ"/>
         <TextBox
-                                x:Name="combobox_ChucVu"
+                                x:Name="txtbox_ChucVu"
                                 Height="30"
                                 Margin="376,149,66,0"
                                 BorderBrush="#e6ebf7"
@@ -98,22 +98,16 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="222,192,293,230" Text="Ngày sinh"/>
-        <TextBox
-                                x:Name="txtbox_ngaysinh"
-                                Height="32"
-                                Margin="218,212,224,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
+        <TextBlock Foreground="Black" 
+                   FontFamily="{StaticResource boldFont}" 
+                   FontSize="12" Margin="222,192,293,230" 
+                   Text="Ngày sinh"/>
+        <DatePicker x:Name="datepicker_NgaySinh"
+                    Background="White"
+            Margin="222,215,224,0" 
+            VerticalAlignment="Top" 
+            Height="29" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged">
+        </DatePicker>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="380,192,168,230" Text="SĐT"/>
         <TextBox
@@ -170,11 +164,15 @@
                 Height="32" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
                 Background="#EA5C2B" FontSize="11" Content="ĐẶT LẠI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="376,374,66,34"/>
 
-        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                Height="32" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="XÓA" FontFamily="{StaticResource boldFont}" Margin="310,374,215,34"/>
+        <Button
+            x:Name="button_xoa"
+            Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                Height="32" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="XÓA" FontFamily="{StaticResource boldFont}" Margin="310,374,215,34" Click="button_xoa_Click"/>
 
-        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                Height="32" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="CẬP NHẬT" FontFamily="{StaticResource boldFont}" Margin="218,374,279,34" RenderTransformOrigin="0.484,2.5"/>
+        <Button
+            x:Name="button_capnhat"
+            Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                Height="32" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="CẬP NHẬT" FontFamily="{StaticResource boldFont}" Margin="218,374,279,34" RenderTransformOrigin="0.484,2.5" Click="button_capnhat_Click"/>
 
 
 
