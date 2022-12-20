@@ -675,7 +675,6 @@ namespace FastfoodManagementFinal.ViewModel
             }
             return bills;
         }
-
     }
 }
 

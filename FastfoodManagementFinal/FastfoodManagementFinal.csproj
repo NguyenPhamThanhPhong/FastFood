@@ -196,6 +196,7 @@
     <Compile Include="ViewModel\Xu_ly_Anh.cs" />
     <Compile Include="ViewModel\Xu_ly_chuoi.cs" />
     <Compile Include="ViewModel\Xu_Ly_Excel.cs" />
+    <Compile Include="ViewModel\Xu_ly_ID.cs" />
     <Compile Include="ViewModel\Xu_ly_SQLcs.cs" />
     <Compile Include="ViewNV.xaml.cs">
       <DependentUpon>ViewNV.xaml</DependentUpon>

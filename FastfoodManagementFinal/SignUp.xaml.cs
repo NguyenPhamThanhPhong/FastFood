@@ -69,9 +69,9 @@ namespace FastfoodManagementFinal
                 access_right = "Quản lý";
             }
             Account a = new Account();
-            a.StaffID = "NV012";
             a.Avatar = a.StaffID + new FileInfo(Avatar_path).Extension;
             a.AccessRight = access_right;
+            a.StaffID = Xu_ly_ID.GetStaffID(access_right);
             a.Username = txtĐK_TK.Text;
             a.Pass = txtĐK_Pass.Text;
             a.Name = txtĐK_Name.Text;
@@ -80,7 +80,7 @@ namespace FastfoodManagementFinal
             a.Phone_Number = txtĐK_Phone.Text;
             a.Email = txtĐK_Email.Text;
             a.address = txtĐK_Address.Text;
-            if(a.Is_valid())
+            if (a.Is_valid())
             {
                 Xu_Ly_SQL.Insert_Staff(a);
                 if (Avatar_path != "")
@@ -88,7 +88,6 @@ namespace FastfoodManagementFinal
                     Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.Avatar);
                 }
             }
-            
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
