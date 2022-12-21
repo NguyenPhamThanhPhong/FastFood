@@ -84,6 +84,153 @@ namespace FastfoodManagementFinal.ViewModel
                     return "";
             }
         }
-
+        public static string GetProductID()
+        {
+            List<Account> acc = new List<Account>();
+            int count = 1;
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                string sql = "select ProductID from PRODUCTS order by ProductID asc";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string MS = reader.GetString(0);
+                    bool isHaveMS = false;
+                    if (MS.Substring(0, 2).Equals("SP"))
+                    {
+                          string numberId = reader.GetString(0).Substring(2);
+                          if (count == int.Parse(numberId))
+                          {
+                              count++;
+                          }
+                          else
+                          {
+                              isHaveMS = true;
+                              break;
+                          }
+                    }
+                    if (isHaveMS)
+                    {
+                        con.Close();
+                    }
+                }
+            }
+            return "SP" + count.ToString().PadLeft(3, '0');
+        }
+        public static string GetCustomerID()
+        {
+            List<Account> acc = new List<Account>();
+            int count = 1;
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                string sql = "select CustomerID from CUSTOMERS order by CustomerID asc";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string MS = reader.GetString(0);
+                    bool isHaveMS = false;
+                    if (MS.Substring(0, 2).Equals("KH"))
+                    {
+                        string numberId = reader.GetString(0).Substring(2);
+                        if (count == int.Parse(numberId))
+                        {
+                            count++;
+                        }
+                        else
+                        {
+                            isHaveMS = true;
+                            break;
+                        }
+                    }
+                    if (isHaveMS)
+                    {
+                        con.Close();
+                    }
+                }
+            }
+            return "KH" + count.ToString().PadLeft(3, '0');
+        }
+        public static string GetBillID()
+        {
+            List<Account> acc = new List<Account>();
+            int count = 1;
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                string sql = "select BillID from BILL order by BillID asc";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string MS = reader.GetString(0);
+                    bool isHaveMS = false;
+                    if (MS.Substring(0, 2).Equals("HD"))
+                    {
+                        string numberId = reader.GetString(0).Substring(2);
+                        if (count == int.Parse(numberId))
+                        {
+                            count++;
+                        }
+                        else
+                        {
+                            isHaveMS = true;
+                            break;
+                        }
+                    }
+                    if (isHaveMS)
+                    {
+                        con.Close();
+                    }
+                }
+            }
+            return "HD" + count.ToString().PadLeft(3, '0');
+        }
+        public static string GetOrderID(int i, string billID)
+        {
+            return billID + "_DH" + i.ToString().PadLeft(3, '0');
+        }
+        public static string GetImportID()
+        {
+            List<Account> acc = new List<Account>();
+            int count = 1;
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                string sql = "select ImportID from IMPORT order by ImportID asc";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string MS = reader.GetString(0);
+                    bool isHaveMS = false;
+                    if (MS.Substring(0, 2).Equals("NH"))
+                    {
+                        string numberId = reader.GetString(0).Substring(2);
+                        if (count == int.Parse(numberId))
+                        {
+                            count++;
+                        }
+                        else
+                        {
+                            isHaveMS = true;
+                            break;
+                        }
+                    }
+                    if (isHaveMS)
+                    {
+                        con.Close();
+                    }
+                }
+            }
+            return "NH" + count.ToString().PadLeft(3, '0');
+        }
+        public static string GetImportProductID(int i, string ImportID)
+        {
+            return ImportID + "_MH" + i.ToString().PadLeft(3, '0');
+        }
     }
 }
