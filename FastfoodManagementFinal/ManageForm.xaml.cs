@@ -35,10 +35,10 @@ namespace FastfoodManagementFinal
         private void Load_stack_panel(List<Account> accounts)
         {
             this.stack_panel_quanly.Children.Clear();
-            //foreach (StackPanel stk in stack_panel_quanly.Children)
-            //{
-            //    stk.Children.Clear();
-            //}
+            foreach (StackPanel stk in stack_panel_quanly.Children)
+            {
+                stk.Children.Clear();
+            }
             StackPanel ss = new StackPanel();
             for (int i=0;i<accounts.Count; i++)
             {
