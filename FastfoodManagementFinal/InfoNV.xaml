@@ -20,7 +20,7 @@
 
         <Image  Source="/IMAGE/Nhân viên.png" Margin="35,-5,28,-4" />
         <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="27" Text="THÔNG TIN NHÂN VIÊN" Margin="139,13,136,394" />
-        <Button HorizontalAlignment="Left" Margin="506,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B">
+        <Button HorizontalAlignment="Left" Margin="506,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>

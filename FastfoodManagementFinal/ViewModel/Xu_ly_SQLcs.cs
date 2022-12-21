@@ -573,7 +573,11 @@ namespace FastfoodManagementFinal.ViewModel
                         "phone = '"+a.Phone_Number+"',email='"+a.Email+"',addr = '"+a.address+"'" +
                         " where ID='"+a.StaffID+"'";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.ExecuteNonQuery();
+                    int check = cmd.ExecuteNonQuery();
+                    if(check ==1)
+                    {
+                        MessageBox.Show("thanh cong");
+                    }
                     con.Close();
                 }
             }

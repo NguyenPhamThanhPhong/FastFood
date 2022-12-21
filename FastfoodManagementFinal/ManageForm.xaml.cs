@@ -3,6 +3,7 @@ using FastfoodManagementFinal.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -34,10 +35,20 @@ namespace FastfoodManagementFinal
         private void Load_stack_panel(List<Account> accounts)
         {
             this.stack_panel_quanly.Children.Clear();
-            foreach(Account a in accounts)
+            //foreach (StackPanel stk in stack_panel_quanly.Children)
+            //{
+            //    stk.Children.Clear();
+            //}
+            StackPanel ss = new StackPanel();
+            for (int i=0;i<accounts.Count; i++)
             {
-                Grid g = Load_Grid(a);
-                stack_panel_quanly.Children.Add(g);
+                if(i%2==0)
+                {
+                    ss = new StackPanel();
+                    ss.Orientation = Orientation.Horizontal;
+                    stack_panel_quanly.Children.Add(ss);
+                }
+                ss.Children.Add(Load_Grid(accounts[i]));
             }
         }
         private Grid Load_Grid(Account acc)
@@ -50,12 +61,25 @@ namespace FastfoodManagementFinal
             i2.Style = (Style)this.Resources["image_NV"];
             if (Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar,acc.Avatar ) != "")
             {
-                i2.Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, acc.Avatar)));
+                i2.Source = null;
+                GC.Collect();
+
+                Uri u = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, acc.Avatar));
+                
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+                bi.CacheOption = BitmapCacheOption.OnLoad;
+                bi.UriSource = u ;
+                bi.EndInit();
+                i2.Source = bi;
+
+                u = null;
+                bi = null;
+                GC.Collect();
             }
 
-
             Image i3 = new Image();
-            i3.Style = (Style)this.Resources["image_MaMV"];
+            //i3.Style = (Style)this.Resources["image_MaMV"];
 
             TextBlock t1 = new TextBlock();
             t1.Style = (Style)this.Resources["txtblock_MaNV"];
@@ -97,6 +121,11 @@ namespace FastfoodManagementFinal
             g.Children.Add(button);
             return g;
         }
+        public void dispose(object o)
+        {
+            o = null;
+            GC.Collect();
+        }
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
@@ -113,16 +142,34 @@ namespace FastfoodManagementFinal
         {
             var p = VisualTreeHelper.GetParent(e.Source as Button);
             TextBlock tt = (TextBlock)VisualTreeHelper.GetChild(p, 3);
-            Image i2 = (Image)VisualTreeHelper.GetChild(p, 1);
 
-            i2.Source = new BitmapImage(new Uri("C:\\Users\\anhng\\OneDrive\\Máy tính\\ảnh\\fast-food-transparent-png-pictures-icons-and-png-18.png"));
-
+            Image i = null;
             foreach (Account a in List_acc)
             {
                 if(a.StaffID == tt.Text)
                 {
+                    ((Image)VisualTreeHelper.GetChild(p, 1)).Source = null;
+                    GC.Collect();
+
                     InfoNV ff = new InfoNV(a);
                     ff.ShowDialog();
+                    Load_stack_panel(Xu_Ly_SQL.Select_all_Account());
+
+                    //BitmapImage bi = new BitmapImage();
+                    //bi.BeginInit();
+                    //bi.CacheOption = BitmapCacheOption.OnLoad;
+                    //bi.UriSource = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
+                    //bi.EndInit();
+                    //MessageBox.Show(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
+
+                    //img_test.Source = bi;
+                    //((Image)VisualTreeHelper.GetChild(p, 1)).Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)));
+
+                    
+                    //bi = null;
+                    //GC.Collect();
+                    
+                    
                     break;
                 }
             }

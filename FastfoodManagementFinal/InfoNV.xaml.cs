@@ -28,8 +28,8 @@ namespace FastfoodManagementFinal
         public InfoNV(Account a)
         {
             InitializeComponent();
-            List<Process> p = FileUtil.WhoIsLocking(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, "NV05"));
-            MessageBox.Show(p.Count.ToString());
+
+
             txtbox_maNV.Text = a.StaffID;
             txtbox_tenNV.Text = a.Name;
             txtbox_GioiTinh.Text = a.Sex;
@@ -52,14 +52,19 @@ namespace FastfoodManagementFinal
 
             if (new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)).Exists)
             {
-                //this.image_avatar.Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)));
-                this.image_avatar.Source = new BitmapImage(new Uri("C:\\Users\\anhng\\OneDrive\\Máy tính\\ảnh\\fast-food-transparent-png-pictures-icons-and-png-18.png"));
-
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+                bi.CacheOption = BitmapCacheOption.OnLoad;
+                bi.UriSource = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
+                bi.EndInit();
+                this.image_avatar.Source = null;
+                GC.Collect();
+                this.image_avatar.Source = bi;
             }
-            Avatar_path = "";
+            List<Process> p1 = FileUtil.WhoIsLocking(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, "NV05.png"));
+            MessageBox.Show(p1.Count.ToString());
 
-            //List<Process> p2 = FileUtil.WhoIsLocking(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
-            //MessageBox.Show(p2.Count.ToString());
+
 
 
             txtbox_ChucVu.IsEnabled = false;
@@ -92,7 +97,16 @@ namespace FastfoodManagementFinal
             }
             else
             {
-                image_avatar.Source = new BitmapImage(new Uri(Avatar_path));
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+                bi.CacheOption = BitmapCacheOption.OnLoad;
+                bi.UriSource = new Uri(Avatar_path);
+                bi.EndInit();
+                this.image_avatar.Source = null;
+                GC.Collect();
+                image_avatar.Source = bi;
+                bi = null;
+                GC.Collect();
             }
         }
 
@@ -111,16 +125,12 @@ namespace FastfoodManagementFinal
             a.Phone_Number = txtbox_sdt.Text;
             a.Email = txtbox_email.Text;
             a.address = txtbox_diachi.Text;
-            MessageBox.Show(datepicker_NgaySinh.Text);
             if(a.Is_valid())
             {
                 Xu_Ly_SQL.Update_Staff(a);
-
-                Avatar_path = "C:\\Users\\anhng\\OneDrive\\Máy tính\\ảnh\\png-transparent-fast-food-drink-junk-food-eating-food-icon-food-text-logo-thumbnail.png";
-
                 if (Avatar_path != "")
                 {
-                    Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, "abc.png");
+                    Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.Avatar);
                 }
             }
 
@@ -129,6 +139,11 @@ namespace FastfoodManagementFinal
         private void button_xoa_Click(object sender, RoutedEventArgs e)
         {
             Xu_Ly_SQL.Delete_Staff(txtbox_maNV.Text.Trim());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

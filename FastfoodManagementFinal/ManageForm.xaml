@@ -162,6 +162,9 @@
 
         </Grid>
 
+        <Image x:Name="img_test" Height="300">
+            
+        </Image>
         <!--Thêm Scroll Viewer-->
 
         <Grid Margin="0,153,0,7"/>
