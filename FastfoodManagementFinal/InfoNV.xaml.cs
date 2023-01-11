@@ -47,22 +47,25 @@ namespace FastfoodManagementFinal
             username = a.Username;
             pass = a.Pass;
             Avatar_path = Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar);
+            toDelete_avatar = Avatar_path;
 
-
-
-            if (new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)).Exists)
+            if(a.Avatar!="")
             {
-                BitmapImage bi = new BitmapImage();
-                bi.BeginInit();
-                bi.CacheOption = BitmapCacheOption.OnLoad;
-                bi.UriSource = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
-                bi.EndInit();
-                this.image_avatar.Source = null;
-                GC.Collect();
-                this.image_avatar.Source = bi;
+                if (new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)).Exists)
+                {
+                    BitmapImage bi = new BitmapImage();
+                    bi.BeginInit();
+                    bi.CacheOption = BitmapCacheOption.OnLoad;
+                    bi.UriSource = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
+                    bi.EndInit();
+                    this.image_avatar.Source = null;
+                    GC.Collect();
+                    this.image_avatar.Source = bi;
+                }
             }
-            List<Process> p1 = FileUtil.WhoIsLocking(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, "NV05.png"));
-            MessageBox.Show(p1.Count.ToString());
+            
+            //List<Process> p1 = FileUtil.WhoIsLocking(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, "NV05.png"));
+            //MessageBox.Show(p1.Count.ToString());
 
 
 
@@ -71,8 +74,8 @@ namespace FastfoodManagementFinal
             txtbox_maNV.IsEnabled= false;
 
 
-            
         }
+        string toDelete_avatar;
         string username = "";
         string pass = "";
         DateTime picked_date = DateTime.Today;
@@ -115,7 +118,16 @@ namespace FastfoodManagementFinal
             //bool containsInt = "your string".Any(char.IsDigit);
             Account a = new Account();
             a.StaffID = txtbox_maNV.Text;
-            a.Avatar = a.StaffID + new FileInfo(Avatar_path).Extension;
+            a.Avatar = "";
+            if(Avatar_path!="")
+            {
+                if (new FileInfo(Avatar_path).Exists)
+                {
+                    a.Avatar = a.StaffID + new FileInfo(Avatar_path).Extension;
+                }
+            }
+            
+            
             a.AccessRight = txtbox_ChucVu.Text.Trim();
             a.Username = username;
             a.Pass = pass;
@@ -128,17 +140,25 @@ namespace FastfoodManagementFinal
             if(a.Is_valid())
             {
                 Xu_Ly_SQL.Update_Staff(a);
-                if (Avatar_path != "")
+                if(Avatar_path!="")
                 {
-                    Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.Avatar);
+                    if (new FileInfo(Avatar_path).Exists &&
+                        Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar) != Avatar_path)
+                    {
+                        Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.Avatar);
+                    }
                 }
+                
             }
 
         }
 
         private void button_xoa_Click(object sender, RoutedEventArgs e)
         {
+            Xu_ly_Anh.XoaAnh(Xu_ly_Anh.AccountAvatar, toDelete_avatar);
             Xu_Ly_SQL.Delete_Staff(txtbox_maNV.Text.Trim());
+            MessageBox.Show("Xóa thành công!");
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

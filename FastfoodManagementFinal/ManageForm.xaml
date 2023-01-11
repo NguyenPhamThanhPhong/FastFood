@@ -85,18 +85,30 @@
             <Setter Property="Width" Value="28"></Setter>
             <Setter Property="BorderBrush" Value="#00711B1B"></Setter>
             <Setter Property="RenderTransformOrigin" Value="4.667,1.717"></Setter>
-            <Setter Property="Background">
+
+            <!--<Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush ImageSource="/IMAGE/eye-2-128.png"></ImageBrush>
                 </Setter.Value>
-            </Setter>
-
+            </Setter>-->
+            <!--<Setter Property="Content" Value="Button"></Setter>-->
         </Style>
 
     </Page.Resources>
+    <!--<Button  
+                    HorizontalAlignment="Left" Margin="278,16,0,0" 
+                    VerticalAlignment="Top" Height="24" 
+                    Width="28" BorderBrush="#00711B1B" 
+                    RenderTransformOrigin="4.667,1.717" 
+                    Click="eye1_Click">
+
+        <Button.Background>
+            <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+        </Button.Background>
+        <Button Content="Button"/>
+    </Button>-->
 
     <Grid Height="580" Width="765">
-
 
         <Grid Height="140" Margin="0,0,0,440">
             <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="QUẢN LÝ" Margin="40,17,485,67" RenderTransformOrigin="0.845,0.596"/>
@@ -123,13 +135,17 @@
             <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,669,41" RenderTransformOrigin="0.845,0.596"/>
             <ComboBox
     
-    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    x:Name="BoLocComboBox" 
+    FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
+                SelectedIndex="0"
     Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" >
-                <ComboBoxItem Content="Tất cả"/>
+                <ComboBoxItem Content="ID"/>
                 <ComboBoxItem Content="Tên"/>
+                <ComboBoxItem Content="Số điện thoại"/>
+                
 
             </ComboBox>
 
@@ -138,7 +154,7 @@
             <!--Tìm kiếm-->
             <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="241,76,455,41" RenderTransformOrigin="0.845,0.596"/>
 
-            <TextBox
+            <TextBox            x:Name="textbox_timkiem"
                                 Margin="232,101,321,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
@@ -149,14 +165,14 @@
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
-                                BorderThickness="2" CaretBrush="#e6ebf7" />
+                                BorderThickness="2" CaretBrush="#e6ebf7" TextChanged="TextBox_TextChanged" />
 
             <Image Source="/IMAGE/search-13-48.png" Margin="408,111,333,9" />
 
-            <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+            <!--<Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
                 Height="39" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="14" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="627,101,60,0" RenderTransformOrigin="0.397,0.938" Click="Button_Click"/>
+                Background="#EA5C2B" FontSize="14" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="627,101,60,0" RenderTransformOrigin="0.397,0.938" Click="Button_Click"/>-->
 
 
 
@@ -198,7 +214,12 @@
                     <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,79,96" Text="0398285020"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,16,60"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run Text="TP. Hồ Chí Minh"/></TextBlock>
-                    <Button  HorizontalAlignment="Left" Margin="278,16,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="eye1_Click">
+                    <Button  
+                    HorizontalAlignment="Left" Margin="278,16,0,0" 
+                    VerticalAlignment="Top" Height="24" 
+                    Width="28" BorderBrush="#00711B1B" 
+                    RenderTransformOrigin="4.667,1.717" 
+                    Click="eye1_Click">
 
                         <Button.Background>
                             <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>

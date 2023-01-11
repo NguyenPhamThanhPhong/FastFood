@@ -54,6 +54,7 @@ namespace FastfoodManagementFinal
         {
             Account a = new Account();
             a = Xu_Ly_SQL.Select_LoggedIn_Account(txtEmail.Text, txtPass.Text);
+            
             if (a.Username != null && a.Pass != null)
             {
                 Dashboard dashboard = new Dashboard(a);

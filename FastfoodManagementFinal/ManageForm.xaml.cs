@@ -2,6 +2,7 @@
 using FastfoodManagementFinal.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -107,6 +108,13 @@ namespace FastfoodManagementFinal
             button.Style = (Style)this.Resources["button_viewdetailNV"];
             button.Click += eye_Click;
 
+            //
+            //ImageBrush img = new ImageBrush();
+            //string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName+"\\IMAGE"+ "\\eye-2-128.png";
+            //img.ImageSource = new BitmapImage(new Uri(path));
+            //
+            //button.Content = button.Background;
+
 
 
             g.Children.Add(i1);
@@ -154,22 +162,6 @@ namespace FastfoodManagementFinal
                     InfoNV ff = new InfoNV(a);
                     ff.ShowDialog();
                     Load_stack_panel(Xu_Ly_SQL.Select_all_Account());
-
-                    //BitmapImage bi = new BitmapImage();
-                    //bi.BeginInit();
-                    //bi.CacheOption = BitmapCacheOption.OnLoad;
-                    //bi.UriSource = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
-                    //bi.EndInit();
-                    //MessageBox.Show(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
-
-                    //img_test.Source = bi;
-                    //((Image)VisualTreeHelper.GetChild(p, 1)).Source = new BitmapImage(new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)));
-
-                    
-                    //bi = null;
-                    //GC.Collect();
-                    
-                    
                     break;
                 }
             }
@@ -207,6 +199,22 @@ namespace FastfoodManagementFinal
         {
             Setting setting = new Setting();
             setting.ShowDialog();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string search_by = "ID";
+            if(BoLocComboBox.SelectedIndex == 1)
+            {
+                search_by = "Fullname";
+            }
+            else if(BoLocComboBox.SelectedIndex == 2)
+            {
+                search_by = "Phone";
+            }
+            string parameter = textbox_timkiem.Text.Trim();
+            List<Account> list_acc = Xu_Ly_SQL.Search_staff(parameter, search_by);
+            Load_stack_panel(list_acc);
         }
     }
 }

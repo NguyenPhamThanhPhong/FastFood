@@ -107,7 +107,7 @@
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" >
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" SelectionChanged="BoLocComboBox_SelectionChanged" >
                 <ComboBoxItem Content="Tất cả"/>
                 <!--<ComboBoxItem Content="Burger"/>
                 <ComboBoxItem Content="Cơm - Mỳ ý"/>
@@ -124,7 +124,7 @@
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="193,100,461,0" VerticalAlignment="Stretch" >
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="193,100,461,0" VerticalAlignment="Stretch" SelectionChanged="SapXepComboBox_SelectionChanged" >
                 <ComboBoxItem Content="Tên"/>
                 <ComboBoxItem Content="Giá"/>
             </ComboBox>

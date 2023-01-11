@@ -33,18 +33,17 @@ namespace FastfoodManagementFinal
             txtBlock_AccessRight.Text = logged_in_acc.AccessRight;
             //MessageBox.Show(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
 
-                
-            //if (new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)).Exists)
-            //{
-            //    Uri u = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, "NV05.png"));
 
-            //    BitmapImage b = new BitmapImage();
-            //    b.BeginInit();
-            //    b.CacheOption= BitmapCacheOption.OnLoad;
-            //    b.UriSource = u;
-            //    b.EndInit();
-            //    logged_in_avatar.Source = b;
-            //}
+            if (new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)).Exists)
+            {
+                Uri u = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
+                BitmapImage b = new BitmapImage();
+                b.BeginInit();
+                b.CacheOption = BitmapCacheOption.OnLoad;
+                b.UriSource = u;
+                b.EndInit();
+                logged_in_avatar.Source = b;
+            }
             //List<Process> p = FileUtil.WhoIsLocking(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, "NV05.png"));
             //MessageBox.Show(p.Count.ToString());
         }

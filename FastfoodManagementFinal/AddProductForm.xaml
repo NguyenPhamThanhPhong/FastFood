@@ -9,6 +9,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="580" d:DesignWidth="765"
       Title="Product_Form">
+    <Page.Resources>
+        <Style x:Key="aa" TargetType="Button">
+            
+        </Style>
+    </Page.Resources>
 
     <Grid Height="580" Width="765">
 
@@ -144,7 +149,13 @@
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
-                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                    <Button  HorizontalAlignment="Left" 
+                             Margin="612,14,0,0" 
+                             VerticalAlignment="Top" 
+                             Height="24" Width="28" 
+                             BorderBrush="#00711B1B" 
+                             RenderTransformOrigin="4.667,1.717" 
+                             Click="Button_Click_1">
                         <Button.Background>
                             <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
                         </Button.Background>
@@ -157,7 +168,10 @@
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="1"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="Trần Thanh Hiền"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="12/12/2022"/>
-                    <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                    <Button  HorizontalAlignment="Left" 
+                             Margin="612,14,0,0" VerticalAlignment="Top" 
+                             Height="24" Width="28" BorderBrush="#00711B1B" 
+                             RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
                         <Button.Background>
                             <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
                         </Button.Background>

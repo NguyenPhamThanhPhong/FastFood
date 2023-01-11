@@ -36,29 +36,6 @@ namespace FastfoodManagementFinal
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show(datepicker_NgaySinh.Text);
-
-            if (txtKey.Visibility == Visibility.Visible && txtKey.Text == "")
-            {
-
-            }
-            if (txtĐK_TK.Text == "")
-            {
-
-            }
-            if (txtĐK_Pass.Text == "")
-            {
-
-            }
-            if (txtĐK_Name.Text == "")
-            {
-
-            }
-            if (txtĐK_Address.Text == "")
-            {
-
-            }
-
             string access_right = "Nhân viên";
             if (radio_button_nhanvien.IsChecked == true)
             {
@@ -68,10 +45,11 @@ namespace FastfoodManagementFinal
             {
                 access_right = "Quản lý";
             }
+            
             Account a = new Account();
-            a.Avatar = a.StaffID + new FileInfo(Avatar_path).Extension;
             a.AccessRight = access_right;
             a.StaffID = Xu_ly_ID.GetStaffID(access_right);
+            a.Avatar = a.StaffID + new FileInfo(Avatar_path).Extension;
             a.Username = txtĐK_TK.Text;
             a.Pass = txtĐK_Pass.Text;
             a.Name = txtĐK_Name.Text;
@@ -82,6 +60,11 @@ namespace FastfoodManagementFinal
             a.address = txtĐK_Address.Text;
             if (a.Is_valid())
             {
+                if (txtKey.Visibility == Visibility.Visible && txtKey.Text != "QL_VIP_PRO")
+                {
+                    MessageBox.Show("Sai mã key quản lý! " +
+                        "   \n Vui lòng chọn đúng quyền hạn hoặc nhập đúng mã Key!");
+                }
                 Xu_Ly_SQL.Insert_Staff(a);
                 if (Avatar_path != "")
                 {

@@ -66,13 +66,14 @@
                    FontFamily="{StaticResource boldFont}" 
                    FontSize="13" Margin="178,127,255,273" Text="Quyền truy cập"/>
         <RadioButton
-                    x:Name="radio_button_nhanvien"
+            x:Name="radio_button_quanly" 
+                    
                     Foreground="Black" 
                    FontFamily="{StaticResource boldFont}" 
                    FontSize="13" Margin="266,154,167,246" Checked="radio_button_nhanvien_Checked">
             Quản lý
         </RadioButton>
-        <RadioButton x:Name="radio_button_quanly" 
+        <RadioButton x:Name="radio_button_nhanvien"
                     Foreground="Black" 
                    FontFamily="{StaticResource boldFont}" 
                    FontSize="13" Margin="170,154,263,246" Checked="radio_button_quanly_Checked">

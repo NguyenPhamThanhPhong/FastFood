@@ -28,6 +28,7 @@
         <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26" Text="THÊM SẢN PHẨM" Margin="192,35,0,0"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="193,80,216,291" Text="Mã sản phẩm"/>
         <TextBox
+                                IsEnabled="False"
                                 x:Name="txt_maSP"
                                 Height="30"
                                 Margin="191,99,185,0"
@@ -137,6 +138,9 @@
         <Button x:Name="loginBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#F87D32"
                 Background="#FF6633" FontSize="18" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="194,272,186,86" Click="loginBtn_Click"/>
+        <Button x:Name="button_capnhat" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#F87D32"
+                Background="#FF6633" FontSize="18" Content="Cập nhật" FontFamily="{StaticResource boldFont}" Margin="194,272,186,86" Click="Button_Capnhat_Click"/>
     </Grid>
 </Window>
 

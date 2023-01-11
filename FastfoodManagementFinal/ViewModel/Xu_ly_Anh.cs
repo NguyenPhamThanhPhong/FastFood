@@ -35,5 +35,14 @@ namespace FastfoodManagementFinal.ViewModel
             }
             return "";
         }
+        public static void XoaAnh(string directory,string filename)
+        {
+            FileInfo fileInfo = new FileInfo(Path.Combine(directory, filename));
+
+            if (fileInfo.Exists)
+            {
+                File.Delete(fileInfo.FullName);
+            }
+        }
     }
 }

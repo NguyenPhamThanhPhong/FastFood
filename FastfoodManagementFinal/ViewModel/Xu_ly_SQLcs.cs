@@ -615,7 +615,91 @@ namespace FastfoodManagementFinal.ViewModel
             }
 
         }
-        
+        public static void Update_Product(Product p)
+        {
+            //try
+            //{
+            //    if (con.State != ConnectionState.Open)
+            //    {
+            //        con.Open();
+            //        string sql = "update staff set " +
+            //            "ProductID='"+p.ProductId+"',productName='"+p.Name+"', " +
+            //            "productType='"+p.Product_Type+"',''productPrice='"+p.Price+"'," +
+            //            "RemainingQuantity = '"+p.Remaining_quantity+"'," +
+            //            "Descriptions='"+p.description+"', Avatar= '"+p.Avatar+"' ";
+            //        SqlCommand cmd = new SqlCommand(sql, con);
+            //        int check = cmd.ExecuteNonQuery();
+            //        if (check == 1)
+            //        {
+            //            MessageBox.Show("thanh cong");
+            //        }
+            //        con.Close();
+            //    }
+            //}
+            //catch (SqlException ex)
+            //{
+            //    MessageBox.Show("lỗi:" + ex.ToString() + " \n " +
+            //        "Thất bại, vui lòng điền thông tin hợp lệ!!");
+            //    return;
+            //}
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                string sql = "update products set " +
+                    "productName ='" + p.Name + "', " +
+                    "productType ='" + p.Product_Type + "', productPrice='" + p.Price + "'," +
+                    "RemainingQuantity = '" + p.Remaining_quantity + "'," +
+                    "Descriptions='" + p.description + "', Avatar= '" + p.Avatar + "'" +
+                    "where productID = '"+p.ProductId+"' ";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                int check = cmd.ExecuteNonQuery();
+                if (check == 1)
+                {
+                    MessageBox.Show("thanh cong");
+                }
+                con.Close();
+            }
+        }
+
+        public static List <Account> Search_staff(string parameter, string search_by)
+        {
+            List<Account> list = new List<Account>();
+            
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+
+                string sql = "select * from staff where lower(" + search_by + ") like lower(N'%" + parameter + "%')";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    Account a = new Account();
+                    a.StaffID = reader.GetString(0);
+                    a.Avatar = reader.GetString(1);
+                    a.AccessRight = reader.GetString(2);
+                    a.Username = reader.GetString(3);
+                    a.Pass = reader.GetString(4);
+                    a.Name = reader.GetString(5);
+                    a.Sex = reader.GetString(6);
+                    a.DateOfBirth = reader.GetDateTime(7);
+                    a.Phone_Number = reader.GetString(8);
+                    a.Email = reader.GetString(9);
+                    a.address = reader.GetString(10);
+                    list.Add(a);
+                }
+                con.Close();
+
+            }
+            return list;
+        }
+        public static List<Account> Staff()
+        {
+            List<Account> acc = new List<Account>();
+            
+
+            return acc;
+        }
 
         public static List<Bill> Search_bill_hoten(string search_by, string parameter)
         {

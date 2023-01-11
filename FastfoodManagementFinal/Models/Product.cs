@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,28 @@ namespace FastfoodManagementFinal.Models
         public Product()
         {
 
+        }
+        public bool IsValid(string price, string quantity)
+        {
+            if (this.ProductId == "" || Name == ""|| Product_Type=="")
+            {
+                MessageBox.Show("Món ăn phải có tên món ăn và loại món ăn!");
+                return false;
+            }
+            int try_parse;
+            if(int.TryParse(price,out try_parse)==false||
+                    int.TryParse(quantity,out try_parse)==false)
+            {
+                MessageBox.Show("Số lượng sản phẩm và giá sản phẩm phải là số!");
+                return false;
+            }
+            else 
+            {
+                Price = int.Parse(price);
+                Remaining_quantity = int.Parse(quantity);
+            }
+            
+            return true;
         }
         public string ProductId { get; set; }
         public string Name { get; set; }
