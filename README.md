@@ -55,9 +55,9 @@ Bạn muốn mở một cửa hàng thức ăn nhanh nhưng chưa biết phải 
 * [Nguyễn Phạm Thanh Phong – Trưởng nhóm](https://github.com/NguyenPhamThanhPhong)
   * Vai trò: Backend Developer, Database Design
 * [Trần Thanh Hiền](https://github.com/chip267)
-  * Vai trò: Frontend Developer, App Designer
+  * Vai trò: Frontend Developer, Backend Developer
 * [Huỳnh Phước Tài](https://github.com/nous366)
-  * Vai trò: Database Design, Backend Developer
+  * Vai trò: Frontend Developer, Backend Developer
 * [Nguyễn Thiện](https://github.com/thienng268)
   * Vai trò: Database Design, Backend Developer
 
