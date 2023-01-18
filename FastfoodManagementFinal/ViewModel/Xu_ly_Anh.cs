@@ -33,7 +33,7 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 return fileInfo.FullName;
             }
-            return "";
+            return Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "IMAGE", "Thêm Ảnh.png");
         }
         public static void XoaAnh(string directory,string filename)
         {

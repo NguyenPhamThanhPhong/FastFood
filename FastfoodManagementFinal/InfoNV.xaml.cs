@@ -155,8 +155,12 @@ namespace FastfoodManagementFinal
 
         private void button_xoa_Click(object sender, RoutedEventArgs e)
         {
-            Xu_ly_Anh.XoaAnh(Xu_ly_Anh.AccountAvatar, toDelete_avatar);
+            
             Xu_Ly_SQL.Delete_Staff(txtbox_maNV.Text.Trim());
+            if (toDelete_avatar != System.IO.Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "IMAGE", "Thêm Ảnh.png"))
+            {
+                Xu_ly_Anh.XoaAnh(Xu_ly_Anh.AccountAvatar, toDelete_avatar);
+            }
             MessageBox.Show("Xóa thành công!");
             this.Close();
         }

@@ -434,7 +434,7 @@ namespace FastfoodManagementFinal.ViewModel
             // sort_by: product.name hoặc product.price??
             // vd: ProductPrice asc, ProductPrice dsc, ProductName
             List<Product> p = new List<Product>();
-            string sql = "select * from products where lower(productName) like lower('%"+parameter_search+"%')";
+            string sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%')";
             if ( product_type == "Tất cả" || product_type =="")
             sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%') order by "+sort_by+"";
             else
@@ -568,10 +568,10 @@ namespace FastfoodManagementFinal.ViewModel
                 {
                     con.Open();
                     string sql = "update staff set " +
-                        "avatar = '"+a.Avatar+"',acessRight = '"+a.AccessRight+"'," +
-                        "fullname = '"+a.Name+"',sex = '"+a.Sex+"', dob = '"+a.DateOfBirth+"'," +
-                        "phone = '"+a.Phone_Number+"',email='"+a.Email+"',addr = '"+a.address+"'" +
-                        " where ID='"+a.StaffID+"'";
+                        "avatar = N'"+a.Avatar+"',acessRight = N'"+a.AccessRight+"'," +
+                        "fullname = N'"+a.Name+"',sex = N'"+a.Sex+"', dob = '"+a.DateOfBirth+"'," +
+                        "phone = N'"+a.Phone_Number+"',email=N'"+a.Email+"',addr = N'"+a.address+"'" +
+                        " where ID=N'"+a.StaffID+"'";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     int check = cmd.ExecuteNonQuery();
                     if(check ==1)
@@ -646,11 +646,11 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 con.Open();
                 string sql = "update products set " +
-                    "productName ='" + p.Name + "', " +
-                    "productType ='" + p.Product_Type + "', productPrice='" + p.Price + "'," +
+                    "productName =N'" + p.Name + "', " +
+                    "productType =N'" + p.Product_Type + "', productPrice=N'" + p.Price + "'," +
                     "RemainingQuantity = '" + p.Remaining_quantity + "'," +
-                    "Descriptions='" + p.description + "', Avatar= '" + p.Avatar + "'" +
-                    "where productID = '"+p.ProductId+"' ";
+                    "Descriptions=N'" + p.description + "', Avatar= N'" + p.Avatar + "'" +
+                    "where productID = N'"+p.ProductId+"' ";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 int check = cmd.ExecuteNonQuery();
                 if (check == 1)

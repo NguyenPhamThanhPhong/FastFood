@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace FastfoodManagementFinal.Models
 {
@@ -64,6 +66,7 @@ namespace FastfoodManagementFinal.Models
         public string Phone_Number { get; set; }
         public string Email { get; set; }
         public string address { get; set; }
+        public ImageSource AvatarImg { get; set; }
         public int Insert_num (List<int> x) 
         { 
             for(int i=0;i<x.Count-1;i++) 
@@ -74,6 +77,13 @@ namespace FastfoodManagementFinal.Models
                 }
             }
             return x.Count ;
+        }
+        public void LoadAvatar()
+        {
+            string path = Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, this.Avatar);
+            Uri ImageUri = new Uri(path);
+            this.AvatarImg = BitmapFrame.Create(
+                      ImageUri, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
         }
         public bool Is_valid()
         {
@@ -113,6 +123,7 @@ namespace FastfoodManagementFinal.Models
             }
             return true;
         }
+
         //public string Create_staffID(string AccessRight)
         //{
         //    string ID = "";

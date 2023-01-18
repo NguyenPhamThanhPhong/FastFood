@@ -8,93 +8,11 @@
       xmlns:local="clr-namespace:FastfoodManagementFinal"
       mc:Ignorable="d" 
       d:DesignHeight="580" d:DesignWidth="765"
-      Title="Manage_Form">
+      Title="Manage_Form"
+      x:Name="_this"
+      DataContext="{Binding ElementName=_this}">
 
-    <Page.Resources>
 
-        <Style TargetType="ScrollBar"></Style>
-
-        <Style x:Key="grid_NV" TargetType="Grid">
-            <Setter Property="Height" Value="170"></Setter>
-            <Setter Property="Width" Value="320"></Setter>
-            <Setter Property="Margin" Value="4,5,6,5"></Setter>
-        </Style>
-
-        <Style x:Key="image" TargetType="Image">
-            <Setter Property="Source" Value="/IMAGE/Quản lý.png"></Setter>
-            <Setter Property="Margin" Value="-8,-8,-8,-9"></Setter>
-        </Style>
-
-        <Style x:Key="image_NV" TargetType="Image">
-            <Setter Property="Margin" Value="18,24,208,59"></Setter>
-        </Style>
-
-        <Style x:Key="image_MaMV" TargetType="Image">
-            <Setter Property="Source" Value="/IMAGE/Giá.png"></Setter>
-            <Setter Property="Margin" Value="18,24,208,59"></Setter>
-            <Setter Property="RenderTransformOrigin" Value="0.556,1.263"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_MaNV" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="Margin" Value="49,122,244,36"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_TenNV" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="10"></Setter>
-            <Setter Property="Margin" Value="127,33,68,121"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_SĐT" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="Margin" Value="127,33,68,121"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_ĐC" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="Margin" Value="127,33,68,121"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_SĐTNV" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontSize" Value="10"></Setter>
-            <Setter Property="Margin" Value="162,58,79,96"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_ĐCNV" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontSize" Value="10"></Setter>
-            <Setter Property="Margin" Value="162,80,16,60"></Setter>
-        </Style>
-
-        <Style x:Key="button_viewdetailNV" TargetType="Button">
-            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-            <Setter Property="Margin" Value="278,16,0,0"></Setter>
-            <Setter Property="VerticalAlignment" Value="Top"></Setter>
-            <Setter Property="Height" Value="24"></Setter>
-            <Setter Property="Width" Value="28"></Setter>
-            <Setter Property="BorderBrush" Value="#00711B1B"></Setter>
-            <Setter Property="RenderTransformOrigin" Value="4.667,1.717"></Setter>
-
-            <!--<Setter Property="Background">
-                <Setter.Value>
-                    <ImageBrush ImageSource="/IMAGE/eye-2-128.png"></ImageBrush>
-                </Setter.Value>
-            </Setter>-->
-            <!--<Setter Property="Content" Value="Button"></Setter>-->
-        </Style>
-
-    </Page.Resources>
     <!--<Button  
                     HorizontalAlignment="Left" Margin="278,16,0,0" 
                     VerticalAlignment="Top" Height="24" 
@@ -184,11 +102,52 @@
         <!--Thêm Scroll Viewer-->
 
         <Grid Margin="0,153,0,7"/>
-        <ScrollViewer Margin="0,153,0,7">
+        <ListView   x:Name="listview_show"
+                    ItemsSource="{Binding List_acc,Mode=TwoWay}" Margin="0,153,0,7"
+                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<Grid>
+                        <TextBlock FontSize="50" Text="{Binding StaffID}"></TextBlock>
+                    </Grid>-->
+                    <Grid Height="170" Width="320" Margin="4,5,6,5" Grid.Column="1">
+                        <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
+
+                        <Image x:Name="avt_img"  Source="{Binding AvatarImg, IsAsync=True}" Margin="18,24,208,59" />
+                        <Image Source="/IMAGE/Giá.png" Margin="37,118,234,29" RenderTransformOrigin="0.556,1.263" />
+                        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="49,122,244,36" Text="{Binding StaffID}"/>
+                        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,68,121" Text="{Binding Name}"/>
+                        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
+                        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,79,96" Text="{Binding Phone_Number}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,16,60"><Run Text="{Binding address}"/><LineBreak/><Run Text="TP. Hồ Chí Minh"/></TextBlock>
+                        <Button  
+                    HorizontalAlignment="Left" Margin="278,16,0,0" 
+                    VerticalAlignment="Top" Height="24" 
+                    Width="28" BorderBrush="#00711B1B" 
+                    RenderTransformOrigin="4.667,1.717" 
+                    Click="eye_Click">
+
+                            <Button.Background>
+                                <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                            </Button.Background>
+                            <Button Content="Button"/>
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<ScrollViewer Margin="0,153,0,7">
             <StackPanel x:Name="stack_panel_quanly">
                 
             </StackPanel>
-            <!--<Grid>
+            --><!--<Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="350"/>
@@ -324,9 +283,9 @@
                 </Grid>
                
 
-            </Grid>-->
+            </Grid>--><!--
 
-        </ScrollViewer>
+        </ScrollViewer>-->
 
     </Grid>
 </Page>

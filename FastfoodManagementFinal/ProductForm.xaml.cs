@@ -183,7 +183,7 @@ namespace FastfoodManagementFinal
                 //{
                 //    order_by = "productName asc";
                 //}
-                if (Xu_ly_chuoi.Sang_chuoi_khong_dau(sapxep).ToLower() == "gia")
+                if (sapxep.Trim() == "Giá")
                 {
                     order_by = "productPrice asc";
                 }
@@ -209,16 +209,12 @@ namespace FastfoodManagementFinal
                 //MessageBox.Show(SapXepComboBox.SelectedIndex.ToString());
                 string sapxep = ((ComboBoxItem)(SapXepComboBox.SelectedItem)).Content.ToString();
                 string order_by = "productName asc";
-                //if (Xu_ly_chuoi.Sang_chuoi_khong_dau(SapXepComboBox.Text).ToLower() == "ten"
-                //    || SapXepComboBox.Text == "")
-                //{
-                //    order_by = "productName asc";
-                //}
-                if (Xu_ly_chuoi.Sang_chuoi_khong_dau(SapXepComboBox.Text).ToLower() == "gia")
+
+                if (sapxep.Trim()== "Giá")
                 {
                     order_by = "productPrice asc";
                 }
-                Xu_ly_ScrollViewer(Xu_Ly_SQL.Search_Product(BoLocComboBox.Text,
+                Xu_ly_ScrollViewer(Xu_Ly_SQL.Search_Product(sss,
                     order_by, txtbox_timkiem.Text));
             }
             catch

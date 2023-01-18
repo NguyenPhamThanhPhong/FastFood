@@ -100,7 +100,7 @@
             </Button>
 
             <!--Bộ lọc-->
-            <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,669,41" RenderTransformOrigin="0.845,0.596"/>
+            <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Loại" Margin="52,76,669,41" RenderTransformOrigin="0.845,0.596"/>
             <ComboBox
             Text="Tất cả"
     x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
@@ -124,6 +124,7 @@
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
+                
     Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="193,100,461,0" VerticalAlignment="Stretch" SelectionChanged="SapXepComboBox_SelectionChanged" >
                 <ComboBoxItem Content="Tên"/>
                 <ComboBoxItem Content="Giá"/>
