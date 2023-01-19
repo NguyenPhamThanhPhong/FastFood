@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:FastfoodManagementFinal"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Height="440" 
-        Width="580"
+        Height="520" 
+        Width="640"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -15,59 +15,94 @@
         AllowsTransparency="True"
         Background="{x:Null}">
 
+    <Window.Resources>
+        <Style x:Key="grid_HD" TargetType="Grid">
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Width" Value="430"></Setter>
+            <Setter Property="Margin" Value="4,0,1,0"></Setter>
+        </Style>
+
+        <Style x:Key="border" TargetType="Border">
+            <Setter Property="Height" Value="18"></Setter>
+            <Setter Property="Width" Value="430"></Setter>
+            <Setter Property="CornerRadius" Value="1"></Setter>
+            <Setter Property="BorderThickness" Value="1.5"></Setter>
+            <Setter Property="BorderBrush" Value="#e6ebf7"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Margin" Value="1,0,4,2"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_STT" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
+            <Setter Property="FontSize" Value="8"></Setter>
+            <Setter Property="Margin" Value="12,3,393,7"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_TenSP" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
+            <Setter Property="FontSize" Value="8"></Setter>
+            <Setter Property="Margin" Value="55,3,308,2"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_DonGia" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
+            <Setter Property="FontSize" Value="8"></Setter>
+            <Setter Property="Margin" Value="137,3,226,7"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_SoLuong" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
+            <Setter Property="FontSize" Value="8"></Setter>
+            <Setter Property="Margin" Value="248,3,145,7"></Setter>
+        </Style>
+
+        <Style x:Key="txtblock_ThanhTien" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
+            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
+            <Setter Property="FontSize" Value="8"></Setter>
+            <Setter Property="Margin" Value="328,3,37,7"></Setter>
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
-            <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="468*"/>
             <ColumnDefinition Width="113*"/>
         </Grid.ColumnDefinitions>
         <Image Source="/IMAGE/Đơn hàng.png" Margin="35,-7,28,-2" Grid.ColumnSpan="2" />
-        <Image Source="/IMAGE/Đơn hàng3.png" Margin="64,29,57,174" Grid.ColumnSpan="2" />
-        <Button HorizontalAlignment="Left" Margin="34,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="1">
+        <Image Source="/IMAGE/Đơn hàng3.png" Margin="49,1,43,202" Grid.ColumnSpan="2" />
+        <Button HorizontalAlignment="Left" Margin="59,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>
             <Button Content="Button"/>
         </Button>
-        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="25" Text="ĐƠN HÀNG" Margin="224,11,100,396" />
+        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="25" Text="ĐƠN HÀNG" Margin="258,9,97,472" />
 
-
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="91,66,278,357" Text="Mã NV | Tên NV"/>
+        <Image Source="/IMAGE/white.png" Margin="379,24,76,236" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="/MON_AN/BURGER/burger_beef-teriyaki-burger.png" Margin="379,88,47,348" RenderTransformOrigin="-0.17,-1.583" />
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="494,81,89,415" Text="Số lượng" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="495,133,92,363" Text="Đơn giá" Grid.ColumnSpan="2"/>
+        <Image Source="/IMAGE/Giá.png" Margin="485,150,91,348" Grid.ColumnSpan="2" />
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="9.5" Margin="500,154,87,342" Text="45.000" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="488,182,88,319" Text="Thành tiền" Grid.ColumnSpan="2"/>
         <TextBox
-                                Height="28"
-                                Margin="88,84,224,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
-
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="273,66,144,354" Text="Tên SP"/>
-        <TextBox
-                                Height="28"
-                                Margin="264,84,93,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
-
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="392,66,10,353" Text="Số lượng"/>
-        <TextBox
-                                Height="28"
-                                Margin="388,84,82,0"
+                                Height="24"
+                                Margin="496,97,101,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -80,10 +115,12 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.ColumnSpan="2" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="91,121,326,300" Text="Tên KH"/>
+
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="76,76,331,425" Text="Mã NV | Tên NV"/>
         <TextBox
                                 Height="28"
-                                Margin="88,138,224,0"
+                                Margin="73,94,351,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -96,11 +133,10 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="274,121,140,300" Text="Đơn giá"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="178,76,271,425" Text="Tên SP"/>
         <TextBox
                                 Height="28"
-                                Margin="264,138,93,0"
+                                Margin="174,94,252,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -113,10 +149,14 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="392,121,22,300" Text="Đơn giá"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="392,166,61,330" Text="Burger Bò"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="375,191,64,305" Text="Số lượng còn:"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="449,190,47,306" Text="10" RenderTransformOrigin="0.023,0.583"/>
+
+
         <TextBox
-                                Height="28"
-                                Margin="388,138,82,0"
+                                Height="26"
+                                Margin="487,199,93,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -129,10 +169,25 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.ColumnSpan="2" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="91,172,312,249" Text="Thời gian"/>
+        <Button HorizontalAlignment="Left" Margin="27,101,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Grid.Column="1" RenderTransformOrigin="0.032,-0.467">
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/plus-5-64.png"/>
+            </Button.Background>
+            <Button Content="Button"/>
+        </Button>
+
+        <Button HorizontalAlignment="Left" Margin="479,101,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B">
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/minus-5-64.png"/>
+            </Button.Background>
+            <Button Content="Button"/>
+        </Button>
+
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="76,131,376,370" Text="Tên KH"/>
         <TextBox
                                 Height="28"
-                                Margin="88,189,310,0"
+                                Margin="73,148,351,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -145,10 +200,43 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="176,172,250,249" Text="Số HD"/>
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="180,131,270,365" Text="Đơn giá"/>
         <TextBox
                                 Height="28"
-                                Margin="169,189,229,0"
+                                Margin="174,148,252,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="Black"
+                                FontFamily="{StaticResource mainFont}"
+                                FontSize="12"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="276,76,171,426" Text="Thời gian"/>
+        <TextBox
+                                Height="28"
+                                Margin="273,94,174,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="Black"
+                                FontFamily="{StaticResource mainFont}"
+                                FontSize="12"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="280,131,187,371" Text="Số HD"/>
+        <TextBox
+                                Height="28"
+                                Margin="273,148,174,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -163,21 +251,21 @@
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="9" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="264,188,146,224"/>
+                Background="#EA5C2B" FontSize="9" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="79,205,376,287"/>
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="XÓA" FontFamily="{StaticResource boldFont}" Margin="335,188,77,224"/>
+                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="XÓA" FontFamily="{StaticResource boldFont}" Margin="150,205,306,287"/>
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="THANH TOÁN" FontFamily="{StaticResource boldFont}" Margin="405,188,82,224" Grid.ColumnSpan="2"/>
+                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="THANH TOÁN" FontFamily="{StaticResource boldFont}" Margin="220,205,201,287"/>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="77,245,351,176" Text="STT"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="125,245,296,176" Text="Tên SP"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="208,245,208,176" Text="Đơn giá"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="297,245,109,176" Text="Số lượng"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="398,245,110,176" Text="Thành tiền" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="107,278,321,143" Text="STT"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="155,278,266,143" Text="Tên SP"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="238,278,178,143" Text="Đơn giá"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="327,278,79,143" Text="Số lượng"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="428,278,80,143" Text="Thành tiền" Grid.ColumnSpan="2"/>
 
-        <ScrollViewer Grid.ColumnSpan="2" Margin="70,270,55,80" >
+        <ScrollViewer Grid.ColumnSpan="2" Margin="100,303,85,47" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="430"/>
@@ -274,19 +362,21 @@
 
         </ScrollViewer>
 
+        <!--Nút xuất excel-->
+        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
+                Background="#EA5C2B" FontSize="10" Content="XUẤT HÓA ĐƠN" FontFamily="{StaticResource boldFont}" Margin="79,447,311,45"/>
+
         <!--Tổng tiền-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="299,372,118,53" Text="Tổng tiền"/>
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="398,372,19,53" Text="180.000"/>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="329,432,88,-7" Text="Tổng tiền"/>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="428,432,113,-7" Text="180.000" Grid.ColumnSpan="2"/>
         <!--Giảm giá-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="299,386,118,39" Text="Giảm giá"/>
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="398,386,19,39" Text="30.000"/>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="329,446,88,-21" Text="Giảm giá"/>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="428,446,113,-21" Text="30.000" Grid.ColumnSpan="2"/>
         <!--Thành tiền-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="299,400,118,25" Text="Thành tiền"/>
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="398,400,19,25" Text="150.000"/>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="329,460,88,-35" Text="Thành tiền"/>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="428,460,113,-35" Text="150.000" Grid.ColumnSpan="2"/>
 
     </Grid>
-    </Grid>
-
-
 </Window>
 

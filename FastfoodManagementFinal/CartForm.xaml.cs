@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastfoodManagementFinal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,13 @@ namespace FastfoodManagementFinal
         public CartForm()
         {
             InitializeComponent();
+            bills.Add(new Bill() { Bill_ID= "alskdj"});
+            bills.Add(new Bill());
+            MessageBox.Show( bills.Count().ToString());
+
+            listviewBill.Items.Refresh();
         }
+        public List<Bill> bills { get; set; } = new List<Bill>();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -37,35 +44,9 @@ namespace FastfoodManagementFinal
             createHD.ShowDialog();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            CreateHD createHD = new CreateHD();
-            createHD.ShowDialog();
-        }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            CreateHD createHD = new CreateHD();
-            createHD.ShowDialog();
-        }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            CreateHD createHD = new CreateHD();
-            createHD.ShowDialog();
-        }
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            CreateHD createHD = new CreateHD();
-            createHD.ShowDialog();
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-            CreateHD createHD = new CreateHD();
-            createHD.ShowDialog();
-        }
 
         private void Setting_Click(object sender, RoutedEventArgs e)
         {
