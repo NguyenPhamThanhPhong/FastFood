@@ -36,6 +36,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="94,64,275,359" Text="Mã NV | Tên NV"/>
         <TextBox
+                                x:Name="txtbox_NV"
                                 Height="30"
                                 Margin="92,83,196,0"
                                 BorderBrush="#e6ebf7"
@@ -52,6 +53,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="316,64,27,356" Text="Mã KH | Họ tên KH"/>
         <TextBox
+                                x:Name="txtbox_KH"
                                 Height="30"
                                 Margin="312,83,89,0"
                                 BorderBrush="#e6ebf7"
@@ -75,6 +77,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="315,120,108,305" Text="Số HD"/>
         <TextBox
+                                x:Name="txtBox_BillID"
                                 Height="30"
                                 Margin="312,139,73,0"
                                 BorderBrush="#e6ebf7"
@@ -91,6 +94,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="410,120,82,305" Text="Khuyến mãi" Grid.ColumnSpan="2"/>
         <TextBox
+                                x:Name="txtbox_discount"
                                 Height="30"
                                 Margin="409,139,89,0"
                                 BorderBrush="#e6ebf7"

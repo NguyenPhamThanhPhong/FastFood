@@ -1,4 +1,5 @@
 ﻿using FastfoodManagementFinal.Models;
+using FastfoodManagementFinal.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,24 +25,37 @@ namespace FastfoodManagementFinal
         public CartForm()
         {
             InitializeComponent();
-            bills.Add(new Bill() { Bill_ID= "alskdj"});
-            bills.Add(new Bill());
-            MessageBox.Show( bills.Count().ToString());
+            //bills.Add(new Bill() { Bill_ID= "alskdj"});
+            //bills.Add(new Bill());
 
             listviewBill.Items.Refresh();
         }
-        public List<Bill> bills { get; set; } = new List<Bill>();
+        public List<Bill> bills { get; set; } = Xu_Ly_SQL.Select_all_Bill();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
+
             ViewDH viewDH = new ViewDH();
             viewDH.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            CreateHD createHD = new CreateHD();
-            createHD.ShowDialog();
+            Grid parent = (Grid)VisualTreeHelper.GetParent(e.Source as Button);
+            TextBlock tt = (TextBlock)parent.Children[1];
+            foreach(Bill b in bills)
+            {
+                if(b.Bill_ID == tt.Text)
+                {
+                    MessageBox.Show(b.StaffID + " | " + b.StaffName);
+                    MessageBox.Show(b.CustomerID + " | " + b.CustomerName);
+
+                    CreateHD createHD = new CreateHD(b);
+                    createHD.ShowDialog();
+                }
+            }    
+            
         }
 
 

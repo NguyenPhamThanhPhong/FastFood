@@ -110,11 +110,11 @@
                 <DataTemplate>
                     <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="2">
                         <Border CornerRadius="5" BorderThickness="2" Height="55" BorderBrush="#e6ebf7" Background="White" Margin="4,0,5,0"/>
-                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="35,17,615,10" Text="1"/>
-                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="101,17,445,10" Text="Trần Thanh Hiền"/>
-                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="262,17,330,6" Text="12/12/2022"/>
-                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="376,17,195,6" Text="0398285020"/>
-                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="518,17,80,16" Text="500.000"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="35,17,615,10" Text="{Binding Bill_ID}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="101,17,445,10" Text="{Binding CustomerName}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="262,17,330,6" Text="{Binding Bill_Time}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="376,17,195,6" Text="{Binding Bill_Discount}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="518,17,80,16" Text="{Binding Bill_Total}"/>
                         <Button  HorizontalAlignment="Left" Margin="622,0,0,0" VerticalAlignment="Center" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
                             <Button.Background>
                                 <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>

@@ -304,7 +304,7 @@ namespace FastfoodManagementFinal.ViewModel
             }
             return o;
         }
-        public static void Select_all_Bill()
+        public static List<Bill> Select_all_Bill()
         {
             List<Bill> bills = new List<Bill>();
             if (con.State != ConnectionState.Open)
@@ -336,6 +336,7 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 b.orders = Select_all_Orders_specified_BillID(b.Bill_ID);
             }
+            return bills;
             //total & list <order>
         }
         public static List<Account> Select_all_Account()
