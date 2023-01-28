@@ -67,6 +67,7 @@ namespace FastfoodManagementFinal.Models
         public string Email { get; set; }
         public string address { get; set; }
         public ImageSource AvatarImg { get; set; }
+        public bool Visible { get; set; }
         public int Insert_num (List<int> x) 
         { 
             for(int i=0;i<x.Count-1;i++) 

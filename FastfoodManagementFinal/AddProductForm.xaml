@@ -8,7 +8,9 @@
       xmlns:local="clr-namespace:FastfoodManagementFinal"
       mc:Ignorable="d" 
       d:DesignHeight="580" d:DesignWidth="765"
-      Title="Product_Form">
+      Title="Product_Form"
+      x:Name="_this"
+      DataContext="{Binding ElementName=_this}">
     <Page.Resources>
         <Style x:Key="aa" TargetType="Button">
             
@@ -65,8 +67,35 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Mã phiếu" Margin="52,155,32,396" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Nhân viên" Margin="198,155,442,396" RenderTransformOrigin="0.845,0.596"/>
+        
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Thời gian" Margin="419,155,242,396" RenderTransformOrigin="0.845,0.596"/>
-        <ScrollViewer Margin="0,193,0,15" Grid.ColumnSpan="2">
+
+        <ListView x:Name="listview_show"
+            Margin="0,193,0,15"
+                  ItemsSource="{Binding imps}"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<Grid>
+                        <TextBlock FontSize="50" Text="{Binding StaffID}"></TextBlock>
+                    </Grid>-->
+                    <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="0">
+                        <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="{Binding ImportID }"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="158,15,387,12" Text="{Binding AdminID}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="381,15,205,12" Text="{Binding ImportDate}"/>
+                        <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                            </Button.Background>
+                            <Button Content="Button"/>
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<ScrollViewer Margin="0,193,0,15" Grid.ColumnSpan="2">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -178,7 +207,7 @@
                         <Button Content="Button"/>
                     </Button>
                 </Grid>
-                <!--<Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,1,8,4" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+                --><!--<Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,1,8,4" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="33,16,84,11" Text="1" Grid.Column="1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="30,16,373,11" Text="Trần Thanh Hiền" Grid.Column="2" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="251,16,210,11" Text="12/12/2022" Grid.Column="2" Grid.Row="2"/>
@@ -232,12 +261,12 @@
                         <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
                     </Button.Background>
                     <Button Content="Button"/>
-                </Button>-->
+                </Button>--><!--
             </Grid>
 
 
 
-        </ScrollViewer>
+        </ScrollViewer>-->
 
 
     </Grid>

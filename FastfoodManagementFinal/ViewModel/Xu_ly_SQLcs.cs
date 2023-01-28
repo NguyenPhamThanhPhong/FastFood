@@ -136,7 +136,7 @@ namespace FastfoodManagementFinal.ViewModel
                 string sql = "insert into staff values ('" + a.StaffID + "',N'" + a.Avatar + "'," +
                     "N'" + a.AccessRight + "',N'" + a.Username + "',N'" + a.Pass + "',N'" + a.Name + "'," +
                     "N'" + a.Sex + "','" + a.DateOfBirth + "','" + a.Phone_Number + "',N'" + a.Email + "'," +
-                    "N'" + a.address + "')";
+                    "N'" + a.address + "', '"+a.Visible+"')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 int check = cmd.ExecuteNonQuery();
                 MessageBox.Show(check.ToString());
@@ -149,7 +149,7 @@ namespace FastfoodManagementFinal.ViewModel
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                string sql = "select * from staff where username='"+username+"' and pass='"+password+"'";
+                string sql = "select * from staff where username='"+username+"' and pass='"+password+"' and avail = '1'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -346,7 +346,7 @@ namespace FastfoodManagementFinal.ViewModel
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                string sql = "select * from staff ";
+                string sql = "select * from staff where avail='1'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -592,7 +592,7 @@ namespace FastfoodManagementFinal.ViewModel
         }
         public static bool Delete_Staff(string ID)
         {
-            string sql = "delete from staff where ID = '" + ID + "'";
+            string sql = "update Staff set avail = '0' where ID='"+ID+"'";
             try
             {
                 if (con.State != ConnectionState.Open)

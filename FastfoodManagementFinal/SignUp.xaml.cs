@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace FastfoodManagementFinal
     /// <summary>
     /// Interaction logic for SignUp.xaml
     /// </summary>
+    /// 
+
     public partial class SignUp : Window
     {
         public SignUp()
@@ -58,6 +61,7 @@ namespace FastfoodManagementFinal
             a.Phone_Number = txtĐK_Phone.Text;
             a.Email = txtĐK_Email.Text;
             a.address = txtĐK_Address.Text;
+            a.Visible = true;
             if (a.Is_valid())
             {
                 if (txtKey.Visibility == Visibility.Visible && txtKey.Text != "QL_VIP_PRO")
@@ -80,6 +84,10 @@ namespace FastfoodManagementFinal
             if (openFileDialog.ShowDialog() == true && openFileDialog.CheckFileExists == true)
             {
                 Avatar_path = openFileDialog.FileName;
+            }
+            if(Avatar_path=="" || Avatar_path==null)
+            {
+                return;
             }
             FileInfo fileInfo = new FileInfo(Avatar_path);
             if (!(fileInfo.Exists) || (fileInfo.Extension != ".jpg" && fileInfo.Extension != ".png"))
@@ -123,4 +131,5 @@ namespace FastfoodManagementFinal
             }
         }
     }
+
 }

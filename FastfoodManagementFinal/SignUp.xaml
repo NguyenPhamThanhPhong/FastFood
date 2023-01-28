@@ -13,7 +13,9 @@
         WindowStyle="None"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         AllowsTransparency="True"
-        Background="{x:Null}">
+        Background="{x:Null}"
+        >
+
     <Grid>
 
         <Image Source="/IMAGE/Đăng ký.png" />
@@ -21,7 +23,8 @@
 
 
         <!--Tên ĐN-->
-        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Text="ĐĂNG KÝ" Margin="190,25,0,0" Width="152"/>
+
+        <TextBlock  Foreground="#FF6633" FontFamily="{StaticResource boldFont}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Text="ĐĂNG KÝ" Margin="190,25,0,0" Width="152"/>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="178,69,255,331" Text="Tên đăng nhập"/>
         <TextBox
