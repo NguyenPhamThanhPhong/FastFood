@@ -24,7 +24,7 @@
 
         <!--Tên ĐN-->
 
-        <TextBlock  Foreground="#FF6633" FontFamily="{StaticResource boldFont}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Text="ĐĂNG KÝ" Margin="190,21,0,0" Width="152"/>
+        <TextBlock  Foreground="#FF6633" FontFamily="{StaticResource boldFont}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Text="ĐĂNG KÝ" Margin="190,22,0,0" Width="152"/>
         <Button HorizontalAlignment="Left" Margin="507,19,0,0" VerticalAlignment="Top" Height="16" Width="16" BorderBrush="#00711B1B">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
