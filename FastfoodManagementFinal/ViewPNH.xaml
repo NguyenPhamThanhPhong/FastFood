@@ -187,6 +187,8 @@
             </Grid>
 
         </ScrollViewer>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="279,376,227,45" Text="TỔNG TIỀN:"/>
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="397,376,109,45" Text="1.000.000"/>
 
 
     </Grid>
