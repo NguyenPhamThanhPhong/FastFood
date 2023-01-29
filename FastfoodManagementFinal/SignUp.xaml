@@ -80,13 +80,13 @@
                     
                     Foreground="Black" 
                    FontFamily="{StaticResource boldFont}" 
-                   FontSize="13" Margin="266,157,167,243" Checked="radio_button_nhanvien_Checked">
+                   FontSize="13" Margin="266,157,167,243" Checked="radio_button_nhanvien_Checked" Background="#FFFF6633" BorderBrush="#FFFF6633">
             Quản lý
         </RadioButton>
         <RadioButton x:Name="radio_button_nhanvien"
                     Foreground="Black" 
                    FontFamily="{StaticResource boldFont}" 
-                   FontSize="13" Margin="170,157,263,243" Checked="radio_button_quanly_Checked">
+                   FontSize="13" Margin="170,157,263,243" Checked="radio_button_quanly_Checked" BorderBrush="#FFFF6633" Background="#FFFF6633">
             Nhân viên
         </RadioButton>
         <DatePicker x:Name="datepicker_NgaySinh"
