@@ -122,6 +122,9 @@
     <Compile Include="AddProductForm.xaml.cs">
       <DependentUpon>AddProductForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Add_PNH.xaml.cs">
+      <DependentUpon>Add_PNH.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CartForm.xaml.cs">
       <DependentUpon>CartForm.xaml</DependentUpon>
     </Compile>
@@ -205,6 +208,10 @@
       <DependentUpon>ViewPNH.xaml</DependentUpon>
     </Compile>
     <Page Include="AddProductForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_PNH.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

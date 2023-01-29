@@ -21,6 +21,12 @@
         <Image Source="/IMAGE/Phiếu nhập hàng.png" Margin="35,-5,28,-4" />
         <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="27" Text="THÔNG TIN NHẬP HÀNG" Margin="136,13,124,394" />
         <Image Source="/IMAGE/Phiếu nhập hàng1.png" Margin="57,52,50,224" />
+        <Button HorizontalAlignment="Left" Margin="505,9,0,0" VerticalAlignment="Top" Height="16" Width="16" BorderBrush="#00711B1B">
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
+            </Button.Background>
+            <Button Content="Button"/>
+        </Button>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="108,73,376,349" Text="Mã ND | Tên ND"/>
         <TextBox
