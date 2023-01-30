@@ -367,6 +367,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AccountAvatar\" />
+    <Folder Include="Converters\" />
     <Folder Include="Datbase\" />
     <Folder Include="ProductAvatar\" />
   </ItemGroup>
