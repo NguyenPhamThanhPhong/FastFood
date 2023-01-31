@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastfoodManagementFinal.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,17 @@ namespace FastfoodManagementFinal.Models
         public Order()
         {
 
+        }
+        public Order(string Bill_ID,int count,Product p,int sell)
+        {
+            this.Bill_ID = Bill_ID;
+            this.Order_ID = Xu_ly_ID.GetOrderID(count, Bill_ID);
+            this.Order_Product_ID = p.ProductId;
+            this.Order_Product_Name = p.Name;
+            this.Order_Product_Price = p.Price;
+            this.Order_Sell_Quantity = sell;
+            this.Order_Discount = 0;
+            this.Order_Total = p.Price * sell * (1 - this.Order_Discount);
         }
         public string Bill_ID { get; set; }
         public string Order_ID { get; set; }

@@ -1,10 +1,16 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using FastfoodManagementFinal.ViewModel;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace FastfoodManagementFinal.Models
 {
@@ -49,6 +55,79 @@ namespace FastfoodManagementFinal.Models
             }
             
             return true;
+        }
+        public static List<Product> HoaDon_Product(string parameter)
+        {
+            string sql = "select * from products where lower(ProductID) + lower(productName) like N'%" + parameter + "%'";
+            string ID = parameter;
+            if(parameter.Length>6)
+            {
+                 ID = parameter.Substring(0, 5); 
+                string pName = parameter.Substring(6);
+                sql = "select * from products where lower(ProductID) + lower(productName) like N'%" + ID + "%" + pName + "%'";
+            }
+            List<Product> p = new List<Product>();
+            SqlConnection con = Xu_Ly_SQL.con;
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product product = new Product();
+                    product.ProductId = reader.GetString(0);
+                    product.Name = reader.GetString(1);
+                    product.Product_Type = reader.GetString(2);
+                    product.Price = reader.GetInt32(3);
+                    product.Remaining_quantity = reader.GetInt32(4);
+                    product.description = reader.GetString(5);
+                    product.Avatar = reader.GetString(6);
+                    p.Add(product);
+                }
+                con.Close();
+            }
+            return p;
+        }
+        public static Product Find(string parameter)
+        {
+            Product product = new Product();
+            if (parameter.Length>=5)
+            {
+                string tempstr = parameter.Substring(0, 5);
+                SqlConnection con = Xu_Ly_SQL.con;
+                string sql = "select * from products where productID = N'"+tempstr+"'";
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        
+                        product.ProductId = reader.GetString(0);
+                        product.Name = reader.GetString(1);
+                        product.Product_Type = reader.GetString(2);
+                        product.Price = reader.GetInt32(3);
+                        product.Remaining_quantity = reader.GetInt32(4);
+                        product.description = reader.GetString(5);
+                        product.Avatar = reader.GetString(6);
+                    }
+                    con.Close();
+                }
+            }
+            return product;
+        }
+        public override string ToString()
+        {
+            return this.ProductId + " " + this.Name;
+        }
+        public ImageSource LoadAvatar()
+        {
+            string path = Xu_ly_Anh.GetAnh(Xu_ly_Anh.ProductAvatar, this.Avatar);
+            Uri ImageUri = new Uri(path);
+            return BitmapFrame.Create(
+                      ImageUri, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
         }
         public string ProductId { get; set; }
         public string Name { get; set; }

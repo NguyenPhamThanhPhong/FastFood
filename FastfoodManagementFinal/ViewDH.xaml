@@ -7,6 +7,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:converters="clr-namespace:FastfoodManagementFinal.Converters"
         Height="520" 
         Width="640"
         ResizeMode="NoResize"
@@ -15,60 +16,16 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         AllowsTransparency="True"
         Background="{x:Null}"
+        x:Name ="_this"
+        DataContext="{Binding ElementName=_this}"
         >
 
     <Window.Resources>
-        <Style x:Key="grid_HD" TargetType="Grid">
-            <Setter Property="Height" Value="20"></Setter>
-            <Setter Property="Width" Value="430"></Setter>
-            <Setter Property="Margin" Value="4,0,1,0"></Setter>
-        </Style>
-
-        <Style x:Key="border" TargetType="Border">
-            <Setter Property="Height" Value="18"></Setter>
-            <Setter Property="Width" Value="430"></Setter>
-            <Setter Property="CornerRadius" Value="1"></Setter>
-            <Setter Property="BorderThickness" Value="1.5"></Setter>
-            <Setter Property="BorderBrush" Value="#e6ebf7"></Setter>
-            <Setter Property="Background" Value="White"></Setter>
-            <Setter Property="Margin" Value="1,0,4,2"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_STT" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontSize" Value="8"></Setter>
-            <Setter Property="Margin" Value="12,3,393,7"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_TenSP" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontSize" Value="8"></Setter>
-            <Setter Property="Margin" Value="55,3,308,2"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_DonGia" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontSize" Value="8"></Setter>
-            <Setter Property="Margin" Value="137,3,226,7"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_SoLuong" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontSize" Value="8"></Setter>
-            <Setter Property="Margin" Value="248,3,145,7"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_ThanhTien" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontSize" Value="8"></Setter>
-            <Setter Property="Margin" Value="328,3,37,7"></Setter>
-        </Style>
-
+        <converters:ComboBoxText_to_ProductName x:Key="toAvatar"/>
+        <converters:ComboBoxText_to_ProductQuantity x:Key="toQuantity"/>
+        <converters:ComboBoxText_to_ProducPrice x:Key="toPrice"/>
+        <converters:ProductQuantity_amount_toTotal x:Key="toTotal"/>
+        <converters:OrderID_to_OrderNumber x:Key="toID"/>
 
     </Window.Resources>
 
@@ -97,13 +54,26 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Source="/MON_AN/BURGER/burger_beef-teriyaki-burger.png" Margin="379,88,47,348" RenderTransformOrigin="-0.17,-1.583" />
+        <Image Source="{Binding ElementName=combobox_SP,Path=Text,Converter={StaticResource toAvatar},IsAsync=True}" Margin="379,88,47,348" RenderTransformOrigin="-0.17,-1.583" />
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="494,81,89,415" Text="Số lượng" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="495,133,92,363" Text="Đơn giá" Grid.ColumnSpan="2"/>
-        <Image Source="/IMAGE/Giá.png" Margin="485,150,91,348" Grid.ColumnSpan="2" />
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="9.5" Margin="500,154,87,342" Text="45.000" Grid.ColumnSpan="2"/>
+        <Image Source="/IMAGE/Giá.png" Margin="21,123,26,375" Grid.Column="1" />
+        <TextBlock 
+            x:Name="txtblock_dongia"
+            Foreground="Black" FontFamily="{StaticResource boldFont}" 
+                   FontSize="14" Margin="484,149,86,347" 
+                   Text="{Binding ElementName=combobox_SP,Path=Text,Converter={StaticResource toPrice}}" 
+                   Grid.ColumnSpan="2"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"
+                   >
+            <TextBlock.Background>
+                <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
+            </TextBlock.Background>
+        </TextBlock>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="488,182,88,319" Text="Thành tiền" Grid.ColumnSpan="2"/>
         <TextBox
+                                x:Name="txtbox_soluong"
                                 Height="24"
                                 Margin="496,97,101,0"
                                 BorderBrush="#e6ebf7"
@@ -122,6 +92,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="76,76,331,425" Text="Mã NV | Tên NV"/>
         <TextBox
+            x:Name="txtbox_maNV" IsEnabled="False"
                                 Height="28"
                                 Margin="73,94,351,0"
                                 BorderBrush="#e6ebf7"
@@ -136,28 +107,47 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="185,127,264,375" Text="Tên SP"/>
-        <TextBox
-                                Height="28"
-                                Margin="177,148,178,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
+        <TextBlock Foreground="Black" 
+                   FontFamily="{StaticResource boldFont}" 
+                   FontSize="12" Margin="217,127,203,375" 
+                   Text="Mã SP | Tên SP"/>
+        <ComboBox 
+                x:Name="combobox_SP"
+                    Margin="209,150,166,0" VerticalAlignment="Top"
+                    MaxDropDownHeight="100"
+                    FontSize="14"
+                    Background="White"
+                    IsEditable="True"
+                  
+                    StaysOpenOnEdit="True"
+                    IsTextSearchEnabled="False"
+                  
+                    BorderBrush="#e6ebf7"
+                    BorderThickness="2"
+                    materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Height="28"
+                    ItemsSource="{Binding products}"
+                    TextBoxBase.TextChanged="ComboBox_TextChanged"
+                    GotFocus="combobox_SP_GotFocus"
+                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ProductId}"/>
+                        <TextBlock Text=" "></TextBlock>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="392,166,61,330" Text="Burger Bò"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="392,166,61,330" Text="{Binding ElementName=combobox_SP,Path=Text}"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="375,191,64,305" Text="Số lượng còn:"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="449,190,47,306" Text="10" RenderTransformOrigin="0.023,0.583"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="449,190,47,306" Text="{Binding ElementName=combobox_SP,Path=Text,Converter={StaticResource toQuantity},IsAsync=True}" RenderTransformOrigin="0.023,0.583"/>
 
 
         <TextBox
+                                IsEnabled="False"
                                 Height="26"
                                 Margin="478,199,80,0"
                                 BorderBrush="#e6ebf7"
@@ -170,16 +160,28 @@
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
                                 BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" Grid.ColumnSpan="2" />
+                                VerticalAlignment="Top" CaretBrush="Gray" Grid.ColumnSpan="2" >
 
-        <Button HorizontalAlignment="Left" Margin="27,101,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Grid.Column="1" RenderTransformOrigin="0.032,-0.467">
+
+            <TextBox.Text>
+                <MultiBinding Converter="{StaticResource toTotal }">
+                    <Binding ElementName="txtbox_soluong" Path="Text"></Binding>
+                    <Binding ElementName="txtblock_dongia" Path="Text"></Binding>
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button x:Name="Button_cong"
+            HorizontalAlignment="Left" Margin="27,101,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Grid.Column="1" RenderTransformOrigin="0.032,-0.467" Click="Button_cong_Click"  >
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/plus-5-64.png"/>
             </Button.Background>
             <Button Content="Button"/>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="479,101,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B">
+        <Button 
+                x:Name="Button_tru"
+            HorizontalAlignment="Left" Margin="479,101,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Click="Button_tru_Click">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/minus-5-64.png"/>
             </Button.Background>
@@ -187,30 +189,50 @@
         </Button>
 
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="76,131,376,370" Text="Tên KH"/>
-        <TextBox
-                                Height="28"
-                                Margin="73,148,351,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
+        <TextBlock Foreground="Black" 
+                   FontFamily="{StaticResource boldFont}" 
+                   FontSize="12" Margin="78,127,341,374" 
+                   Text="Mã KH | Tên KH" RenderTransformOrigin="0.576,1.274"/>
+        <ComboBox 
+                x:Name="combobox_KH"
+                    Margin="73,150,315,0" VerticalAlignment="Top"
+                    MaxDropDownHeight="100"
+                    FontSize="14"
+                    Background="White"
+                    BorderBrush="#e6ebf7"
+                    BorderThickness="2"
+                    materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Height="28"
+                    IsEditable="True"
+                  
+                    StaysOpenOnEdit="True"
+                    IsTextSearchEnabled="False"
+
+                    ItemsSource="{Binding customers}"
+                    TextBoxBase.TextChanged="ComboBox_KH_TextChanged"
+                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding CustomerID}"/>
+                        <TextBlock Text=" "></TextBlock>
+                        <TextBlock Text="{Binding CustomerName}"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="276,76,171,426" Text="Thời gian"/>
-        <DatePicker Margin="276,93,171,0" VerticalAlignment="Top" SelectedDate="{x:Static sys:DateTime.Now}">
-            
+
+        <DatePicker Margin="270,94,166,0" VerticalAlignment="Top" 
+                    SelectedDate="{x:Static sys:DateTime.Now}" Height="30">
+
         </DatePicker>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="185,72,283,430" Text="Số HD"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="185,78,283,424" Text="Số HD"/>
         <TextBox
+            x:Name="txtbox_soHD" IsEnabled="False"
                                 Height="28"
-                                Margin="177,91,258,0"
+                                Margin="177,94,258,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -225,13 +247,16 @@
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="9" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="262,205,193,287"/>
+                Background="#EA5C2B" FontSize="9" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="238,205,192,287" Click="Button_Click_1"/>
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="XÓA" FontFamily="{StaticResource boldFont}" Margin="82,205,374,287"/>
+                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="Reset" FontFamily="{StaticResource boldFont}" Margin="105,205,331,287"/>
 
-        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" Content="THANH TOÁN" FontFamily="{StaticResource boldFont}" Margin="151,205,270,287"/>
+        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="9" FontFamily="{StaticResource boldFont}" Margin="0,266,46,222" Grid.Column="1" Click="Button_Click">
+            <TextBlock FontSize="12">
+                Xóa hết
+            </TextBlock>
+        </Button>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="107,278,321,143" Text="STT"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="155,278,266,143" Text="Tên SP"/>
@@ -239,6 +264,47 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="327,278,79,143" Text="Số lượng"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="428,278,80,143" Text="Thành tiền" Grid.ColumnSpan="2"/>
 
+        <ListView 
+            x:Name="ListView_order"
+            Grid.ColumnSpan="2" Margin="100,303,85,93"
+            ItemsSource="{Binding odrs,IsAsync=True}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid  Margin="4,0,1,0" Grid.Row="0">
+
+                        <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,3,393,7" Text="{Binding Order_ID,Converter={StaticResource toID}}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="{Binding Order_Product_Name}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="{Binding Order_Product_Price}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="231,4,161,6" Text="{Binding Order_Sell_Quantity}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="{Binding Order_Total}"/>
+
+                        <Button  HorizontalAlignment="Left" Margin="393,0,0,0" VerticalAlignment="Center" Height="14" Width="14" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" >
+                            <Button.Background>
+                                <ImageBrush ImageSource="/IMAGE/thungrac.png"/>
+                            </Button.Background>
+                            <Button Content="Button"/>
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <!--<Grid  Margin="4,0,1,0" Grid.Row="0">
+
+                <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,3,393,7" Text="1"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,3,308,2" Text="Burger Tôm"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,3,226,7" Text="45.000"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="231,4,161,6" Text="1"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
+
+                <Button  HorizontalAlignment="Left" Margin="393,0,0,0" VerticalAlignment="Center" Height="14" Width="14" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/IMAGE/thungrac.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>-->
+        </ListView>
         <!--<ScrollViewer Grid.ColumnSpan="2" Margin="100,303,85,47" >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -318,7 +384,8 @@
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,3,145,7" Text="1"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="45.000"/>
                 </Grid>
-                --><!--<Border CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="6,1,4,1" Grid.Row="2"/>
+
+                <Border CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="6,1,4,1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="15,4,390,6" Text="1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,4,308,1" Text="Burger Tôm" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,4,226,6" Text="45.000" Grid.Row="2"/>
@@ -337,14 +404,17 @@
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,6,308,2" Text="Burger Tôm" Grid.Row="6" Grid.RowSpan="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="137,6,226,4" Text="45.000" Grid.Row="6"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,6,145,4" Text="1" Grid.Row="6"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,6,37,4" Text="45.000" Grid.Row="6"/>--><!--
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,6,37,4" Text="45.000" Grid.Row="6"/>
+
 
             </Grid>
 
         </ScrollViewer>-->
 
         <!--Nút xuất excel-->
-        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+        <Button  
+            x:Name="button_xuatExcel"
+            Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
                 Background="#EA5C2B" FontSize="10" Content="XUẤT HÓA ĐƠN" FontFamily="{StaticResource boldFont}" Margin="79,447,311,45"/>
 

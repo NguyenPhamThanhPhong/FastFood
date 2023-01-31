@@ -27,6 +27,10 @@ namespace FastfoodManagementFinal.ViewModel
         }
         public static string GetAnh(string directory, string filename)
         {
+            if(directory == null || filename == null)
+            {
+                return Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "IMAGE", "Thêm Ảnh.png");
+            }
             FileInfo fileInfo = new FileInfo(Path.Combine(directory,filename));
 
             if (fileInfo.Exists)
