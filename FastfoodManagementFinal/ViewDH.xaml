@@ -42,7 +42,7 @@
             </Button.Background>
             <Button Content="Button"/>
         </Button>
-        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="25" Text="ĐƠN HÀNG" Margin="258,9,97,472" />
+        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="26" Text="ĐƠN HÀNG" Margin="258,9,97,472" />
 
         <Image Source="/IMAGE/white.png" Margin="379,24,76,236" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" >
             <Image.RenderTransform>
@@ -59,10 +59,12 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="495,131,92,365" Text="Đơn giá" Grid.ColumnSpan="2"/>
         <TextBlock 
             x:Name="txtblock_dongia"
-            Foreground="Black" FontFamily="{StaticResource boldFont}" 
+            Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" 
                    FontSize="11" Margin="488,148,91,348" 
                    Text="{Binding ElementName=combobox_SP,Path=Text,Converter={StaticResource toPrice}}" 
                    Grid.ColumnSpan="2"
+                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,-0.8,0,0"
+
                    TextAlignment="Center"
                    TextWrapping="Wrap"
                    >
@@ -73,13 +75,13 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="488,180,88,321" Text="Thành tiền" Grid.ColumnSpan="2"/>
         <TextBox
                                 x:Name="txtbox_soluong"
-                                Height="25"
+                                Height="26"
                                 Margin="496,100,101,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -102,7 +104,7 @@
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.3,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -114,7 +116,7 @@
                 x:Name="combobox_SP"
                     Margin="209,161,161,0" VerticalAlignment="Top"
                     MaxDropDownHeight="100"
-                    FontSize="14"
+                    FontSize="11"
                     Background="White"
                     IsEditable="True"
                     FontFamily="{StaticResource boldFont}"
@@ -172,7 +174,7 @@
         </TextBox>
 
         <Button x:Name="Button_cong"
-            HorizontalAlignment="Left" Margin="27,104,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Grid.Column="1" RenderTransformOrigin="0.032,-0.467" Click="Button_cong_Click"  >
+            HorizontalAlignment="Left" Margin="27,106,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Grid.Column="1" RenderTransformOrigin="0.032,-0.467" Click="Button_cong_Click"  >
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/plus-5-64.png"/>
             </Button.Background>
@@ -181,7 +183,7 @@
 
         <Button 
                 x:Name="Button_tru"
-            HorizontalAlignment="Left" Margin="479,104,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Click="Button_tru_Click">
+            HorizontalAlignment="Left" Margin="479,106,0,0" VerticalAlignment="Top" Height="15" Width="15" BorderBrush="#00711B1B" Click="Button_tru_Click">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/minus-5-64.png"/>
             </Button.Background>
@@ -225,10 +227,10 @@
         </ComboBox>
 
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="276,74,171,428" Text="Thời gian"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="258,74,189,428" Text="Thời gian"/>
         <TextBox
                                 Height="28"
-                                Margin="265,92,161,0"
+                                Margin="255,92,161,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -242,12 +244,12 @@
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
 
-        <DatePicker Margin="272,94,169,0" VerticalAlignment="Top"
+        <DatePicker Margin="270,94,168,0" VerticalAlignment="Top"
                      SelectedDate="{x:Static sys:DateTime.Now}" Height="23" BorderBrush="White" FontFamily="{StaticResource boldFont}" Foreground="#9B9CA3" FontSize="11">
 
         </DatePicker>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="185,76,283,426" Text="Số HD"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="185,74,283,428" Text="Số HD"/>
         <TextBox
             x:Name="txtbox_soHD" IsEnabled="False"
                                 Height="28"
@@ -260,7 +262,7 @@
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.3,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" SelectionBrush="#FFE6EBF7" />
 
