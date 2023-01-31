@@ -62,11 +62,22 @@
         <Border Margin="32,28,166,-28" Grid.ColumnSpan="2">
             <Frame x:Name="PagesNavigation" NavigationUIVisibility='Hidden' Margin="240,24,-766,76"/>
         </Border>
-        
-        <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+
+        <Button 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
-                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="        TRANG CHỦ" FontFamily="{StaticResource boldFont}" Margin="56,160,196,472" Click="Button_Click" Grid.ColumnSpan="2"/>
+                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="        TRANG CHỦ" FontFamily="{StaticResource boldFont}" Margin="56,160,196,472" Click="Button_Click" Grid.ColumnSpan="2">
+            <Button.Style>
+                <Style BasedOn="{StaticResource MaterialDesignFlatMidBgButton}" TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Green"></Setter>
+                            <!--<Setter Property="Foreground" Value="Red"></Setter>-->
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
         <Image Source="/IMAGE/home-4-256.png" Margin="67,163,140,477" />
 
 
