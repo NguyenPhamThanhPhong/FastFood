@@ -120,7 +120,7 @@ namespace FastfoodManagementFinal
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             odrs.Clear();
-            ListView_order.Items.Clear();
+            ListView_order.Items.Refresh();
         }
     }
 }
