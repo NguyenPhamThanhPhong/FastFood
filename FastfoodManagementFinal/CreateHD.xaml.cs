@@ -46,7 +46,7 @@ namespace FastfoodManagementFinal
             txtblock_thanhtien.Text = Paid.ToString();
         }
 
-        public List<Order> odrs { get; set; } = new List<Order> { new Order() };
+        public List<Order> odrs { get; set; } = new List<Order> { };
         DateTime picked_date = DateTime.Now;
         private void datepicker_NgaySinh_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {

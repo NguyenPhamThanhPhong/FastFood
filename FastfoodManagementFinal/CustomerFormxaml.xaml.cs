@@ -25,53 +25,17 @@ namespace FastfoodManagementFinal
         public CustomerFormxaml()
         {
             InitializeComponent();
-            load_stack_panel(customers);
+            //load_stack_panel(customers);
         }
-        List<Customer> customers = Xu_Ly_SQL.Select_all_Customers();
-        private void load_stack_panel(List<Customer> list_cus)
-        {
-            this.stackpanel_KH.Children.Clear();
-            foreach(Customer cc in list_cus)
-            {
-                Grid g = load_Grid_stack_panel(cc.CustomerID, cc.CustomerName, cc.CustomerPhone, cc.Address);
-                this.stackpanel_KH.Children.Add(g);
-            }
-        }
-        private Grid load_Grid_stack_panel(string customerID,string customerName,string sdt,string address)
-        {
-            Grid g = new Grid();
-            g.Style = (Style)this.Resources["grid_food"];
-            Border b = new Border();
-            b.Style = (Style)this.Resources["border_KH"];
-            TextBlock t1 = new TextBlock();
-            t1.Style = (Style)this.Resources["txtblock_maKH"];
-            t1.Text = customerID;
-            TextBlock t2 = new TextBlock();
-            t2.Text = customerName;
-            t2.Style = (Style)this.Resources["txtblock_tenKH"];
-            TextBlock t3 = new TextBlock();
-            t3.Style = (Style)this.Resources["txtblock_sdtKH"];
-            t3.Text = sdt;
-            TextBlock t4 = new TextBlock();
-            t4.Style = (Style)this.Resources["txtblock_diachiKH"];
-            t4.Text = address;
-            Button button= new Button();
-            button.Style = (Style)this.Resources["button_viewdetailKH"];
-            button.Click += view_button_click;
-            g.Children.Add(b);
-            g.Children.Add(t1);
-            g.Children.Add(t2);
-            g.Children.Add(t3);
-            g.Children.Add(t4);
-            g.Children.Add(button);
-            return g;
-        }
+        public List<Customer> customers { get; set; } = Xu_Ly_SQL.Select_all_Customers();
+
+
         private void view_button_click(object sender,RoutedEventArgs e)
         {
             var p = VisualTreeHelper.GetParent(e.Source as Button);
             TextBlock tt = (TextBlock)VisualTreeHelper.GetChild(p, 1);
             Customer customer = new Customer();
-            foreach(Customer c in customers)
+            foreach (Customer c in customers)
             {
                 if (c.CustomerID == tt.Text)
                 {
@@ -79,45 +43,20 @@ namespace FastfoodManagementFinal
                     break;
                 }
             }
+
             InfoCustomer ff = new InfoCustomer(customer);
             ff.ShowDialog();
-            load_stack_panel(Xu_Ly_SQL.Select_all_Customers());
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            InfoCustomer infoCustomer = new InfoCustomer();
-            infoCustomer.ShowDialog();
+
+            List<Customer> list_cus = Xu_Ly_SQL.Select_all_Customers();
+            customers.Clear();
+            foreach(Customer c in list_cus)
+            {
+                customers.Add(c);
+            }
+            listview_show.Items.Refresh();
+            //load_stack_panel(Xu_Ly_SQL.Select_all_Customers());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            InfoCustomer infoCustomer = new InfoCustomer();
-            infoCustomer.ShowDialog();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            InfoCustomer infoCustomer = new InfoCustomer();
-            infoCustomer.ShowDialog();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            InfoCustomer infoCustomer = new InfoCustomer();
-            infoCustomer.ShowDialog();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            InfoCustomer infoCustomer = new InfoCustomer();
-            infoCustomer.ShowDialog();
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            InfoCustomer infoCustomer = new InfoCustomer();
-            infoCustomer.ShowDialog();
-        }
 
         private void Setting_Click(object sender, RoutedEventArgs e)
         {
@@ -126,15 +65,25 @@ namespace FastfoodManagementFinal
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (BoLocComboBox.Text == "Tất cả" || BoLocComboBox.Text == "")
+            if (BoLocComboBox.SelectedIndex == 0 || BoLocComboBox.SelectedIndex == 1)
             {
                 List<Customer> lst_cus = Xu_Ly_SQL.Search_customer("fullname", textbox_timkiem.Text);
-                load_stack_panel(lst_cus);
+                customers.Clear();
+                foreach (Customer c in lst_cus)
+                {
+                    customers.Add(c);
+                }
+                listview_show.Items.Refresh();
             }
-            else if (BoLocComboBox.Text == "sđt")
+            else if (BoLocComboBox.SelectedIndex == 2)
             {
                 List<Customer> lst_cus = Xu_Ly_SQL.Search_customer("phone", textbox_timkiem.Text);
-                load_stack_panel(lst_cus);
+                customers.Clear();
+                foreach (Customer c in lst_cus)
+                {
+                    customers.Add(c);
+                }
+                listview_show.Items.Refresh();
             }
 
         }
@@ -144,5 +93,34 @@ namespace FastfoodManagementFinal
             InfoCustomer f = new InfoCustomer();
             f.ShowDialog();
         }
+
+        private void BoLocComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (BoLocComboBox.SelectedIndex == 0 || BoLocComboBox.SelectedIndex == 1)
+            {
+                List<Customer> lst_cus = Xu_Ly_SQL.Search_customer("fullname", textbox_timkiem.Text);
+                customers.Clear();
+                foreach (Customer c in lst_cus)
+                {
+                    customers.Add(c);
+                }
+                listview_show.Items.Refresh();
+            }
+            else if (BoLocComboBox.SelectedIndex == 2)
+            {
+                List<Customer> lst_cus = Xu_Ly_SQL.Search_customer("phone", textbox_timkiem.Text.Trim());
+                customers.Clear();
+                foreach (Customer c in lst_cus)
+                {
+                    customers.Add(c);
+                }
+                listview_show.Items.Refresh();
+            }
+        }
+
+        //private void Button_Click_6(object sender, RoutedEventArgs e)
+        //{
+
+        //}
     }
 }

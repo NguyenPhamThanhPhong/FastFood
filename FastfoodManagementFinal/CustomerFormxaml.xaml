@@ -4,65 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
- 
+      
       xmlns:local="clr-namespace:FastfoodManagementFinal"
       mc:Ignorable="d" 
       d:DesignHeight="580" d:DesignWidth="765"
+      x:Name="_this"
+      DataContext="{Binding ElementName=_this}"
       >
 
     <Page.Resources>
-        <Style x:Key="grid_KH" TargetType="Grid">
-            <Setter Property="Height" Value="55"></Setter>
-            <Setter Property="Width" Value="670"></Setter>
-            <Setter Property="Margin" Value="0,0,0,0"></Setter>
-        </Style>
-        <Style x:Key="border_KH" TargetType="Border">
-            <Setter Property="CornerRadius" Value="5"></Setter>
-            <Setter Property="BorderThickness" Value="2"></Setter>
-            <Setter Property="Height" Value="50"></Setter>
-            <Setter Property="BorderBrush" Value="#e6ebf7"></Setter>
-            <Setter Property="Background" Value="White"></Setter>
-            <Setter Property="Margin" Value="-42,2,-41,3"></Setter>
-        </Style>
-        <Style x:Key="txtblock_maKH" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="Margin" Value="33,15,624,12"></Setter>
-        </Style>
-        <Style x:Key="txtblock_tenKH" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="Margin" Value="100,15,433,12"></Setter>
-        </Style>
-        <Style x:Key="txtblock_sdtKH" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="Margin" Value="270,15,305,12"></Setter>
-        </Style>
-        <Style x:Key="txtblock_diachiKH" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#9B9CA3"></Setter>
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="Margin" Value="428,15,108,12"></Setter>
-        </Style>
-        <Style x:Key="button_viewdetailKH" TargetType="Button">
-            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-            <Setter Property="Margin" Value="614,14,0,0"></Setter>
-            <Setter Property="VerticalAlignment" Value="Top"></Setter>
-            <Setter Property="Height" Value="24"></Setter>
-            <Setter Property="Width" Value="28"></Setter>
-            <Setter Property="BorderBrush" Value="#00711B1B"></Setter>
-            <Setter Property="RenderTransformOrigin" Value="4.667,1.717"></Setter>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <ImageBrush ImageSource="/IMAGE/eye-2-128.png"></ImageBrush>
-                </Setter.Value>
-            </Setter>
-            <!--<Setter Property="Content"-->
-        </Style>
+
 
     </Page.Resources>
     <Grid Height="580" Width="765">
@@ -91,19 +42,27 @@
                 <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
             </Button.Background>
         </Button>
-        <!--Bộ lọc-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,667,483" RenderTransformOrigin="0.845,0.596"/>
-        <ComboBox
-    
-    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
-    materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
-    IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
-    ItemsSource="{Binding ShortStringList}"
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" >
-            <ComboBoxItem Content="Tất cả"/>
-            <ComboBoxItem Content="Tên"/>
 
-        </ComboBox>
+        <ListView x:Name="listview_show" Margin="0,184,0,24" ItemsSource="{Binding customers }">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="4" >
+                        <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="33,15,624,12" Text="{Binding CustomerID}" />
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="100,15,433,12" Text="{Binding CustomerName}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="270,15,305,12" Text="{Binding CustomerPhone}" />
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="428,15,108,12" Text="{Binding Address}"/>
+                        <Button  HorizontalAlignment="Left" Margin="614,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="view_button_click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                            </Button.Background>
+                            <Button Content="Button"/>
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
         <!--Tìm kiếm-->
         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="233,76,458,483" RenderTransformOrigin="0.845,0.596"/>
 
@@ -122,6 +81,22 @@
                                 BorderThickness="2" CaretBrush="#e6ebf7" TextChanged="TextBox_TextChanged" />
 
         <Image Source="/IMAGE/search-13-48.png" Margin="401,110,340,447" />
+        <!--Bộ lọc-->
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,667,483" RenderTransformOrigin="0.845,0.596"/>
+        <ComboBox
+    
+    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
+    IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
+    ItemsSource="{Binding ShortStringList}"
+            SelectedIndex="0"
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" SelectionChanged="BoLocComboBox_SelectionChanged" >
+            <ComboBoxItem Content="Tất cả"/>
+            <ComboBoxItem Content="Tên"/>
+            <ComboBoxItem Content="Số điện thoại"/>
+
+        </ComboBox>
+        
 
 
 
@@ -131,8 +106,9 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Tên khách hàng" Margin="138,155,478,396" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="SĐT" Margin="310,155,416,396" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Địa chỉ" Margin="468,155,230,396" RenderTransformOrigin="0.845,0.596"/>
-        
-        <ScrollViewer Margin="0,184,0,24">
+
+
+        <!--<ScrollViewer Margin="0,184,0,24">
 
             <StackPanel x:Name="stackpanel_KH" Orientation="Vertical">
                 <Grid Height="55" Width="670" Margin="0,0,0,0"  >
@@ -141,7 +117,7 @@
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="100,15,433,12" Text="Trần Thanh Hiền"/>
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="270,15,305,12" Text="0398285020" />
                     <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="428,15,108,12" Text="KP6, P. Linh Trung"/>
-                    <Button  HorizontalAlignment="Left" Margin="614,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717">
+                    <Button  HorizontalAlignment="Left" Margin="614,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_6">
                         <Button.Background>
                             <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
                         </Button.Background>
@@ -162,7 +138,7 @@
                     </Button>
                 </Grid>
             </StackPanel>
-            <!--<Grid>
+            --><!--<Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="670"/>
@@ -316,11 +292,11 @@
                     </Button.Background>
                     <Button Content="Button"/>
                 </Button>
-            </Grid>-->
+            </Grid>--><!--
 
 
 
-        </ScrollViewer>
+        </ScrollViewer>-->
 
 
 

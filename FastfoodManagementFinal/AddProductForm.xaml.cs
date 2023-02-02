@@ -58,5 +58,10 @@ namespace FastfoodManagementFinal
             imps = Xu_Ly_SQL.Select_all_Import();
             listview_show.Items.Refresh();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

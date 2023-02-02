@@ -92,7 +92,7 @@
         <DatePicker x:Name="datepicker_NgaySinh"
             Margin="178,271,210,0" 
             VerticalAlignment="Top" 
-            Height="24" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" SelectedDateFormat="Short" IsEnabled="False"/>
+            Height="24" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" SelectedDateFormat="Short" />
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" 
                    FontSize="13" Margin="355,129,119,271" Text="Key"/>

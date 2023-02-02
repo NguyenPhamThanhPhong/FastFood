@@ -56,7 +56,7 @@
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
                                 BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="#e6ebf7" />
+                                VerticalAlignment="Top" CaretBrush="#e6ebf7" TextChanged="TextBox_TextChanged" />
 
         <Image Source="/IMAGE/search-13-48.png" Margin="218,114,523,443" />
 
