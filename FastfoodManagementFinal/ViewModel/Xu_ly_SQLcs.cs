@@ -227,7 +227,7 @@ namespace FastfoodManagementFinal.ViewModel
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                string sql = "select * from import ";
+                string sql = "select i.ImportID, i.AdminID, i.ImportDate,s.FullName from import i join staff s on i.AdminID = s.ID";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -236,6 +236,7 @@ namespace FastfoodManagementFinal.ViewModel
                     i.ImportID = reader.GetString(0);
                     i.AdminID = reader.GetString(1);
                     i.ImportDate = reader.GetDateTime(2);
+                    i.AdminName = reader.GetString(3);
                     i.importProducts = new List<ImportProduct>();
                     imports.Add(i);
                     
@@ -767,6 +768,39 @@ namespace FastfoodManagementFinal.ViewModel
                 b.orders = Select_all_Orders_specified_BillID(b.Bill_ID);
             }
             return bills;
+        }
+        public static List<Import> Search_import(string search_by, string parameter)
+        {
+            List<Import> imports = new List<Import>();
+            
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                string sql = "select i.ImportID, i.AdminID, i.ImportDate,s.FullName " +
+                    "from import i join staff s on i.AdminID = s.ID " +
+                        "where lower(" + search_by + ") like lower(N'%" + parameter + "%')";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Import i = new Import();
+                    i.ImportID = reader.GetString(0);
+                    i.AdminID = reader.GetString(1);
+                    i.ImportDate = reader.GetDateTime(2);
+                    i.AdminName = reader.GetString(3);
+                    i.importProducts = new List<ImportProduct>();
+                    imports.Add(i);
+
+                }
+                con.Close();
+                foreach (Import i in imports)
+                {
+                    i.importProducts = select_all_Import_Product_specified_ImportID(i.ImportID);
+                    //MessageBox.Show(i.importProducts.Count.ToString());
+                }
+
+            }
+            return imports;
         }
     }
 }

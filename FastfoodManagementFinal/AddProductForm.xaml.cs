@@ -25,6 +25,7 @@ namespace FastfoodManagementFinal
         public AddProductForm()
         {
             InitializeComponent();
+            
         }
         public List<Import> imps { get; set; } = Xu_Ly_SQL.Select_all_Import();
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -55,13 +56,87 @@ namespace FastfoodManagementFinal
         {
             Add_PNH f = new Add_PNH();
             f.ShowDialog();
-            imps = Xu_Ly_SQL.Select_all_Import();
+            List<Import> lst_imp = Xu_Ly_SQL.Search_import("i.importID", txtbox_timkiem.Text.Trim());
+            imps.Clear();
+            foreach (Import ip in lst_imp)
+            {
+                imps.Add(ip);
+            }
             listview_show.Items.Refresh();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if(BoLocComboBox.SelectedIndex==0)
+            {
+                List<Import> lst_imp = Xu_Ly_SQL.Search_import("i.importID", txtbox_timkiem.Text.Trim());
+                imps.Clear();
+                foreach(Import ip in lst_imp) 
+                {
+                    imps.Add(ip);
+                }
+                listview_show.Items.Refresh();
+                return;
+            }
+            if (BoLocComboBox.SelectedIndex == 1)
+            {
+                List<Import> lst_imp = Xu_Ly_SQL.Search_import("i.adminID", txtbox_timkiem.Text.Trim());
+                imps.Clear();
+                foreach (Import ip in lst_imp)
+                {
+                    imps.Add(ip);
+                }
+                listview_show.Items.Refresh();
+                return;
+            }
+            if (BoLocComboBox.SelectedIndex == 2)
+            {
+                List<Import> lst_imp = Xu_Ly_SQL.Search_import("s.fullname", txtbox_timkiem.Text.Trim());
+                imps.Clear();
+                foreach (Import ip in lst_imp)
+                {
+                    imps.Add(ip);
+                }
+                listview_show.Items.Refresh();
+                return;
+            }
+        }
 
+        private void BoLocComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (BoLocComboBox.SelectedIndex == 0)
+            {
+                List<Import> lst_imp = Xu_Ly_SQL.Search_import("i.importID", txtbox_timkiem.Text.Trim());
+                imps.Clear();
+                foreach (Import ip in lst_imp)
+                {
+                    imps.Add(ip);
+                }
+                listview_show.Items.Refresh();
+                return;
+            }
+            if (BoLocComboBox.SelectedIndex == 1)
+            {
+                List<Import> lst_imp = Xu_Ly_SQL.Search_import("i.adminID", txtbox_timkiem.Text.Trim());
+                imps.Clear();
+                foreach (Import ip in lst_imp)
+                {
+                    imps.Add(ip);
+                }
+                listview_show.Items.Refresh();
+                return;
+            }
+            if (BoLocComboBox.SelectedIndex == 2)
+            {
+                List<Import> lst_imp = Xu_Ly_SQL.Search_import("s.fullname", txtbox_timkiem.Text.Trim());
+                imps.Clear();
+                foreach (Import ip in lst_imp)
+                {
+                    imps.Add(ip);
+                }
+                listview_show.Items.Refresh();
+                return;
+            }
         }
     }
 }
