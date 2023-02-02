@@ -48,6 +48,8 @@ namespace FastfoodManagementFinal.Models
                 con.Close();
             }
 
+            //System.Windows.MessageBox.Show(customers.Count.ToString());
+
             return customers;
         }
         public static Customer FindAbsolute_ID(string parameter)
@@ -58,8 +60,9 @@ namespace FastfoodManagementFinal.Models
                 return c;
             }
             SqlConnection con = Xu_Ly_SQL.con;
-            string str = parameter.Substring(0, 5);
-            string sql = "select * from customers where customerID = '"+str+"'";
+            string strID = parameter.Substring(0, 5);
+            string strName = parameter.Substring(5);
+            string sql = "select * from customers where customerID = N'"+strID.Trim()+"' and Fullname = N'"+strName.Trim()+"' ";
             if (con.State != ConnectionState.Open)
             {
                 con.Open();

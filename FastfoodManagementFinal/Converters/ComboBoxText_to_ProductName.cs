@@ -6,13 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using static OfficeOpenXml.ExcelErrorValue;
 
 namespace FastfoodManagementFinal.Converters
 {
-    public class ComboBoxText_to_ProductName : IValueConverter
+    public class ComboBoxText_to_Avatar : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -29,6 +31,23 @@ namespace FastfoodManagementFinal.Converters
             throw new NotImplementedException();
         }
     }
+    public class ComboBoxText_to_ProductName : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string text = value as string;
+            Product p = Product.Find(text.Trim());
+            
+
+            return p.Name;
+            throw new NotImplementedException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public class ComboBoxText_to_ProductQuantity : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -36,7 +55,7 @@ namespace FastfoodManagementFinal.Converters
             string text = value as string;
             Product p = Product.Find(text.Trim());
 
-            return p.Remaining_quantity.ToString();
+            return p.Remaining_quantity;
             throw new NotImplementedException();
         }
 

@@ -29,6 +29,7 @@ namespace FastfoodManagementFinal
         public List<Import> imps { get; set; } = new List<Import> { new Import(),new Import() };
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+
             ViewPNH viewPNH = new ViewPNH();
             viewPNH.ShowDialog();
         }
@@ -39,6 +40,12 @@ namespace FastfoodManagementFinal
         {
             Setting setting = new Setting();
             setting.ShowDialog();
+        }
+
+        private void button_them_Click(object sender, RoutedEventArgs e)
+        {
+            Add_PNH f = new Add_PNH();
+            f.ShowDialog();
         }
     }
 }

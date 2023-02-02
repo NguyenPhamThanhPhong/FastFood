@@ -28,11 +28,20 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
             PagesNavigation.Navigate(new System.Uri("HomeForm.xaml", UriKind.RelativeOrAbsolute));
+            Selected.LoggedIn = a;
             logged_in_acc = a;
             txtBlock_Acc_Name.Text = logged_in_acc.Name;
             txtBlock_AccessRight.Text = logged_in_acc.AccessRight;
             //MessageBox.Show(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
 
+            if(Selected.LoggedIn.AccessRight == "Nhân viên")
+            {
+                button_quanly.Visibility= Visibility.Collapsed;
+                button_nhaphang.Visibility = Visibility.Collapsed;
+                img_nhaphang.Visibility = Visibility.Collapsed;
+                img_quanly.Visibility = Visibility.Collapsed;
+
+            }
 
             if (new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)).Exists)
             {

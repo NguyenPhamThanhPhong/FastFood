@@ -14,7 +14,7 @@ namespace FastfoodManagementFinal.Models
         public string ImportProductID { get; set; }
         public string ImportID { get; set; } // lấy từ import
         public int ImportProductPrice { get; set; }
-        public string ProductType { get; set; }
+        public string ProductType { get; set; }//missing
         public int ImportQuantity { get; set; }
         public string Unit { get; set; }
 

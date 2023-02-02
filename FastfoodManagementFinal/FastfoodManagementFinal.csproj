@@ -132,6 +132,7 @@
       <DependentUpon>ChangePass.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ComboBoxText_to_ProductName.cs" />
+    <Compile Include="Converters\ImportProductConverter.cs" />
     <Compile Include="CreateHD.xaml.cs">
       <DependentUpon>CreateHD.xaml</DependentUpon>
     </Compile>
@@ -192,11 +193,10 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\FileUtil.cs" />
-    <Compile Include="ViewModel\Grid_don_hang.cs" />
-    <Compile Include="ViewModel\Grid_San_Pham.cs" />
     <Compile Include="ViewModel\iSQL_command.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Pass_Variable.cs" />
+    <Compile Include="ViewModel\Selected.cs" />
     <Compile Include="ViewModel\Xu_ly_Anh.cs" />
     <Compile Include="ViewModel\Xu_ly_chuoi.cs" />
     <Compile Include="ViewModel\Xu_Ly_Excel.cs" />

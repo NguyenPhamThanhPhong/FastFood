@@ -26,6 +26,7 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
             txtbox_soHD.Text = Xu_ly_ID.GetBillID();
+            txtbox_maNV.Text = Selected.LoggedIn.StaffID + " " + Selected.LoggedIn.Name;
         }
         public List<Order> odrs { get; set; } = new List<Order>();
         public ObservableCollection<Customer> customers { get; set; } = new ObservableCollection<Customer>(Xu_Ly_SQL.Select_all_Customers());
@@ -61,9 +62,6 @@ namespace FastfoodManagementFinal
         {
             combobox_KH.IsDropDownOpen = true;
         }
-
-
-
 
         //button thêm 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -121,6 +119,44 @@ namespace FastfoodManagementFinal
         {
             odrs.Clear();
             ListView_order.Items.Refresh();
+        }
+
+        private void button_reset_Click(object sender, RoutedEventArgs e)
+        {
+            combobox_KH.Text= string.Empty;
+            combobox_SP.Text = string.Empty;
+            txtbox_soluong.Text = string.Empty;
+        }
+
+        private void button_thanhtoan_Click(object sender, RoutedEventArgs e)
+        {
+            Customer c = Customer.FindAbsolute_ID(combobox_KH.Text.Trim());
+            MessageBox.Show(c.CustomerID);
+            if(this.odrs.Count<=0)
+            {
+                MessageBox.Show("vui lòng nhập order của khách hàng!");
+                return;
+            }
+            if (c.CustomerID !=null) 
+            {
+                Bill b = new Bill();
+                b.Bill_ID = txtbox_soHD.Text;
+                b.CustomerID = c.CustomerID;
+                b.CustomerName= c.CustomerName;
+                b.StaffID = txtbox_maNV.Text.Substring(0,5);
+                b.StaffName = txtbox_maNV.Text.Substring(5);
+                b.Bill_Time = datepicker_billtime.SelectedDate.Value;
+                b.Bill_Discount = 0;
+                b.Bill_Total = 180000;
+                b.orders = this.odrs;
+                Xu_Ly_SQL.Insert_Bill(b);
+                foreach(Order o in odrs)
+                {
+                    Xu_Ly_SQL.Insert_Orders(o);
+                }
+                MessageBox.Show("did");
+
+            }
         }
     }
 }

@@ -106,11 +106,11 @@
 
 
 
-        <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+        <Button x:Name="button_quanly" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
                 Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content=" QUẢN LÝ" FontFamily="{StaticResource boldFont}" Margin="56,408,196,224"  Grid.ColumnSpan="2" Click="Button_Click_4"/>
-        <Image Source="/IMAGE/edit-user-256.png" Margin="69,412,138,228" />
+        <Image x:Name="img_quanly"  Source="/IMAGE/edit-user-256.png" Margin="69,412,138,228" />
 
 
 
@@ -122,11 +122,11 @@
 
 
 
-        <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+        <Button x:Name="button_nhaphang" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
                 Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="           NHẬP HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,532,196,100" Click="Button_Click_6" Grid.ColumnSpan="2"/>
-        <Image Source="/IMAGE/add-list-256.png" Margin="69,538,138,102" />
+        <Image x:Name="img_nhaphang" Source="/IMAGE/add-list-256.png" Margin="69,538,138,102" />
 
 
 

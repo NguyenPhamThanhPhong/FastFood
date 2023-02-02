@@ -58,7 +58,7 @@ namespace FastfoodManagementFinal.Models
         }
         public static List<Product> HoaDon_Product(string parameter)
         {
-            string sql = "select * from products where lower(ProductID) + lower(productName) like N'%" + parameter + "%'";
+            string sql = "select * from products where lower(ProductID) + lower(productName) like N'%" + parameter.Trim() + "%'";
             string ID = parameter;
             if(parameter.Length>6)
             {
@@ -92,11 +92,13 @@ namespace FastfoodManagementFinal.Models
         public static Product Find(string parameter)
         {
             Product product = new Product();
-            if (parameter.Length>=5)
+            if (parameter.Length>6)
             {
-                string tempstr = parameter.Substring(0, 5);
+                string strID = parameter.Substring(0, 5);
+                string strName = parameter.Substring(6);
                 SqlConnection con = Xu_Ly_SQL.con;
-                string sql = "select * from products where productID = N'"+tempstr+"'";
+                string sql = "select * from products where productID = N'"+strID.Trim()+"' " +
+                                        "and productName = N'"+strName.Trim()+"'";
                 if (con.State != ConnectionState.Open)
                 {
                     con.Open();
