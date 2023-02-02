@@ -20,7 +20,7 @@ namespace FastfoodManagementFinal
     /// <summary>
     /// Interaction logic for Add_PNH.xaml
     /// </summary>
-    public partial class Add_PNH : Window,INotifyPropertyChanged
+    public partial class Add_PNH : Window, INotifyPropertyChanged
     {
         public Add_PNH()
         {
@@ -28,40 +28,26 @@ namespace FastfoodManagementFinal
             txtbox_maNV.Text = Selected.LoggedIn.StaffID + " " + Selected.LoggedIn.Name;
             txtbox_maImport.Text = Xu_ly_ID.GetImportID();
         }
+        int Total = 0;
         private List<ImportProduct> _imps = new List<ImportProduct>();
-        public  List<ImportProduct> imps 
-        { 
-            get { return _imps;  } 
-            set 
-            { 
-                if(_imps!=value)
+        public List<ImportProduct> imps
+        {
+            get { return _imps; }
+            set
+            {
+                if (_imps != value)
                 {
                     _imps = value;
-                    MessageBox.Show("alskd");
                     OnPropertyChanged("_imps");
-                    OnPropertyChanged("Total");
                 }
-            } 
-        }
-        public string Total
-        {
-            get 
-            {
-                int x = 0;
-                foreach(ImportProduct ip in _imps)
-                {
-                    x += (ip.ImportProductPrice * ip.ImportQuantity);
-                }
-                
-                return x.ToString();
             }
-
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string property)
+        private void OnPropertyChanged(string property)
         {
-            if(PropertyChanged != null)
+            if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
@@ -70,7 +56,7 @@ namespace FastfoodManagementFinal
         private void button_tru_Click(object sender, RoutedEventArgs e)
         {
             int output;
-            if(int.TryParse(txtbox_soluong.Text.Trim(), out output))
+            if (int.TryParse(txtbox_soluong.Text.Trim(), out output))
                 txtbox_soluong.Text = (--output).ToString();
         }
 
@@ -81,19 +67,19 @@ namespace FastfoodManagementFinal
             {
                 txtbox_soluong.Text = (++output).ToString();
             }
-                
+
         }
 
         private void button_them_Click(object sender, RoutedEventArgs e)
         {
-            int outprice,outquantity;
-            
-            if(txtbox_MH.Text.Trim()== string.Empty)
+            int outprice, outquantity;
+
+            if (txtbox_MH.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("vui lòng nhập mặt hàng");
                 return;
             }
-            else if((!int.TryParse(txtbox_dongia.Text.Trim(),out outprice) || outprice<0) 
+            else if ((!int.TryParse(txtbox_dongia.Text.Trim(), out outprice) || outprice < 0)
                 || (!int.TryParse(txtbox_soluong.Text.Trim(), out outquantity) || outquantity < 0))
             {
                 MessageBox.Show("Số lượng hoặc đơn giá ko hợp lệ");
@@ -101,7 +87,7 @@ namespace FastfoodManagementFinal
             }
 
             ImportProduct ip = new ImportProduct();
-            ip.ImportProductID = Xu_ly_ID.GetImportProductID(imps.Count(),txtbox_maImport.Text.Trim());
+            ip.ImportProductID = Xu_ly_ID.GetImportProductID(imps.Count(), txtbox_maImport.Text.Trim());
             ip.ImportID = txtbox_maImport.Text.Trim();
             ip.ImportProductName = txtbox_MH.Text.Trim();
             ip.ImportProductPrice = outprice;
@@ -109,11 +95,13 @@ namespace FastfoodManagementFinal
             ip.Unit = "kg";
             imps.Add(ip);
             listview_show.Items.Refresh();
+            Total += (ip.ImportQuantity * ip.ImportProductPrice);
+            txtblock_total.Text = Total.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(imps.Count <= 0)
+            if (imps.Count <= 0)
             {
                 MessageBox.Show("vui lòng nhập danh sách mặt hàng nhập vào!");
                 return;
@@ -123,13 +111,27 @@ namespace FastfoodManagementFinal
             imp.AdminID = Selected.LoggedIn.StaffID;
             imp.AdminName = Selected.LoggedIn.Name;
             imp.ImportDate = datepicker_billtime.SelectedDate.Value;
-            imp.importProducts= imps;
+            imp.importProducts = imps;
             Xu_Ly_SQL.Insert_Import(imp);
-            foreach(ImportProduct ip in imps)
+            foreach (ImportProduct ip in imps)
             {
                 Xu_Ly_SQL.Insert_ImportProducts(ip);
             }
-            
+            MessageBox.Show("thành công!");
+            txtbox_dongia.Text = "";
+            txtbox_maImport.Text = Xu_ly_ID.GetImportID();
+            txtbox_soluong.Text = "";
+            txtbox_MH.Text = "";
+            imps.Clear();
+            listview_show.Items.Refresh();
+            Total = 0;
+            txtblock_total.Text = "0";
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
+
 }

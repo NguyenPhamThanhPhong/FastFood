@@ -202,7 +202,7 @@ namespace FastfoodManagementFinal.ViewModel
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                string sql = "select * from import where importID = '" + ImportID + "'";
+                string sql = "select * from importproduct where importID = N'" + ImportID + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -238,12 +238,15 @@ namespace FastfoodManagementFinal.ViewModel
                     i.ImportDate = reader.GetDateTime(2);
                     i.importProducts = new List<ImportProduct>();
                     imports.Add(i);
-                }
-                foreach (Import i in imports)
-                {
-                    select_all_Import_Product_specified_ImportID(i.ImportID);
+                    
                 }
                 con.Close();
+                foreach (Import i in imports)
+                {
+                    i.importProducts = select_all_Import_Product_specified_ImportID(i.ImportID);
+                    //MessageBox.Show(i.importProducts.Count.ToString());
+                }
+                
             }
             return imports;
         }
@@ -418,6 +421,7 @@ namespace FastfoodManagementFinal.ViewModel
                 string sql = "select Count(o.orderID) from BILL b inner join ORDERS o on b.BillID = o.Bill_ID  where" +
                     "  DAY(BillDate)=" + DateTime.Today.Day + " and Month(billdate)=" + DateTime.Today.Month + "" +
                     " and YEAR(BillDate)=" + "" + DateTime.Today.Year + "";
+
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())

@@ -26,12 +26,21 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
         }
-        public List<Import> imps { get; set; } = new List<Import> { new Import(),new Import() };
+        public List<Import> imps { get; set; } = Xu_Ly_SQL.Select_all_Import();
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Grid parent = (Grid) VisualTreeHelper.GetParent(e.Source as Button);
+            TextBlock tb = VisualTreeHelper.GetChild(parent, 1) as TextBlock;
+            foreach (Import ip in imps)
+            {
+                if (ip.ImportID == tb.Text)
+                {
+                    ViewPNH f = new ViewPNH(ip);
+                    f.ShowDialog();
+                    break;
+                }
+            }
 
-            ViewPNH viewPNH = new ViewPNH();
-            viewPNH.ShowDialog();
         }
 
 
@@ -46,6 +55,8 @@ namespace FastfoodManagementFinal
         {
             Add_PNH f = new Add_PNH();
             f.ShowDialog();
+            imps = Xu_Ly_SQL.Select_all_Import();
+            listview_show.Items.Refresh();
         }
     }
 }
