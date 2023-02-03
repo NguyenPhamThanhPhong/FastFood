@@ -120,7 +120,7 @@
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
             SelectedIndex="0"
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,233,0" VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" >
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,233,0" VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" SelectionChanged="BoLocComboBox_SelectionChanged" >
             <ComboBoxItem Content="Họ tên"/>
             <ComboBoxItem Content="SĐT"/>
             <ComboBoxItem Content="Giá"/>

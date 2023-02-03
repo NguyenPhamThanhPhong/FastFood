@@ -96,5 +96,12 @@ namespace FastfoodManagementFinal
             string parameter = txtbox_timkiem.Text.Trim();
             load_list(Xu_Ly_SQL.Search_bill_hoten(orderby, parameter));
         }
+
+        private void BoLocComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string orderby = this.FindOrderby();
+            string parameter = txtbox_timkiem.Text.Trim();
+            load_list(Xu_Ly_SQL.Search_bill_hoten(orderby, parameter));
+        }
     }
 }
