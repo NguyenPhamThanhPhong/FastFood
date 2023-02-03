@@ -36,22 +36,28 @@ namespace FastfoodManagementFinal.Models
         }
         public bool IsValid(string price, string quantity)
         {
-            if (this.ProductId == "" || Name == ""|| Product_Type=="")
+            if (Name == ""|| Product_Type=="")
             {
                 MessageBox.Show("Món ăn phải có tên món ăn và loại món ăn!");
                 return false;
             }
-            int try_parse;
-            if(int.TryParse(price,out try_parse)==false||
-                    int.TryParse(quantity,out try_parse)==false)
+            int outprice;
+            int outquantity;
+            if(int.TryParse(price,out outprice)==false|| int.TryParse(quantity,out outquantity)==false)
             {
-                MessageBox.Show("Số lượng sản phẩm và giá sản phẩm phải là số!");
                 return false;
             }
             else 
             {
-                Price = int.Parse(price);
-                Remaining_quantity = int.Parse(quantity);
+                if(outprice>0)
+                    Price = outprice;
+                else
+                    Price = 0;
+                if (outquantity > 0)
+                    Remaining_quantity = outquantity;
+                else
+                    Remaining_quantity = 0;
+                
             }
             
             return true;

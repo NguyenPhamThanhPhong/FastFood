@@ -25,7 +25,6 @@ namespace FastfoodManagementFinal
         public LoginWindow()
         {
             InitializeComponent();
-
         }
         SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=FastFood;Integrated Security=True");
 

@@ -11,6 +11,7 @@ namespace FastfoodManagementFinal.ViewModel
     {
         public static Account LoggedIn { get; set; }
         public static Customer SelectedCustomer { get; set; }
+        public static Product product { get; set; }
 
     }
 }

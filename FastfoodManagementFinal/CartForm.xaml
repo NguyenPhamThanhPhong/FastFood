@@ -39,25 +39,11 @@
                 <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
             </Button.Background>
         </Button>
-        <!--Bộ lọc-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,57,480" RenderTransformOrigin="0.845,0.596"/>
-        <ComboBox
-    
-    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
-    materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
-    IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
-    ItemsSource="{Binding ShortStringList}"
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,233,0" VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" >
-            <ComboBoxItem Content="Họ tên"/>
-            <ComboBoxItem Content="Ngày"/>
-            <ComboBoxItem Content="SĐT"/>
-            <ComboBoxItem Content="Giá"/>
 
-        </ComboBox>
         <!--Tìm kiếm-->
         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="70,76,99,480" RenderTransformOrigin="0.845,0.596" Grid.Column="1"/>
 
-        <TextBox
+        <TextBox x:Name="txtbox_timkiem"
                                 Margin="65,101,333,440"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
@@ -68,7 +54,7 @@
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
-                                BorderThickness="2" CaretBrush="#e6ebf7" Grid.Column="1" Grid.ColumnSpan="2" />
+                                BorderThickness="2" CaretBrush="#e6ebf7" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="TextBox_TextChanged" />
 
         <Image Source="/IMAGE/search-13-48.png" Margin="3,110,345,448" Grid.Column="2" />
 
@@ -125,6 +111,22 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <!--Bộ lọc-->
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,57,480" RenderTransformOrigin="0.845,0.596"/>
+        <ComboBox
+    
+    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
+    IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
+    ItemsSource="{Binding ShortStringList}"
+            SelectedIndex="0"
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,233,0" VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" >
+            <ComboBoxItem Content="Họ tên"/>
+            <ComboBoxItem Content="SĐT"/>
+            <ComboBoxItem Content="Giá"/>
+            <ComboBoxItem Content="Ngày"/>
+
+        </ComboBox>
         <!--<ScrollViewer Margin="0,193,0,15" Grid.ColumnSpan="2">
 
             <Grid>

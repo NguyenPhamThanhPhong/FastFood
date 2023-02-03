@@ -329,8 +329,8 @@ namespace FastfoodManagementFinal.ViewModel
                     b.Bill_Time = reader.GetDateTime(3);
                     b.Bill_Discount = reader.GetInt32(4);
                     b.Bill_Total = reader.GetInt32(5);
-                    b.StaffName = reader.GetString(6);
-                    b.CustomerName = reader.GetString(7);
+                    b.StaffName = reader.GetString(7);
+                    b.CustomerName = reader.GetString(6);
                     b.orders = new List<Order>();
                     bills.Add(b);
                 }
@@ -445,7 +445,7 @@ namespace FastfoodManagementFinal.ViewModel
             sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%') order by "+sort_by+"";
             else
             {
-                sql = "select * from products where ProductType = N'"+product_type+"' and lower(productName) like lower(N'%" + parameter_search + "%') order by " + sort_by + "";
+                sql = "select * from products where lower(ProductType) = lower(N'"+product_type+"') and lower(productName) like lower(N'%" + parameter_search + "%') order by " + sort_by + "";
             }
             if(con.State != ConnectionState.Open)
             {
@@ -715,36 +715,37 @@ namespace FastfoodManagementFinal.ViewModel
                                     "inner join STAFF s on b.StaffID = s.ID";
             if (search_by == "hoten")
             {
-                sql += "where c.fullname = '%" + parameter + "'%";
+                sql += " where lower(c.fullname) like lower(N'%" + parameter + "%')";
             }
             else if (search_by == "sdt")
             {
-                sql += "where c.phone = '%" + parameter + "'%";
+                sql += " where lower(c.phone) like lower(N'%" + parameter + "%')";
             }
-            else if (search_by == "gia_up")
-            {
-                int gia = int.Parse(parameter);
-                sql += "where b.total >= '" + gia + "'";
-            }
-            else if (search_by == "gia_down")
-            {
-                int gia = int.Parse(parameter);
-                sql += "where b.total <= '" + gia + "'";
-            }
-            else if (search_by == "ngay_up")
-            {
-                DateTime d = DateTime.Parse(parameter);
-                sql += "where b.billDate >= '" + d + "'";
-            }
-            else if (search_by == "ngay_up")
-            {
-                DateTime d = DateTime.Parse(parameter);
-                sql += "where b.billDate <= '" + d + "'";
-            }
+            //else if (search_by == "gia_up")
+            //{
+            //    int gia = int.Parse(parameter);
+            //    sql += "where b.total >= '" + gia + "'";
+            //}
+            //else if (search_by == "gia_down")
+            //{
+            //    int gia = int.Parse(parameter);
+            //    sql += "where b.total <= '" + gia + "'";
+            //}
+            //else if (search_by == "ngay_up")
+            //{
+            //    DateTime d = DateTime.Parse(parameter);
+            //    sql += "where b.billDate >= '" + d + "'";
+            //}
+            //else if (search_by == "ngay_up")
+            //{
+            //    DateTime d = DateTime.Parse(parameter);
+            //    sql += "where b.billDate <= '" + d + "'";
+            //}
             List<Bill> bills = new List<Bill>();
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
+                //MessageBox.Show(sql);
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -756,8 +757,9 @@ namespace FastfoodManagementFinal.ViewModel
                     b.Bill_Time = reader.GetDateTime(3);
                     b.Bill_Discount = reader.GetInt32(4);
                     b.Bill_Total = reader.GetInt32(5);
-                    b.StaffName = reader.GetString(6);
-                    b.CustomerName = reader.GetString(7);
+                    
+                    b.CustomerName = reader.GetString(6);
+                    b.StaffName = reader.GetString(7);
                     b.orders = new List<Order>();
                     bills.Add(b);
                 }

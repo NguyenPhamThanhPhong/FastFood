@@ -95,35 +95,24 @@ namespace FastfoodManagementFinal
                 if(new FileInfo(Avatar_path).Exists &&
                         Xu_ly_Anh.GetAnh(Xu_ly_Anh.ProductAvatar,p.Avatar)!=Avatar_path)
                     Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.ProductAvatar, p.Avatar);
-
+                Selected.product= p;
                 this.Close();
             }
         }
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            //if (txt_maSP.Text.Trim() == "" || txt_tenSP.Text.Trim() == "" ||
-            //    txt_loaiSP.Text.Trim() == "" || txt_giaSP.Text.Trim() == "" || txt_SoLuongCon.Text.Trim() == "")
-            //{
-            //    MessageBox.Show("dien day du");
-            //    return;
-            //}
-            //int if_num;
-            //if (Int32.TryParse(txt_giaSP.Text.Trim(), out if_num) == false ||
-            //    Int32.TryParse(txt_SoLuongCon.Text.Trim(), out if_num) == false)
-            //{
-            //    MessageBox.Show("nhap so");
-            //    return;
-            //}
+            
             
             Product p = new Product();
             p.ProductId = txt_maSP.Text.Trim();
             p.Avatar = "";
-            if (Avatar_path.Length != 0)
+            if (Avatar_path.Length > 0)
             {
-                if (!new FileInfo(Avatar_path).Exists)
+                FileInfo f_info = new FileInfo(Avatar_path);
+                if (f_info.Exists)
                 {
-                    p.Avatar = p.ProductId + (new FileInfo(Avatar_path).Extension);
+                    p.Avatar = p.ProductId + ".png";
                 }
             }
             
@@ -136,17 +125,17 @@ namespace FastfoodManagementFinal
             if(p.IsValid(txt_giaSP.Text, txt_SoLuongCon.Text))
             {
                 Xu_Ly_SQL.Insert_Products(p);
-                if (Avatar_path.Length != 0)
+                if (Avatar_path.Length > 0)
                 {
-                    if (!new FileInfo(Avatar_path).Exists)
+                    FileInfo f_info = new FileInfo(Avatar_path);
+                    if (f_info.Exists)
                     {
-                        Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.ProductAvatar, p.Avatar);
+                        Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.ProductAvatar, p.ProductId+".png");
                     }
                 }
                 
                 MessageBox.Show("đã thêm mới");
             }
-            //MessageBox.Show("Thêm mới thất bại!");
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
