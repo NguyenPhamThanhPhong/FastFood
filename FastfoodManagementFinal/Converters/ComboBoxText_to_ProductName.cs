@@ -48,7 +48,7 @@ namespace FastfoodManagementFinal.Converters
             throw new NotImplementedException();
         }
     }
-    public class ComboBoxText_to_ProductQuantity : IValueConverter
+    public class ComboBoxText_to_ProductQuantity : IValueConverter,IMultiValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -59,8 +59,47 @@ namespace FastfoodManagementFinal.Converters
             throw new NotImplementedException();
         }
 
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            //Multi value converter
+            string text = values[0] as string;
+            Product p = Product.Find(text.Trim());
+            
+            if(p.ProductId ==null)
+            {
+                return "";
+            }
+            int display = p.Remaining_quantity;
+
+            string sell = values[1] as string;
+            int outsell = 0;
+            List<Order> odrs = values[2] as List<Order>;
+            
+            foreach (Order o in odrs)
+            {
+                if (o.Order_Product_ID == p.ProductId)
+                {
+                    display -= o.Order_Sell_Quantity;
+                    break;
+                }
+            }
+            
+            if (int.TryParse(sell,out outsell))
+            {
+                display -= outsell;
+            }
+            return display.ToString();
+            throw new NotImplementedException();
+        }
+
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            throw new NotImplementedException();
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            //Multi value converter
             throw new NotImplementedException();
         }
     }

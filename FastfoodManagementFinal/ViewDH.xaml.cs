@@ -68,9 +68,21 @@ namespace FastfoodManagementFinal
         {
             Product p = Product.Find(combobox_SP.Text.Trim());
             int sell_amount;
-            if(!int.TryParse(txtbox_soluong.Text.Trim(), out sell_amount))
+            int left_amount=-1;
+            int.TryParse(txtblock_soluongcon.Text, out left_amount);
+            if (!int.TryParse(txtbox_soluong.Text.Trim(), out sell_amount))
             {
                 MessageBox.Show("vui lòng nhập số lượng");
+                return;
+            }
+            if(sell_amount<0)
+            {
+                MessageBox.Show("Số lượng bán không hợp lệ");
+                return;
+            }
+            if(txtblock_soluongcon.Text == "" || left_amount<0)
+            {
+                MessageBox.Show("vui lòng kiểm tra số sản phẩm còn!");
                 return;
             }
             
@@ -131,7 +143,6 @@ namespace FastfoodManagementFinal
         private void button_thanhtoan_Click(object sender, RoutedEventArgs e)
         {
             Customer c = Customer.FindAbsolute_ID(combobox_KH.Text.Trim());
-            MessageBox.Show(c.CustomerID);
             if(this.odrs.Count<=0)
             {
                 MessageBox.Show("vui lòng nhập order của khách hàng!");
@@ -154,9 +165,60 @@ namespace FastfoodManagementFinal
                 {
                     Xu_Ly_SQL.Insert_Orders(o);
                 }
-                MessageBox.Show("did");
-
+                button_reset_Click(sender, e);
+                Button_Click(sender, e);
             }
+        }
+        private void Button_Delete_Element(object sender, RoutedEventArgs e)
+        {
+            var p = VisualTreeHelper.GetParent(e.Source as Button);
+            TextBlock tt = (TextBlock)VisualTreeHelper.GetChild(p, 1);
+            foreach(Order o in odrs)
+            {
+                if(o.Order_ID.Substring(6)==tt.Text)
+                {
+                    odrs.Remove(o);
+                    ListView_order.Items.Refresh();
+                    return;
+                }
+            }
+
+        }
+
+        private void button_xuatExcel_Click(object sender, RoutedEventArgs e)
+        {
+            Customer c = Customer.FindAbsolute_ID(combobox_KH.Text.Trim());
+            if (this.odrs.Count <= 0)
+            {
+                MessageBox.Show("vui lòng nhập order của khách hàng!");
+                return;
+            }
+            if (c.CustomerID != null)
+            {
+                Bill b = new Bill();
+                b.Bill_ID = txtbox_soHD.Text;
+                b.CustomerID = c.CustomerID;
+                b.CustomerName = c.CustomerName;
+                b.StaffID = txtbox_maNV.Text.Substring(0, 5);
+                b.StaffName = txtbox_maNV.Text.Substring(5);
+                b.Bill_Time = datepicker_billtime.SelectedDate.Value;
+                b.Bill_Discount = 0;
+                b.Bill_Total = 180000;
+                b.orders = this.odrs;
+                Xu_Ly_SQL.Insert_Bill(b);
+                foreach (Order o in odrs)
+                {
+                    Xu_Ly_SQL.Insert_Orders(o);
+                }
+                Xu_ly_excel.Xuat_excel_HoaDon(b);
+                button_reset_Click(sender, e);
+                Button_Click(sender, e);
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
