@@ -57,7 +57,41 @@ namespace FastfoodManagementFinal
             //MessageBox.Show(p.Count.ToString());
         }
         
-
+        private void button_UI_change(object sender, RoutedEventArgs e)
+        {
+            //Button clicked_button = sender as Button;
+            //button_trangchu.Opacity = 1;
+            //button_sanpham.Opacity = 1;
+            //button_donhang.Opacity = 1;
+            //button_khachhang.Opacity = 1;
+            //button_nhaphang.Opacity = 1;
+            //button_quanly.Opacity = 1;
+            //button_nhaphang.Opacity = 1;
+            //if(clicked_button==button_trangchu)
+            //{
+            //    button_trangchu.Opacity = 0.5;
+            //}
+            //else if (clicked_button == button_trangchu)
+            //{
+            //    button_trangchu.Opacity = 0.5;
+            //}
+            //else if (clicked_button == button_trangchu)
+            //{
+            //    button_trangchu.Opacity = 0.5;
+            //}
+            //else if (clicked_button == button_trangchu)
+            //{
+            //    button_trangchu.Opacity = 0.5;
+            //}
+            //else if (clicked_button == button_trangchu)
+            //{
+            //    button_trangchu.Opacity = 0.5;
+            //}
+            //else if (clicked_button == button_trangchu)
+            //{
+            //    button_trangchu.Opacity = 0.5;
+            //}
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
