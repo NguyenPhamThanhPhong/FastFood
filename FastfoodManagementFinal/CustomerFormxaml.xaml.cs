@@ -92,6 +92,26 @@ namespace FastfoodManagementFinal
         {
             InfoCustomer f = new InfoCustomer();
             f.ShowDialog();
+            if (BoLocComboBox.SelectedIndex == 0 || BoLocComboBox.SelectedIndex == 1)
+            {
+                List<Customer> lst_cus = Xu_Ly_SQL.Search_customer("fullname", textbox_timkiem.Text);
+                customers.Clear();
+                foreach (Customer c in lst_cus)
+                {
+                    customers.Add(c);
+                }
+                listview_show.Items.Refresh();
+            }
+            else if (BoLocComboBox.SelectedIndex == 2)
+            {
+                List<Customer> lst_cus = Xu_Ly_SQL.Search_customer("phone", textbox_timkiem.Text);
+                customers.Clear();
+                foreach (Customer c in lst_cus)
+                {
+                    customers.Add(c);
+                }
+                listview_show.Items.Refresh();
+            }
         }
 
         private void BoLocComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

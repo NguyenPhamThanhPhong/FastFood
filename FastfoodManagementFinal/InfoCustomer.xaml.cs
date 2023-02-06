@@ -30,6 +30,7 @@ namespace FastfoodManagementFinal
             button_capnhat.IsEnabled = false;
             txtbox_doanhso.IsEnabled = false;
             txtbox_doanhso.Text = "0";
+            txtbox_maKH.Text = Xu_ly_ID.GetCustomerID();
         }
         public InfoCustomer(Customer c)
         {
@@ -88,6 +89,7 @@ namespace FastfoodManagementFinal
                 c.Address = txtbox_diachi.Text;
                 c.CustomerBills = new List<Bill>();
                 Xu_Ly_SQL.Insert_Customers(c);
+                this.Close();
             }
         }
         private void Button_capnhat_Click(object sender, RoutedEventArgs e)

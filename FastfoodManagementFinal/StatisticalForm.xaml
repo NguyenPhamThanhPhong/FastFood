@@ -15,12 +15,7 @@
         <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="THỐNG KÊ" Margin="39,16,497,512" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="THỐNG KÊ" Margin="38,18,485,513" RenderTransformOrigin="0.845,0.596"/>
 
-        <Button HorizontalAlignment="Left" Margin="735,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B">
-            <Button.Background>
-                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
-            </Button.Background>
-            <Button Content="Button"/>
-        </Button>
+        
          <Button HorizontalAlignment="Left" Margin="670,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/IMAGE/settings-6-128.png"/>

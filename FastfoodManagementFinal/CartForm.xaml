@@ -21,12 +21,7 @@
 
         <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="ĐƠN HÀNG" Margin="40,16,116,507" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="ĐƠN HÀNG" Margin="38,18,116,508" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"/>
-        <Button HorizontalAlignment="Left" Margin="342,9,0,0" VerticalAlignment="Top" Height="19" Width="19" BorderBrush="#00711B1B" Grid.Column="2">
-            <Button.Background>
-                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
-            </Button.Background>
-            <Button Content="Button"/>
-        </Button>
+
 
         <Button HorizontalAlignment="Left" Margin="277,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click" Grid.Column="2">
             <Button.Background>

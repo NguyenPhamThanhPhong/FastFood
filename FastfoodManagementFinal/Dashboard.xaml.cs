@@ -137,5 +137,15 @@ namespace FastfoodManagementFinal
             PagesNavigation.Navigate(new System.Uri("ManageForm.xaml", UriKind.RelativeOrAbsolute));
 
         }
+
+        private void Button_setting_click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

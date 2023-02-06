@@ -33,7 +33,7 @@
 
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="131,58,238,365" Text="Mã KH"/>
-        <TextBox
+        <TextBox 
                                 x:Name="txtbox_maKH"
                                 Height="34"
                                 Margin="126,79,182,0"
@@ -42,6 +42,7 @@
                                 Foreground="Black"
                                 FontFamily="{StaticResource mainFont}"
                                 FontSize="12"
+                                IsEnabled="False"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"

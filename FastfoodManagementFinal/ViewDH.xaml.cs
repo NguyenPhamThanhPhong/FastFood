@@ -96,12 +96,19 @@ namespace FastfoodManagementFinal
                         oo.Order_Sell_Quantity += sell_amount;
                         oo.Order_Total += (sell_amount * p.Price * (1 - oo.Order_Discount));
                         ListView_order.Items.Refresh();
+
+                        string current = txtbox_soluong.Text;
+                        txtbox_soluong.Text = "";
+                        txtbox_soluong.Text = current;
                         return;
                     }
                 }
                 Order o = new Order(txtbox_soHD.Text.Trim(),odrs.Count,p,sell_amount);
                 odrs.Add(o);
                 ListView_order.Items.Refresh();
+                string currenttxt = txtbox_soluong.Text;
+                txtbox_soluong.Text = "";
+                txtbox_soluong.Text = currenttxt;
             }
         }
 
