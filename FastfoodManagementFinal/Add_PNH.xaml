@@ -96,13 +96,13 @@
                                 Margin="80,83,315,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
+                                Foreground="#9B9CA3"
                                 FontFamily="{StaticResource mainFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -114,13 +114,13 @@
                                 Margin="282,83,75,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" RenderTransformOrigin="0.5,0.5" >
         </TextBox>
@@ -137,13 +137,13 @@
                                 Margin="304,139,206,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" RenderTransformOrigin="0.5,0.5" >
         </TextBox>
@@ -160,13 +160,13 @@
                                 Margin="409,139,75,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
+                                Foreground="#9B9CA3"
                                 FontFamily="{StaticResource mainFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" RenderTransformOrigin="0.5,0.5" >
         </TextBox>
@@ -185,13 +185,13 @@
                                 Margin="80,194,315,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -234,7 +234,7 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            
+
         </ListView>
         <!--<ScrollViewer Grid.ColumnSpan="2" Margin="70,270,55,80" >
             <Grid>
@@ -318,7 +318,8 @@
                 </Grid>
 
 
-                --><!--<Border CornerRadius="1" Height="18" Width="410" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="4,1,1,1" Grid.Row="2"/>
+                -->
+        <!--<Border CornerRadius="1" Height="18" Width="410" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="4,1,1,1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="21,4,384,6" Text="1" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="65,4,298,1" Text="Gia vị" Grid.Row="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="142,4,221,6" Text="45.000" Grid.Row="2"/>
@@ -337,7 +338,8 @@
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="65,6,298,2" Text="Khoai tây" Grid.Row="6" Grid.RowSpan="2"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="142,6,221,4" Text="45.000" Grid.Row="6"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="248,6,145,4" Text="1" Grid.Row="6"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,6,37,4" Text="45.000" Grid.Row="6"/>--><!--
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,6,37,4" Text="45.000" Grid.Row="6"/>-->
+        <!--
 
             </Grid>
 

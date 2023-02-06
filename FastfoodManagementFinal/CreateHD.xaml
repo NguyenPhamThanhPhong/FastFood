@@ -43,13 +43,13 @@
                                 Margin="92,83,196,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -60,21 +60,37 @@
                                 Margin="312,83,89,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.ColumnSpan="2" />
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="94,120,315,301" Text="Thời gian"/>
+        <TextBox
+                            
+                                Height="30"
+                                Margin="92,139,196,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="12"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
         <DatePicker x:Name="datepicker_NgaySinh"
                     Background="White"
-            Margin="94,139,196,0" 
+            Margin="105,142,207,0"  FontFamily="{StaticResource boldFont}" FontSize="12" Foreground="#9B9CA3"
             VerticalAlignment="Top" 
-            Height="24" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged">
+            Height="23" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" BorderBrush="White">
         </DatePicker>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="315,120,108,305" Text="Số HD"/>
@@ -84,13 +100,13 @@
                                 Margin="312,139,73,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
+                                Foreground="#9B9CA3"
                                 FontFamily="{StaticResource mainFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -101,13 +117,13 @@
                                 Margin="409,139,89,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
+                                Foreground="#9B9CA3"
                                 FontFamily="{StaticResource mainFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.ColumnSpan="2" />
 

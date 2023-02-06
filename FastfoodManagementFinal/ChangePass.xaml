@@ -23,20 +23,20 @@
         <Image Source="/IMAGE/Đổi MK.png" Margin="-17,-4,-17,-9" Grid.RowSpan="2" />
 
 
-        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="21" Text="ĐỔI MẬT KHẨU" Margin="59,20,51,20"/>
+        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="23" Text="ĐỔI MẬT KHẨU" Margin="59,15,51,25"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="34,57,136,321" Text="Nhập mật khẩu cũ" Grid.RowSpan="2"/>
         <TextBox
                                 Height="35"
                                 Margin="28,7,33,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,2,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.Row="1" />
 
@@ -47,13 +47,13 @@
                                 Margin="30,105,31,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,2,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.Row="1" />
 
@@ -63,13 +63,13 @@
                                 Margin="30,183,31,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,2,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.Row="1" />
 

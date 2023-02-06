@@ -34,13 +34,13 @@
                                 Margin="191,99,185,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -52,13 +52,13 @@
                                 Margin="333,99,43,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -70,13 +70,13 @@
                                 Margin="191,159,185,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -88,13 +88,13 @@
                                 Margin="333,159,43,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,1.5,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
@@ -106,8 +106,8 @@
                                 Margin="333,215,43,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
@@ -124,8 +124,8 @@
                                 Margin="191,215,185,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
@@ -140,7 +140,7 @@
                 Background="#FF6633" FontSize="18" Content="THÊM" FontFamily="{StaticResource boldFont}" Margin="194,272,186,86" Click="loginBtn_Click"/>
         <Button x:Name="button_capnhat" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#F87D32"
-                Background="#FF6633" FontSize="18" Content="Cập nhật" FontFamily="{StaticResource boldFont}" Margin="194,272,186,86" Click="Button_Capnhat_Click"/>
+                Background="#FF6633" FontSize="17" Content="CẬP NHẬT" FontFamily="{StaticResource boldFont}" Margin="194,272,186,86" Click="Button_Capnhat_Click"/>
     </Grid>
 </Window>
 

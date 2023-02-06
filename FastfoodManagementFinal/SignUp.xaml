@@ -41,9 +41,9 @@
                                 Margin="175,90,210,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -60,9 +60,9 @@
                                 Margin="350,90,35,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -89,10 +89,21 @@
                    FontSize="13" Margin="170,157,263,243" Checked="radio_button_quanly_Checked" BorderBrush="#FFFF6633" Background="#FFFF6633">
             Nhân viên
         </RadioButton>
-        <DatePicker x:Name="datepicker_NgaySinh"
-            Margin="178,271,210,0" 
-            VerticalAlignment="Top" 
-            Height="24" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" SelectedDateFormat="Short" />
+
+        <TextBox
+        
+                                Width="155"
+                                Margin="175,209,210,179"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
+                                BorderThickness="2" CaretBrush="Gray" />
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" 
                    FontSize="13" Margin="355,129,119,271" Text="Key"/>
@@ -104,9 +115,9 @@
             Margin="351,148,34,0"
             BorderBrush="#e6ebf7"
             Background="White"
-            Foreground="Black"
-            FontFamily="{StaticResource mainFont}"
-            FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+           FontSize="11"
             
             materialDesign:HintAssist.Foreground="White"
             materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
@@ -120,7 +131,7 @@
         <TextBox
             x:Name="txtĐK_Name"
                                 Width="155"
-                                Margin="175,209,210,179"
+                                Margin="175,268,210,120"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -132,6 +143,12 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
                                 BorderThickness="2" CaretBrush="Gray" />
 
+        <DatePicker x:Name="datepicker_NgaySinh"
+                    FontSize="11"                                Foreground="#9B9CA3"
+            FontFamily="{StaticResource boldFont}"            Margin="180,273,218,0" 
+            VerticalAlignment="Top" 
+            Height="23" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" SelectedDateFormat="Short" BorderBrush="White" />
+
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="355,189,122,211" Text="Giới tính"/>
         <TextBox
@@ -141,9 +158,9 @@
                                 Margin="350,209,35,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -164,9 +181,9 @@
                                 Margin="350,268,35,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -183,9 +200,9 @@
                                 Margin="175,322,210,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -202,9 +219,9 @@
                                 Margin="350,322,35,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
-                                Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
-                                FontSize="12"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="11"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"

@@ -26,7 +26,7 @@
         <materialDesign:Card UniformCornerRadius="20" materialDesign:ShadowAssist.ShadowDepth="Depth2"  Background="#FFF9F5" Margin="25,25,25,25" Grid.RowSpan="4" Grid.ColumnSpan="2">
             <Image Source="/IMAGE/LOGIN.png" Margin="500,23,-2,11"/>
         </materialDesign:Card>
-        <Button  HorizontalAlignment="Left" Margin="467,34,0,0" VerticalAlignment="Top" Height="31" Width="32" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Grid.Column="1">
+        <Button  HorizontalAlignment="Left" Margin="461,37,0,0" VerticalAlignment="Top" Height="31" Width="32" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>
@@ -44,12 +44,12 @@
 
         <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="35" Margin="112,98,528,-101" Grid.RowSpan="4" Grid.ColumnSpan="2"><Run Text="PHẦN MỀM "/><LineBreak/><Run Text="QUẢN LÝ BÁN HÀNG"/></TextBlock>
         <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="112,11,-112,-222" Text="EMAIL:" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <TextBox Margin="112,45,84,334" x:Name="txtEmail" FontSize="20" FontFamily="{StaticResource mainFont}"
-                 materialDesign:HintAssist.Hint="Email" BorderThickness="1" Background="#FFFFFF"
+        <TextBox Margin="112,45,84,334" x:Name="txtEmail" FontSize="20" FontFamily="{StaticResource boldFont}"
+                 BorderThickness="1" Background="#FFFFFF"
                  BorderBrush="#C0C6E2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="2" Grid.RowSpan="2" KeyDown="txtEmail_KeyDown"/>
         <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="112,79,-112,-350" Text="MẬT KHẨU:" Grid.Row="3" Grid.ColumnSpan="2"/>
         <TextBox Margin="112,115,84,204" x:Name="txtPass" FontSize="20" FontFamily="{StaticResource mainFont}"
-                 materialDesign:HintAssist.Hint="Mật khẩu" BorderThickness="1" Background="#FFFFFF"
+                 BorderThickness="1" Background="#FFFFFF"
                  BorderBrush="#C0C6E2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="3"/>
 
         <Button x:Name="loginBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" 

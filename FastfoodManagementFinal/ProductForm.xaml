@@ -33,7 +33,9 @@
         </Style>
 
         <Style x:Key="image_food" TargetType="Image">
-            --><!--<Setter Property="Source" Value="/IMAGE/burger_bulgogi-burger.png"></Setter>--><!--
+            -->
+        <!--<Setter Property="Source" Value="/IMAGE/burger_bulgogi-burger.png"></Setter>-->
+        <!--
             <Setter Property="Margin" Value="22,17,24,80"></Setter>
         </Style>
         <Style x:Key="image_price" TargetType="Image">
@@ -81,32 +83,19 @@
     <Grid  Height="580" Width="765">
 
 
-        <Grid Height="140" Margin="0,0,0,440">
+        <Grid Margin="0,0,0,435">
             <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="SẢN PHẨM" Margin="40,17,485,67" RenderTransformOrigin="0.845,0.596"/>
             <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="SẢN PHẨM" Margin="38,18,492,67" RenderTransformOrigin="0.845,0.596"/>
-            
-
-            <Button HorizontalAlignment="Left" Margin="670,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="/IMAGE/settings-6-128.png"/>
-                </Button.Background>
-            </Button>
-
-            <Button HorizontalAlignment="Left" Margin="613,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B">
-                <Button.Background>
-                    <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
-                </Button.Background>
-            </Button>
 
             <!--Bộ lọc-->
-            <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Loại" Margin="52,76,669,41" RenderTransformOrigin="0.845,0.596"/>
+            <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Loại" Margin="52,76,669,41" RenderTransformOrigin="0.845,0.596"/>
             <ComboBox
             Text="Tất cả"
-    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="2" BorderBrush="#e6ebf7" Background="#FFFFFF"
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" SelectionChanged="BoLocComboBox_SelectionChanged" >
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="42" SelectionChanged="BoLocComboBox_SelectionChanged" >
                 <ComboBoxItem Content="Tất cả"/>
                 <!--<ComboBoxItem Content="Burger"/>
                 <ComboBoxItem Content="Cơm - Mỳ ý"/>
@@ -115,14 +104,15 @@
                 <ComboBoxItem Content="Thức uống"/>-->
             </ComboBox>
 
-            
+
 
             <!--Tìm kiếm-->
-            <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="349,76,347,41" RenderTransformOrigin="0.845,0.596"/>
+            <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="349,76,347,41" RenderTransformOrigin="0.845,0.596"/>
 
             <TextBox
+                Height="42"
                                 x:Name="txtbox_timkiem"
-                                Margin="340,101,213,0"
+                                Margin="340,100,213,3"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -133,8 +123,8 @@
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
                                 BorderThickness="2" CaretBrush="#e6ebf7" TextChanged="TextBox_TextChanged" />
+            <Image Source="/IMAGE/search-13-64.png" Margin="504,111,209,11" />
 
-            <Image Source="/IMAGE/search-13-48.png" Margin="516,111,225,9" />
 
             <Button x:Name="button_them" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
@@ -164,46 +154,46 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
-                <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
-                <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
-                <Image Source="{Binding Avatar,Converter={StaticResource toAvatar},IsAsync=True}" Margin="22,17,24,80" ButtonBase.Click="Button_view_ChiTiet" />
-                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="36,109,24,60" Text="{Binding Name}"/>
-                <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="31,141,84,29" Text="{Binding Price}">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
-                    </TextBlock.Background>
-                </TextBlock>
-                <Image Visibility="{Binding Remaining_quantity,Converter={StaticResource toVisible}}" Source="/IMAGE/hethang.png" Margin="-21,-17,12,-1" RenderTransformOrigin="0.505,0.514">
+                        <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
+                        <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
+                        <Image Source="{Binding Avatar,Converter={StaticResource toAvatar},IsAsync=True}" Margin="22,17,24,80" ButtonBase.Click="Button_view_ChiTiet" />
+                        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="36,109,24,60" Text="{Binding Name}"/>
+                        <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="31,141,84,29" Text="{Binding Price}">
+                            <TextBlock.Background>
+                                <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+                        <Image Visibility="{Binding Remaining_quantity,Converter={StaticResource toVisible}}" Source="/IMAGE/hethang.png" Margin="-21,-17,12,-1" RenderTransformOrigin="0.505,0.514">
 
-                </Image>
-                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                        </Image>
+                        <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
                 Width="46" Height="22" BorderBrush="#F87D32"
                         Padding="-1"
                 Background="#F87D32" Margin="88,140,31,28" RenderTransformOrigin="0.397,0.938"
                         Click="Button_view_ChiTiet">
-                    <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Text="Chi tiết" Width="31" >
-                        
-                    </TextBlock>
-                </Button>
-                
+                            <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Text="Chi tiết" Width="31" >
+
+                            </TextBlock>
+                        </Button>
+
 
                     </Grid>
                 </DataTemplate>
-                
+
             </ListView.ItemTemplate>
 
         </ListView>
         <!--Sắp xếp-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Sắp xếp" Margin="198,76,504,46" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Sắp xếp" Margin="198,76,504,46" RenderTransformOrigin="0.845,0.596"/>
         <ComboBox
-    
-    x:Name="SapXepComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    Height="42"
+    x:Name="SapXepComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="2" BorderBrush="#e6ebf7" Background="#FFFFFF"
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
                 
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="193,100,461,440" VerticalAlignment="Stretch" SelectionChanged="SapXepComboBox_SelectionChanged" >
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="193,100,461,438" VerticalAlignment="Stretch" SelectionChanged="SapXepComboBox_SelectionChanged" >
             <ComboBoxItem Content="Tên"/>
             <ComboBoxItem Content="Giá"/>
             <ComboBoxItem Content="Số lượng"/>
@@ -253,14 +243,15 @@
                 </Button>
 
             </Grid> -->
-        
-        
+
+
         <!--<ScrollViewer Margin="0,153,0,7">
             <StackPanel x:Name="stack_panel_food" Orientation="Vertical">
                 
             </StackPanel>
             
-            --><!--<Grid x:Name="tong">
+            -->
+        <!--<Grid x:Name="tong">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30"/>
                     <ColumnDefinition Width="170"/>
@@ -282,7 +273,8 @@
                 </Grid.RowDefinitions>
                 
 
-                --><!--<Grid x:Name="grid_product" Height="190" Width="165" Margin="0,3,5,7" Grid.Column="1">
+                -->
+        <!--<Grid x:Name="grid_product" Height="190" Width="165" Margin="0,3,5,7" Grid.Column="1">
                     <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
                     <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
                     <Image Source="/IMAGE/burger_bulgogi-burger.png" Margin="22,17,24,80" />
@@ -295,7 +287,8 @@
                 Background="#F87D32" Margin="86,140,33,28" RenderTransformOrigin="0.397,0.938"/>
                     <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="94,145,37,32" Text="chi tiết"/>-->
 
-                <!--</Grid>--><!--
+        <!--</Grid>-->
+        <!--
 
                 <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
                     <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
@@ -313,7 +306,7 @@
                 </Grid>-->
 
 
-                <!--<Grid Height="190" Width="165" Margin="2,3,3,7" Grid.Column="2">
+        <!--<Grid Height="190" Width="165" Margin="2,3,3,7" Grid.Column="2">
                     <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
                     <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
                     <Image Source="/MON_AN/BURGER/burger_shrimp-burger_1.png" Margin="22,17,24,80" />
@@ -486,7 +479,8 @@
 
 
 
-            <!--</Grid>--><!--
+        <!--</Grid>-->
+        <!--
 
         </ScrollViewer>-->
 

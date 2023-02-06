@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FastfoodManagementFinal"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Height="250" 
-        Width="290"
+        Height="400" 
+        Width="440"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -20,17 +20,17 @@
             <RowDefinition Height="102*"/>
         </Grid.RowDefinitions>
         <materialDesign:Card UniformCornerRadius="5" materialDesign:ShadowAssist.ShadowDepth="Depth2"  Background="White" Margin="25,25,25,25" Grid.RowSpan="2"/>
-        <Button HorizontalAlignment="Left" Margin="243,28,0,0" VerticalAlignment="Top" Height="16" Width="18" BorderBrush="#00711B1B" RenderTransformOrigin="-0.315,0.646">
+        <Button HorizontalAlignment="Left" Margin="382,33,0,0" VerticalAlignment="Top" Height="22" Width="25" BorderBrush="#00711B1B" RenderTransformOrigin="-0.315,0.646">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>
             <Button Content="Button"/>
         </Button>
-        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="21" Text="QUÊN MẬT KHẨU" Margin="56,36,-56,-36" Grid.RowSpan="2"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="41,39,-41,-296" Text="Tên đăng nhập" Grid.Row="1"/>
+        <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="34" Text="QUÊN MẬT KHẨU" Margin="68,42,81,309" Grid.RowSpan="2"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="21" Margin="40,47,0,248" Text="Tên đăng nhập" Grid.Row="1" HorizontalAlignment="Left" Width="285"/>
         <TextBox
-                                Height="33"
-                                Margin="40,65,41,0"
+                                Height="60"
+                                Margin="40,89,41,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -39,14 +39,15 @@
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,9,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.Row="1" />
         <!--Btn QUÊN MK-->
         <Button x:Name="QMK_Btn" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth0"
-                Background="#FF6633" BorderBrush="#FF6633" BorderThickness="1" Margin="39,125,37,47"
-                FontSize="15" Content="LẤY LẠI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Grid.Row="1"/>
+                Height="65"
+                Background="#FF6633" BorderBrush="#FF6633" BorderThickness="1" Margin="39,194,37,67"
+                FontSize="24" Content="LẤY LẠI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Grid.Row="1"/>
 
     </Grid>
 </Window>
