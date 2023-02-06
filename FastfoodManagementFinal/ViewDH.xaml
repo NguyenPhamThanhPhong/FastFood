@@ -329,11 +329,11 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            
-            
+
+
         </ListView>
-        
-        
+
+
         <!--<Grid  Margin="4,0,1,0" Grid.Row="0">
 
                 <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
