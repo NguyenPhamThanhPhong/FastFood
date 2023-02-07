@@ -46,7 +46,7 @@ namespace FastfoodManagementFinal.ViewModel
                     con.Open();
                     string sql = "insert into customers (customerID, fullname, sex, phone, total, customerRank, customerAddress)" +
                         "values ('" + c.CustomerID + "',N'" + c.CustomerName + "',N'" + c.CustomerSex + "'," +
-                        "'" + c.CustomerPhone + "','" + c.CustomerTotal + "',N'" + c.CustomerRank + "',N'" + c.Address + "')";
+                        "'" + c.CustomerPhone + "','" + c.CustomerTotal + "',N'" + c.CustomerRank + "',N'" + c.Address + "', 1 )";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -176,7 +176,7 @@ namespace FastfoodManagementFinal.ViewModel
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                string sql = "select * from customers order by customerID asc ";
+                string sql = "select * from customers where avail = 1 order by customerID asc ";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -494,7 +494,7 @@ namespace FastfoodManagementFinal.ViewModel
         {
             List<Customer> customers = new List<Customer>();
             string sql = "select * from customers " +
-                "where lower(" + search_by + ") like lower(N'%" + parameter + "%')";
+                "where lower(" + search_by + ") like lower(N'%" + parameter + "%') and avail = 1";
             //if (search_by!=""&&search_by!="Tất cả")
             //{
             //    sql = "select * from customers " +
@@ -555,7 +555,7 @@ namespace FastfoodManagementFinal.ViewModel
                 if (con.State != ConnectionState.Open)
                 {
                     con.Open();
-                    string sql = "delete customers where customerID = '" + customerID + "'";
+                    string sql = "update customers set avail = 0 where customerID = '" + customerID + "'";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
