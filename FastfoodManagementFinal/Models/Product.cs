@@ -41,6 +41,7 @@ namespace FastfoodManagementFinal.Models
                 MessageBox.Show("Món ăn phải có tên món ăn và loại món ăn!");
                 return false;
             }
+            
             int outprice;
             int outquantity;
             if(int.TryParse(price,out outprice)==false|| int.TryParse(quantity,out outquantity)==false)
@@ -144,5 +145,6 @@ namespace FastfoodManagementFinal.Models
         public int Remaining_quantity { get; set; }
         public string description { get; set; }
         public string Avatar { get; set; }
+        public bool Avail { get; set; }
     }
 }

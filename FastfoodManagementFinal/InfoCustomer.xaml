@@ -35,6 +35,7 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="131,58,238,365" Text="Mã KH"/>
         <TextBox 
                                 x:Name="txtbox_maKH"
+                        
                                 Height="34"
                                 Margin="126,79,182,0"
                                 BorderBrush="#e6ebf7"
@@ -124,6 +125,7 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="307,204,102,217" Text="Cấp bậc"/>
         <TextBox
                                 x:Name="txtbox_capbac"
+                                IsEnabled="False"
                                 Height="34"
                                 Margin="300,223,8,0"
                                 BorderBrush="#e6ebf7"

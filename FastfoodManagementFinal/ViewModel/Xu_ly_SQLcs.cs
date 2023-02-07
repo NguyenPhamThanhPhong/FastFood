@@ -121,7 +121,7 @@ namespace FastfoodManagementFinal.ViewModel
                 con.Open();
                 string sql = "insert into products " +
                     "values ('" + p.ProductId + "',N'" + p.Name + "',N'" + p.Product_Type + "'," +
-                    "'" + p.Price + "','" + p.Remaining_quantity + "',N'" + p.description + "',N'" + p.Avatar + "')";
+                    "'" + p.Price + "','" + p.Remaining_quantity + "',N'" + p.description + "',N'" + p.Avatar + "',1)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -257,7 +257,7 @@ namespace FastfoodManagementFinal.ViewModel
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                string sql = "select * from Products";
+                string sql = "select * from Products where avail = 1";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -270,6 +270,7 @@ namespace FastfoodManagementFinal.ViewModel
                     product.Remaining_quantity = reader.GetInt32(4);
                     product.description = reader.GetString(5);
                     product.Avatar = reader.GetString(6);
+                    product.Avail = reader.GetBoolean(7);
                     p.Add(product);
                 }
                 con.Close();
@@ -440,12 +441,12 @@ namespace FastfoodManagementFinal.ViewModel
             // sort_by: product.name hoặc product.price??
             // vd: ProductPrice asc, ProductPrice dsc, ProductName
             List<Product> p = new List<Product>();
-            string sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%')";
+            string sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%') and avail = 1";
             if ( product_type == "Tất cả" || product_type =="")
-            sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%') order by "+sort_by+"";
+            sql = "select * from products where lower(productName) like lower(N'%"+parameter_search+"%') and avail = 1 order by "+sort_by+"";
             else
             {
-                sql = "select * from products where lower(ProductType) = lower(N'"+product_type+"') and lower(productName) like lower(N'%" + parameter_search + "%') order by " + sort_by + "";
+                sql = "select * from products where lower(ProductType) = lower(N'"+product_type+"') and lower(productName) like lower(N'%" + parameter_search + "%') and avail = 1 order by " + sort_by + "";
             }
             if(con.State != ConnectionState.Open)
             {
@@ -471,7 +472,7 @@ namespace FastfoodManagementFinal.ViewModel
         public static List<string> Select_distinct_ProductType()
         {
             List<string> p_type = new List<string>();
-            string sql = "select distinct lower(productType) from products";
+            string sql = "select distinct lower(productType) from products where avail = 1";
             
             if(con.State != ConnectionState.Open)
             {
@@ -546,6 +547,7 @@ namespace FastfoodManagementFinal.ViewModel
             }
 
         }
+
         public static bool Delete_customer(string customerID) 
         {
             try
@@ -594,6 +596,31 @@ namespace FastfoodManagementFinal.ViewModel
                 return;
             }
 
+        }
+        public static bool Delete_product(string ID)
+        {
+            string sql = " update PRODUCTS set avail= 0 where ProductID = '" + ID + "' ";
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    int check = cmd.ExecuteNonQuery();
+                    if (check == 1)
+                    {
+                        con.Close();
+                        return true;
+                    }
+                    con.Close();
+                }
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("xóa thất bại!");
+                return false;
+            }
         }
         public static bool Delete_Staff(string ID)
         {

@@ -30,6 +30,9 @@ namespace FastfoodManagementFinal
             txt_maSP.Text = Xu_ly_ID.GetProductID();
             button_capnhat.IsEnabled= false;
             button_capnhat.Visibility = Visibility.Hidden;
+
+            button_xoa.Visibility = Visibility.Hidden;
+
         }
         public NewProduct(Product p)
         {
@@ -64,9 +67,6 @@ namespace FastfoodManagementFinal
             {
 
             }
-            
-
-            
         }
         private string Avatar_path="";
         private void Button_Capnhat_Click(object sender, RoutedEventArgs e)
@@ -85,7 +85,9 @@ namespace FastfoodManagementFinal
 
             p.Product_Type = txt_loaiSP.Text.Trim();
             p.description = txt_description.Text.Trim();
+            p.Avail = true;
             p.IsValid(txt_giaSP.Text, txt_SoLuongCon.Text);
+
 
             //List<Process> p1 = FileUtil.WhoIsLocking(Xu_ly_Anh.GetAnh(Xu_ly_Anh.ProductAvatar, "SP002.png"));
             //MessageBox.Show(p1.Count.ToString());
@@ -101,9 +103,6 @@ namespace FastfoodManagementFinal
         }
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            
-            
             Product p = new Product();
             p.ProductId = txt_maSP.Text.Trim();
             p.Avatar = "";
@@ -119,10 +118,20 @@ namespace FastfoodManagementFinal
 
             p.Name = txt_tenSP.Text.Trim();
 
-            
             p.Product_Type = txt_loaiSP.Text.Trim();
             p.description = txt_description.Text.Trim();
-            if(p.IsValid(txt_giaSP.Text, txt_SoLuongCon.Text))
+
+            List<Product> pdrs = Xu_Ly_SQL.Select_all_product();
+            foreach (Product pp in pdrs)
+            {
+                if (pp.Name == p.Name)
+                {
+                    MessageBox.Show("Tên đã tồn tại");
+                    return;
+                }
+            }
+
+            if (p.IsValid(txt_giaSP.Text, txt_SoLuongCon.Text))
             {
                 Xu_Ly_SQL.Insert_Products(p);
                 if (Avatar_path.Length > 0)
@@ -170,6 +179,14 @@ namespace FastfoodManagementFinal
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void button_Xoa_Click(object sender, RoutedEventArgs e)
+        {
+            if(Xu_Ly_SQL.Delete_product(txt_maSP.Text.Trim()))
+                MessageBox.Show("xóa thành công");
+
             this.Close();
         }
     }

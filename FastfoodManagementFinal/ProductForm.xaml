@@ -192,7 +192,7 @@
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
-                
+         SelectedIndex="0"       
     Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="193,100,461,438" VerticalAlignment="Stretch" SelectionChanged="SapXepComboBox_SelectionChanged" >
             <ComboBoxItem Content="Tên"/>
             <ComboBoxItem Content="Giá"/>

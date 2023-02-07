@@ -38,7 +38,7 @@ namespace FastfoodManagementFinal
             //Load_Stuff();
             //MessageBox.Show(pros.Count.ToString());
         }
-        public ObservableCollection<Product> pros { get; set; } = new ObservableCollection<Product>(Xu_Ly_SQL.Select_all_product());
+        public ObservableCollection<Product> pros { get; set; } = new ObservableCollection<Product>(new List<Product>());
         private void Load_Stuff(List<Product> pp)
         {
             List<string> str = Xu_Ly_SQL.Select_distinct_ProductType();
@@ -49,6 +49,7 @@ namespace FastfoodManagementFinal
                 cbi.Content = s;
                 BoLocComboBox.Items.Add(cbi);
             }
+
             pros.Clear();
             foreach (Product p in pp)
             {
@@ -120,16 +121,28 @@ namespace FastfoodManagementFinal
                         string order_by = Find_orderby();
                         load_list(Xu_Ly_SQL.Search_Product(BoLocComboBox.Text,
                             order_by, txtbox_timkiem.Text));
+                        
                     }
                     break;
                 }
             }
         }
+        //button them SP
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NewProduct NewProduct = new NewProduct();
             NewProduct.ShowDialog();
-            Load_Stuff(Xu_Ly_SQL.Select_all_product());
+            string order_by = Find_orderby();
+            string current = BoLocComboBox.Text;
+            Load_Stuff(Xu_Ly_SQL.Search_Product(BoLocComboBox.Text,
+                order_by, txtbox_timkiem.Text));
+            for(int i=0;i<BoLocComboBox.Items.Count;i++)
+            {
+                ComboBoxItem cbi = (ComboBoxItem)BoLocComboBox.Items[i];
+                if (cbi.Content.ToString() == current)
+                    BoLocComboBox.SelectedIndex = i;
+            }
+            //Load_Stuff(Xu_Ly_SQL.Select_all_product());
         }
 
 
