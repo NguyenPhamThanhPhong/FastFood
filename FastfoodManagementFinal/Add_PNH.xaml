@@ -172,7 +172,22 @@
         </TextBox>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="84,121,433,301" Text="Thời gian"/>
-        <DatePicker x:Name="datepicker_billtime" Margin="89,141,315,0" VerticalAlignment="Top"
+        <TextBox               
+                                Height="30"
+                                Margin="80,139,315,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="12"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-1.5,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" RenderTransformOrigin="0.5,0.5" >
+        </TextBox>
+        <DatePicker x:Name="datepicker_billtime" Margin="89,142,335,0" VerticalAlignment="Top"
                      SelectedDate="{x:Static sys:DateTime.Now}" Height="23" BorderBrush="White" FontFamily="{StaticResource boldFont}" Foreground="#9B9CA3" FontSize="11">
 
         </DatePicker>

@@ -19,6 +19,10 @@
 
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
 
         <!--Dashboard-->
         <Grid.ColumnDefinitions>
@@ -29,25 +33,16 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
 
-        <Border CornerRadius="15" Margin="39,31,23,27" Grid.ColumnSpan="5">
+        <Border CornerRadius="15" Margin="39,31,23,27" Grid.ColumnSpan="5" Grid.RowSpan="2">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="#FF9F45" Offset="0"/>
-                    <GradientStop Color="#FDA65D" Offset="0.8"/>
+                    <GradientStop Color="#F87D32" Offset="0"/>
+                    <GradientStop Color="#FF9F45" Offset="0.8"/>
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
 
-        <Border CornerRadius="15" Margin="88,66,189,553" Grid.ColumnSpan="2">
-            <Border.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="White" Offset="0"/>
-                    <GradientStop Color="White" Offset="0.7"/>
-                </LinearGradientBrush>
-            </Border.Background>
-        </Border>
-
-        <Border CornerRadius="15" Margin="17,37,0,33" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="794" Grid.Column="1">
+        <Border CornerRadius="15" Margin="88,66,189,243" Grid.ColumnSpan="2">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="White" Offset="0"/>
@@ -56,12 +51,21 @@
             </Border.Background>
         </Border>
 
-        <Image Cursor="Hand" x:Name="logged_in_avatar" Source="/IMAGE/Hiền.png" Margin="42,57,119,548" />
+        <Border CornerRadius="15" Margin="17,37,0,33" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="794" Grid.Column="1" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.7"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
 
-        <TextBlock x:Name="txtBlock_Acc_Name" Foreground="#F87D32" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="123,72,190,583" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"><Run Text="Thanh Hiền"/><LineBreak/><Run Text=" ấdgdfghg"/></TextBlock>
-        <TextBlock x:Name="txtBlock_AccessRight" Foreground="#F87D32" FontFamily="{StaticResource boldFont}" FontSize="13" Text="Nhân Viên" Margin="131,100,32,558" RenderTransformOrigin="0.845,0.596"/>
+        <Image Cursor="Hand" x:Name="logged_in_avatar" Source="/IMAGE/Hiền.png" Margin="42,57,119,238" />
 
-        <Border Margin="32,28,166,-28" Grid.ColumnSpan="2">
+        <TextBlock x:Name="txtBlock_Acc_Name" Foreground="#F87D32" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="123,72,190,273" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"><Run Text="Thanh Hiền"/><LineBreak/><Run Text=" ấdgdfghg"/></TextBlock>
+        <TextBlock x:Name="txtBlock_AccessRight" Foreground="#F87D32" FontFamily="{StaticResource boldFont}" FontSize="13" Text="Nhân Viên" Margin="131,100,32,248" RenderTransformOrigin="0.845,0.596"/>
+
+        <Border Margin="32,28,166,-28" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Frame x:Name="PagesNavigation" NavigationUIVisibility='Hidden' Margin="240,24,-766,76"/>
         </Border>
 
@@ -69,7 +73,7 @@
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
                 Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="        TRANG CHỦ" 
-            FontFamily="{StaticResource boldFont}" Margin="56,160,196,472"
+            FontFamily="{StaticResource boldFont}" Margin="56,156,196,166"
             Click="Button_Click" Grid.ColumnSpan="2">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
@@ -95,14 +99,14 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="/IMAGE/home-4-256.png" Margin="67,163,140,477" />
+        <Image Source="/IMAGE/home-4-256.png" Margin="67,159,140,171" />
 
 
 
         <Button x:Name="button_sanpham" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
-                Background="#F8FAFF" Foreground="#EA5C2B" FontSize="16" Content="     SẢN PHẨM" FontFamily="{StaticResource boldFont}" Margin="56,222,196,410" Click="Button_Click_1" Grid.ColumnSpan="2">
+                Background="#F8FAFF" Foreground="#EA5C2B" FontSize="16" Content="     SẢN PHẨM" FontFamily="{StaticResource boldFont}" Margin="56,218,196,104" Click="Button_Click_1" Grid.ColumnSpan="2">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -127,14 +131,14 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="/IMAGE/restaurant-3-256.png" Margin="65,226,142,414" />
+        <Image Source="/IMAGE/restaurant-3-256.png" Margin="65,222,142,108" />
 
 
 
         <Button x:Name="button_donhang" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
-                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="      ĐƠN HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,284,196,348" Click="Button_Click_2" Grid.ColumnSpan="2">
+                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="      ĐƠN HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,280,196,42" Click="Button_Click_2" Grid.ColumnSpan="2">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -159,14 +163,14 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="/IMAGE/buy-256.png" Margin="67,290,140,350" />
+        <Image Source="/IMAGE/buy-256.png" Margin="67,286,140,44" />
 
 
 
         <Button x:Name="button_khachhang" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
-                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="              KHÁCH HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,346,196,286" Click="Button_Click_3" Grid.ColumnSpan="2">
+                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="              KHÁCH HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,342,196,290" Click="Button_Click_3" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -191,7 +195,7 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="/IMAGE/group-256.png" Margin="69,350,138,290" />
+        <Image Source="/IMAGE/group-256.png" Margin="69,346,138,294" Grid.RowSpan="2" />
 
 
 
@@ -199,8 +203,8 @@
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
                 Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content=" QUẢN LÝ" 
-                FontFamily="{StaticResource boldFont}" Margin="56,408,196,224"  
-                Grid.ColumnSpan="2" Click="Button_Click_4">
+                FontFamily="{StaticResource boldFont}" Margin="56,34,196,228"  
+                Grid.ColumnSpan="2" Click="Button_Click_4" Grid.Row="1">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -225,16 +229,16 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image x:Name="img_quanly"  Source="/IMAGE/edit-user-256.png" Margin="69,412,138,228" />
+        <Image x:Name="img_quanly"  Source="/IMAGE/edit-user-256.png" Margin="69,38,138,232" Grid.Row="1" />
 
 
 
         <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
-                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="      THỐNG KÊ" 
-                FontFamily="{StaticResource boldFont}" Margin="56,470,196,162" 
-                Click="Button_Click_5" Grid.ColumnSpan="2">
+                Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="CÀI ĐẶT" 
+                FontFamily="{StaticResource boldFont}" Margin="56,96,196,166" 
+                Click="Button_Click_5" Grid.ColumnSpan="2" Grid.Row="1">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -259,14 +263,14 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="/IMAGE/data-configuration-256.png" Margin="69,474,138,166" />
+        <Image Source="/IMAGE/settings-5-256.png" Margin="69,100,138,170" Grid.Row="1" />
 
 
 
         <Button x:Name="button_nhaphang" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
      materialDesign:ButtonAssist.CornerRadius="15"
      Height="48" BorderBrush="#F8FAFF"
-     Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="           NHẬP HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,532,196,100" Click="Button_Click_6" Grid.ColumnSpan="2">
+     Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="           NHẬP HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,158,196,104" Click="Button_Click_6" Grid.ColumnSpan="2" Grid.Row="1">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -291,18 +295,36 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image x:Name="img_nhaphang" Source="/IMAGE/add-list-256.png" Margin="69,538,138,102" />
+        <Image x:Name="img_nhaphang" Source="/IMAGE/add-list-256.png" Margin="69,164,138,106" Grid.Row="1" />
 
 
-
-
-        <Button Grid.Column="4" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="31" Width="30" BorderBrush="#00711B1B" Margin="240,46,0,0"
-                Click="Button_Click_7" RenderTransformOrigin="0.2,0.467">
-            <Button.Background>
-                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
-            </Button.Background>
-            <Button Content="Button"/>
+        <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"
+     Background="{x:Null}" FontSize="16" Foreground="White" Content="THOÁT" FontFamily="{StaticResource boldFont}" Margin="44,235,36,43" BorderBrush="{x:Null}" Grid.Row="1">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                     Storyboard.TargetProperty="(UIElement.Opacity)" 
+                     To="0.5" 
+                     Duration="0:0:0.1" 
+                     AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                     Storyboard.TargetProperty="(UIElement.Opacity)" 
+                     To="1" 
+                     Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
+        <Image Source="/IMAGE/logout-512.png" Margin="63,234,150,44" Grid.Row="1" />
 
 
     </Grid>

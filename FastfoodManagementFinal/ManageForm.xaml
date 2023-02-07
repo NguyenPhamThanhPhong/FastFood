@@ -31,44 +31,33 @@
         <Grid Height="140" Margin="0,0,0,440">
             <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="QUẢN LÝ" Margin="40,17,485,67" RenderTransformOrigin="0.845,0.596"/>
             <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="QUẢN LÝ" Margin="38,18,492,67" RenderTransformOrigin="0.845,0.596"/>
-
-
-            <Button HorizontalAlignment="Left" Margin="670,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="/IMAGE/settings-6-128.png"/>
-                </Button.Background>
-            </Button>
-
-            <Button HorizontalAlignment="Left" Margin="613,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B">
-                <Button.Background>
-                    <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
-                </Button.Background>
-            </Button>
             <!--Bộ lọc-->
-            <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,669,41" RenderTransformOrigin="0.845,0.596"/>
+            <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,73,669,44" RenderTransformOrigin="0.845,0.596"/>
             <ComboBox
     
     x:Name="BoLocComboBox" 
-    FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
-    materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
+    FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="2" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    materialDesign:TextFieldAssist.TextBoxViewMargin="8,-11,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"
                 SelectedIndex="0"
-    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,605,0" VerticalAlignment="Top" Height="40" >
-                <ComboBoxItem Content="ID"/>
-                <ComboBoxItem Content="Tên"/>
-                <ComboBoxItem Content="Số điện thoại"/>
-                
+    Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="49,100,585,0" VerticalAlignment="Top" Height="40" >
+                <ComboBoxItem Content="Mã NV"/>
+                <ComboBoxItem Content="Tên NV"/>
+                <ComboBoxItem Content="SĐT"/>
+
 
             </ComboBox>
 
 
 
             <!--Tìm kiếm-->
-            <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="241,76,455,41" RenderTransformOrigin="0.845,0.596"/>
+            <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="241,73,455,44" RenderTransformOrigin="0.845,0.596"/>
 
-            <TextBox            x:Name="textbox_timkiem"
-                                Margin="232,101,321,0"
+            <TextBox            
+                Height="40"
+                x:Name="textbox_timkiem"
+                                Margin="232,98,321,2"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -80,7 +69,7 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
                                 BorderThickness="2" CaretBrush="#e6ebf7" TextChanged="TextBox_TextChanged" />
 
-            <Image Source="/IMAGE/search-13-48.png" Margin="408,111,333,9" />
+            <Image Source="/IMAGE/search-13-48.png" Margin="408,109,333,11" />
 
             <!--<Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
@@ -92,7 +81,7 @@
         </Grid>
 
         <Image x:Name="img_test" Height="300">
-            
+
         </Image>
         <!--Thêm Scroll Viewer-->
 
@@ -142,7 +131,8 @@
             <StackPanel x:Name="stack_panel_quanly">
                 
             </StackPanel>
-            --><!--<Grid>
+            -->
+        <!--<Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="350"/>
@@ -278,7 +268,8 @@
                 </Grid>
                
 
-            </Grid>--><!--
+            </Grid>-->
+        <!--
 
         </ScrollViewer>-->
 

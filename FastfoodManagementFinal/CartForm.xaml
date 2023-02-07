@@ -21,24 +21,12 @@
         <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="ĐƠN HÀNG" Margin="40,16,116,507" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="ĐƠN HÀNG" Margin="38,18,116,508" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"/>
 
-
-        <Button HorizontalAlignment="Left" Margin="277,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click" Grid.Column="2">
-            <Button.Background>
-                <ImageBrush ImageSource="/IMAGE/settings-6-128.png"/>
-            </Button.Background>
-        </Button>
-
-        <Button HorizontalAlignment="Left" Margin="220,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Grid.Column="2">
-            <Button.Background>
-                <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
-            </Button.Background>
-        </Button>
-
         <!--Tìm kiếm-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="70,76,99,480" RenderTransformOrigin="0.845,0.596" Grid.Column="1"/>
+        <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Tìm kiếm" Margin="70,76,99,480" RenderTransformOrigin="0.845,0.596" Grid.Column="1"/>
 
         <TextBox x:Name="txtbox_timkiem"
-                                Margin="65,101,333,440"
+                 Height="40"
+                                Margin="65,100,333,440"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -50,12 +38,12 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,4,0,0"
                                 BorderThickness="2" CaretBrush="#e6ebf7" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="TextBox_TextChanged" />
 
-        <Image Source="/IMAGE/search-13-48.png" Margin="3,110,345,448" Grid.Column="2" />
+        <Image Source="/IMAGE/search-13-48.png" Margin="7,111,345,451" Grid.Column="2" />
 
         <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
-                Height="39" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="20" Content="TẠO" FontFamily="{StaticResource boldFont}" Margin="227,101,60,440" Grid.Column="2" Click="Button_Click"/>
+                Height="40" BorderBrush="#EA5C2B"
+                Background="#EA5C2B" FontSize="20" Content="TẠO" FontFamily="{StaticResource boldFont}" Margin="227,100,60,440" Grid.Column="2" Click="Button_Click"/>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Mã KH" Margin="52,155,32,396" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Khách hàng" Margin="138,155,130,396" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"/>
@@ -106,10 +94,10 @@
             </ListView.ItemTemplate>
         </ListView>
         <!--Bộ lọc-->
-        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,57,480" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,57,480" RenderTransformOrigin="0.845,0.596"/>
         <ComboBox
     
-    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="#FFFFFF"
+    x:Name="BoLocComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="2" BorderBrush="#e6ebf7" Background="#FFFFFF"
     materialDesign:TextFieldAssist.TextBoxViewMargin="8,-10,0,0"
     IsEnabled="{Binding IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
     ItemsSource="{Binding ShortStringList}"

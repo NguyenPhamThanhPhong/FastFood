@@ -12,35 +12,162 @@
 
     <Grid Height="580" Width="765">
 
-        <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="THỐNG KÊ" Margin="39,16,497,512" RenderTransformOrigin="0.845,0.596"/>
-        <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="THỐNG KÊ" Margin="38,18,485,513" RenderTransformOrigin="0.845,0.596"/>
 
-        
-         <Button HorizontalAlignment="Left" Margin="670,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B" Click="Setting_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/IMAGE/settings-6-128.png"/>
-            </Button.Background>
-        </Button>
+        <TextBlock Foreground="#e6ebf7" FontFamily="{StaticResource boldFont}" FontSize="42" Text="CÀI ĐẶT" Margin="39,16,497,512" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="CÀI ĐẶT" Margin="38,18,485,513" RenderTransformOrigin="0.845,0.596"/>
 
-        <Button HorizontalAlignment="Left" Margin="613,19,0,0" VerticalAlignment="Top" Height="31" Width="34" BorderBrush="#00711B1B">
-            <Button.Background>
-                <ImageBrush ImageSource="/IMAGE/power-2-128.png"/>
-            </Button.Background>
-        </Button>
 
-        <Image Source="/IMAGE/Tổng quan.png" Margin="36,79,490,420" />
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="17" Margin="102,105,538,442" Text="TỔNG QUAN" RenderTransformOrigin="0.467,3"/>
 
-        <Image Source="/IMAGE/Nhân viên năng suất.png" Margin="24,164,480,265" />
-        <Image Source="/IMAGE/Tổng quan.png" Margin="295,79,231,420" />
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="17" Margin="325,105,245,445" Text="LỊCH SỬ KINH DOANH" RenderTransformOrigin="0.467,3"/>
 
-        <Image Source="/IMAGE/Doanh thu với tháng.png" Margin="281,166,220,265" />
 
-        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="34" Margin="57,222,614,310" Text="NV01" RenderTransformOrigin="0.467,3"/>
-        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="59,265,582,295" Text="Trần Thanh Hiền" RenderTransformOrigin="0.467,3"/>
+        <Image Source="/IMAGE/Cài đặt2.png" Margin="39,81,38,149" />
+        <Image Source="/IMAGE/Thêm Ảnh.png" Margin="94,164,550,285" RenderTransformOrigin="0.606,0.649" />
 
-        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="326,246,342,305" Text="8,999,919" RenderTransformOrigin="0.467,3"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="239,107,433,451" Text="Họ và tên"/>
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="464,107,208,456" Text="Giới tính"/>
+        <TextBox
+                                Height="40"
+                                Margin="236,129,318,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <TextBox
+                                Height="40"
+                                Margin="460,129,93,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="240,178,428,376" Text="Ngày sinh"/>
+        <TextBox
+                                Height="40"
+                                Margin="236,201,318,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="464,178,248,376" Text="SĐT"/>
+        <TextBox
+                                Height="40"
+                                Margin="460,201,94,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="240,248,453,312" Text="Địa chỉ"/>
+
+        <TextBox
+                                Height="40"
+                                Margin="236,272,318,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="464,248,218,292" Text="Email"/>
+        <TextBox
+                                Height="40"
+                                Margin="460,272,94,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+
+
+        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                Height="50" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="15" Content="CẬP NHẬT" FontFamily="{StaticResource boldFont}" Margin="350,337,241,193"/>
+
+        <Image Source="/IMAGE/Cài đặt3.png" Margin="58,417,57,1" />
+
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="103,455,544,103" Text="Tên đăng nhập"/>
+        <TextBox
+                                Height="40"
+                                Margin="97,481,489,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="298,455,359,98" Text="Mật khẩu"/>
+        <TextBox
+                                Height="40"
+                                Margin="293,481,293,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                Height="40" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
+                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="498,481,97,59" Click="Button_Click"/>
+
 
 
 
