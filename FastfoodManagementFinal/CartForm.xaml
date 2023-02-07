@@ -11,7 +11,6 @@
       Title="Product_Form"
       x:Name="_this"
       DataContext="{Binding ElementName=_this}">
-
     <Grid Height="580" Width="765">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="155*"/>
