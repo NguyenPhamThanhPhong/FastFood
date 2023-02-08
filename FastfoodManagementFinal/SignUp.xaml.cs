@@ -37,6 +37,7 @@ namespace FastfoodManagementFinal
         SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=FastFood;Integrated Security=True");
         DateTime picked_date;
 
+        string Mailcode;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string access_right = "Nhân viên";
@@ -64,10 +65,17 @@ namespace FastfoodManagementFinal
             a.Visible = true;
             if (a.Is_valid())
             {
+
                 if (txtKey.Visibility == Visibility.Visible && txtKey.Text != "QL_VIP_PRO")
                 {
                     MessageBox.Show("Sai mã key quản lý! " +
                         "   \n Vui lòng chọn đúng quyền hạn hoặc nhập đúng mã Key!");
+                    return;
+                }
+                if(txtbox_maEmail.Text!=Mailcode)
+                {
+                    MessageBox.Show("Mã email ko hợp lệ");
+                    return;
                 }
                 Xu_Ly_SQL.Insert_Staff(a);
                 if (Avatar_path != "")
@@ -129,6 +137,11 @@ namespace FastfoodManagementFinal
             {
                 e.Handled = true;
             }
+        }
+
+        private void button_guima_Click(object sender, RoutedEventArgs e)
+        {
+            Mailcode = Xu_ly_Mail.SendMail(txtbox_maEmail.Text.Trim());
         }
     }
 

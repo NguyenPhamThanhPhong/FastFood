@@ -65,14 +65,15 @@ namespace FastfoodManagementFinal.Models
         }
         public static List<Product> HoaDon_Product(string parameter)
         {
-            string sql = "select * from products where lower(ProductID) + lower(productName) like N'%" + parameter.Trim() + "%'";
-            string ID = parameter;
-            if(parameter.Length>6)
-            {
-                 ID = parameter.Substring(0, 5); 
-                string pName = parameter.Substring(6);
-                sql = "select * from products where lower(ProductID) + lower(productName) like N'%" + ID + "%" + pName + "%'";
-            }
+            string sql = "select * from products where ( lower(ProductID) + lower(productName) like lower(N'%" + parameter.Trim() + "%') " +
+                "or lower(ProductID) like lower(N'%"+parameter+"%') or lower(productName) like lower('%"+parameter+"%') ) and avail = 1 ";
+            //string ID = parameter;
+            //if (parameter.Length > 6)
+            //{
+            //    ID = parameter.Substring(0, 5);
+            //    string pName = parameter.Substring(6);
+            //    sql = "select * from products where lower(ProductID) + lower(productName) like N'%" + ID + "%" + pName + "%'";
+            //}
             List<Product> p = new List<Product>();
             SqlConnection con = Xu_Ly_SQL.con;
             if (con.State != ConnectionState.Open)
@@ -105,7 +106,7 @@ namespace FastfoodManagementFinal.Models
                 string strName = parameter.Substring(6);
                 SqlConnection con = Xu_Ly_SQL.con;
                 string sql = "select * from products where productID = N'"+strID.Trim()+"' " +
-                                        "and productName = N'"+strName.Trim()+"'";
+                                        "and productName = N'"+strName.Trim()+"' and avail = 1";
                 if (con.State != ConnectionState.Open)
                 {
                     con.Open();

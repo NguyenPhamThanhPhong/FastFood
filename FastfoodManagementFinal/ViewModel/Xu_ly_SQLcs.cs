@@ -44,10 +44,11 @@ namespace FastfoodManagementFinal.ViewModel
                 if (con.State != ConnectionState.Open)
                 {
                     con.Open();
-                    string sql = "insert into customers (customerID, fullname, sex, phone, total, customerRank, customerAddress)" +
+                    string sql = "insert into customers (customerID, fullname, sex, phone, total, customerRank, customerAddress, avail) " +
                         "values ('" + c.CustomerID + "',N'" + c.CustomerName + "',N'" + c.CustomerSex + "'," +
                         "'" + c.CustomerPhone + "','" + c.CustomerTotal + "',N'" + c.CustomerRank + "',N'" + c.Address + "', 1 )";
                     SqlCommand cmd = new SqlCommand(sql, con);
+                    MessageBox.Show(sql);
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
@@ -57,9 +58,14 @@ namespace FastfoodManagementFinal.ViewModel
                 if (ex.Number == 2627)
                 {
                     MessageBox.Show("đã tồn tại ID");
+                    con.Close();
                 }
                 else
+                {
                     MessageBox.Show("Thất bại, vui lòng điền thông tin hợp lệ!!");
+                    con.Close();
+                }
+                    
             }
 
         }

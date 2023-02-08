@@ -52,10 +52,10 @@ namespace FastfoodManagementFinal.ViewModel
             for (int i=0; i< acc.Count - 1;i++)
             {
                 int pre = int.Parse(acc[i].StaffID.Substring(2, 3));
-                int next = int.Parse(acc[i + 1].StaffID.Substring(2, 3));
-                if (next - pre > 1)
+                //int next = int.Parse(acc[i + 1].StaffID.Substring(2, 3));
+                if (pre - i > 1)
                 {
-                    return prefix + (pre + 1).ToString().PadLeft(3, '0');
+                    return prefix + (i+1).ToString().PadLeft(3, '0');
                 }
             }
             return prefix + (acc.Count + 1).ToString().PadLeft(3, '0');
@@ -89,9 +89,9 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 int pre = int.Parse(p[i].ProductId.Substring(2, 3));
                 int next = int.Parse(p[i + 1].ProductId.Substring(2, 3));
-                if (next - pre > 1)
+                if (pre - i > 1)
                 {
-                    return "SP" + (pre + 1).ToString().PadLeft(3, '0');
+                    return "SP" + (i+1).ToString().PadLeft(3, '0');
                 }
             }
             return "SP" + (p.Count + 1).ToString().PadLeft(3, '0');
@@ -124,10 +124,10 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 int pre = int.Parse(csm[i].CustomerID.Substring(2, 3));
                 int next = int.Parse(csm[i + 1].CustomerID.Substring(2, 3));
-                if(next-pre>1)
+                if(pre - i>1)
                 {
 
-                    return "KH" + (pre+1).ToString().PadLeft(3, '0');
+                    return "KH" + (i+1).ToString().PadLeft(3, '0');
                 }
             }
             return "KH" + (csm.Count+1).ToString().PadLeft(3, '0');
@@ -139,10 +139,10 @@ namespace FastfoodManagementFinal.ViewModel
             for (int i = 0; i < bills.Count-1; i++)
             {
                 int pre = int.Parse(bills[i].Bill_ID.Substring(2, 3));
-                int next = int.Parse(bills[i + 1].Bill_ID.Substring(2, 3));
-                if (next - pre > 1)
+                //int next = int.Parse(bills[i + 1].Bill_ID.Substring(2, 3));
+                if (pre - i > 1)
                 {
-                    return "HD" + (pre + 1).ToString().PadLeft(3, '0');
+                    return "HD" + (i+1).ToString().PadLeft(3, '0');
                 }
             }
             return "HD" + (bills.Count+1).ToString().PadLeft(3, '0');
@@ -157,10 +157,10 @@ namespace FastfoodManagementFinal.ViewModel
             for (int i = 0; i < imps.Count-1; i++)
             {
                 int pre = int.Parse(imps[i].ImportID.Substring(2, 3));
-                int next = int.Parse(imps[i + 1].ImportID.Substring(2, 3));
-                if (next - pre > 1)
+                //int next = int.Parse(imps[i + 1].ImportID.Substring(2, 3));
+                if (pre - i > 1)
                 {
-                    return "NH" + (pre + 1).ToString().PadLeft(3, '0');
+                    return "NH" + (i+1).ToString().PadLeft(3, '0');
                 }
             }
             return "NH" + (imps.Count+1).ToString().PadLeft(3, '0');

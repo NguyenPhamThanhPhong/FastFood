@@ -21,12 +21,12 @@
 
 
         <Image Source="/IMAGE/Cài đặt2.png" Margin="39,81,38,149" />
-        <Image Source="/IMAGE/Thêm Ảnh.png" Margin="94,164,550,285" RenderTransformOrigin="0.606,0.649" />
+        <Image Cursor="Hand" Source="/IMAGE/Thêm Ảnh.png" Margin="94,164,550,285" RenderTransformOrigin="0.606,0.649" />
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="239,107,433,451" Text="Họ và tên"/>
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="464,107,208,456" Text="Giới tính"/>
-        <TextBox
+        <TextBox x:Name="txtbox_hoten"
                                 Height="40"
                                 Margin="236,129,318,0"
                                 BorderBrush="#e6ebf7"
@@ -41,7 +41,7 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBox
+        <TextBox    x:Name="txtbox_gioitinh"
                                 Height="40"
                                 Margin="460,129,93,0"
                                 BorderBrush="#e6ebf7"
@@ -58,23 +58,14 @@
 
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="240,178,428,376" Text="Ngày sinh"/>
-        <TextBox
-                                Height="40"
-                                Margin="236,201,318,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="#9B9CA3"
-                                FontFamily="{StaticResource boldFont}"
-                                FontSize="13.5"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <DatePicker x:Name="datepicker_ngaysinh" Margin="240,201,318,0" VerticalAlignment="Top" Height="40">
+
+        </DatePicker>
+
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="464,178,248,376" Text="SĐT"/>
-        <TextBox
+        <TextBox    x:Name="txtbox_sdt"
                                 Height="40"
                                 Margin="460,201,94,0"
                                 BorderBrush="#e6ebf7"
@@ -92,7 +83,7 @@
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="240,248,453,312" Text="Địa chỉ"/>
 
-        <TextBox
+        <TextBox x:Name="txtbox_diachi"
                                 Height="40"
                                 Margin="236,272,318,0"
                                 BorderBrush="#e6ebf7"
@@ -166,7 +157,7 @@
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}"
                 Height="40" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="498,481,97,59" Click="Button_Click"/>
+                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="498,481,97,59" />
 
 
 

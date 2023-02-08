@@ -19,14 +19,15 @@ namespace FastfoodManagementFinal.Models
         public static List<Customer> Search_ID_Name(string parameter)
         {
             List<Customer> customers = new List<Customer>();
-            string sql = "select * from customers where lower(customerID) + lower(fullname) like lower(N'%" + parameter + "%') and avail = '1'";
-            if (parameter.Length >6)
-            {
-                string ID = parameter.Substring(0, 5);
-                string pName = parameter.Substring(6);
-                sql = "select * from customers where lower(customerID) + lower(fullname) like lower(N'%" + ID + "%" + pName + "%') and avail = '1'";
+            string sql = "select * from customers where ( lower(customerID) + lower(fullname) like lower(N'%" + parameter + "%') " +
+                "or lower(customerID) like lower(N'%"+parameter+"%') or lower(fullname) like lower(N'%"+parameter+"%') ) and avail = '1'";
+            //if (parameter.Length >6)
+            //{
+            //    string ID = parameter.Substring(0, 5);
+            //    string pName = parameter.Substring(6);
+            //    sql = "select * from customers where lower(customerID) + lower(fullname) like lower(N'%" + ID + "%" + pName + "%') and avail = '1'";
 
-            }
+            //}
             SqlConnection con = Xu_Ly_SQL.con;
             if (con.State != ConnectionState.Open)
             {
@@ -62,7 +63,7 @@ namespace FastfoodManagementFinal.Models
             SqlConnection con = Xu_Ly_SQL.con;
             string strID = parameter.Substring(0, 5);
             string strName = parameter.Substring(5);
-            string sql = "select * from customers where customerID = N'"+strID.Trim()+"' and Fullname = N'"+strName.Trim()+"' ";
+            string sql = "select * from customers where customerID = N'"+strID.Trim()+"' and Fullname = N'"+strName.Trim()+"' and avail = 1 ";
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
