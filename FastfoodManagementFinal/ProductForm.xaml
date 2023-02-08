@@ -144,14 +144,14 @@
         <!--Thêm Scroll Viewer-->
 
         <ListView x:Name="listview_show"
-                Margin="0,153,0,7" ItemsSource="{Binding pros}" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                Margin="24,153,0,7" ItemsSource="{Binding pros}" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Width="741">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
                         <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
@@ -181,11 +181,62 @@
                     </Grid>
                 </DataTemplate>
 
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
+            <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
+                <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
+                <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
+                <Image Source="/MON_AN/RICE_NOODLE/rice-spaghetti-534x374px._com-gasoth_s.png" Margin="22,17,24,80" />
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="36,109,24,60" Text="Burger Bulgogi"/>
+                <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="31,141,84,29" Text="45.000">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                Width="46" Height="22" BorderBrush="#F87D32"
+                        Padding="-1"
+                Background="#F87D32" Margin="88,140,31,28" RenderTransformOrigin="0.397,0.938">
+                    <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Text="Chi tiết" Width="31" >
+
+                    </TextBlock>
+                </Button>
+                <Image Source="/IMAGE/hethang.png" Margin="-21,-17,12,-1" RenderTransformOrigin="0.505,0.514">
+
+                </Image>
+
+
+            </Grid>
+            <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
+                <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
+                <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
+                <Image Source="/MON_AN/RICE_NOODLE/rice-spaghetti-534x374px._com-gasoth_s.png" Margin="22,17,24,80" />
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="36,109,24,60" Text="Burger Bulgogi"/>
+                <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="31,141,84,29" Text="45.000">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                Width="46" Height="22" BorderBrush="#F87D32"
+                        Padding="-1"
+                Background="#F87D32" Margin="88,140,31,28" RenderTransformOrigin="0.397,0.938">
+                    <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Text="Chi tiết" Width="31" >
+
+                    </TextBlock>
+                </Button>
+                <Image Source="/IMAGE/hethang.png" Margin="-21,-17,12,-1" RenderTransformOrigin="0.505,0.514">
+
+                </Image>
+
+
+            </Grid>
+
 
         </ListView>
         <!--Sắp xếp-->
-        <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Sắp xếp" Margin="198,76,504,46" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Sắp xếp" Margin="198,76,504,475" RenderTransformOrigin="0.845,0.596"/>
         <ComboBox
     Height="42"
     x:Name="SapXepComboBox" FontFamily="{StaticResource boldFont}" Foreground="Black" BorderThickness="2" BorderBrush="#e6ebf7" Background="#FFFFFF"

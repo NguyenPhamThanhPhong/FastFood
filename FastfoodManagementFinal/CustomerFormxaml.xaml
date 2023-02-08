@@ -25,7 +25,7 @@
         <TextBlock Foreground="#EA5C2B" FontFamily="{StaticResource boldFont}" FontSize="42" Text="KHÁCH HÀNG" Margin="38,18,436,508" RenderTransformOrigin="0.845,0.596"/>
 
         <ListView x:Name="listview_show" Margin="0,184,0,24" ItemsSource="{Binding customers }">
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="4" >
                         <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5"/>
@@ -41,7 +41,20 @@
                         </Button>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
+            <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="2" >
+                <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="22,15,593,12" Text="1" />
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="95,15,408,12" Text="Trần Thanh Hiền"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="279,15,296,12" Text="0398285020" />
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="413,15,68,12" Text="KP6, P. Linh Trung"/>
+                <Button  HorizontalAlignment="Left" Margin="620,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>
         </ListView>
 
         <!--Tìm kiếm-->
@@ -78,16 +91,16 @@
             <ComboBoxItem Content="SĐT"/>
 
         </ComboBox>
-        
 
 
 
-        
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Mã KH" Margin="52,155,642,396" RenderTransformOrigin="0.845,0.596"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Tên khách hàng" Margin="138,155,478,396" RenderTransformOrigin="0.845,0.596"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="SĐT" Margin="310,155,416,396" RenderTransformOrigin="0.845,0.596"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Địa chỉ" Margin="468,155,230,396" RenderTransformOrigin="0.845,0.596"/>
+
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Mã KH" Margin="63,155,631,396" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Tên khách hàng" Margin="142,155,474,396" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="SĐT" Margin="324,155,402,396" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Địa chỉ" Margin="458,155,240,396" RenderTransformOrigin="0.845,0.596"/>
 
 
         <!--<ScrollViewer Margin="0,184,0,24">
@@ -120,7 +133,8 @@
                     </Button>
                 </Grid>
             </StackPanel>
-            --><!--<Grid>
+            -->
+        <!--<Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="670"/>
@@ -274,7 +288,8 @@
                     </Button.Background>
                     <Button Content="Button"/>
                 </Button>
-            </Grid>--><!--
+            </Grid>-->
+        <!--
 
 
 

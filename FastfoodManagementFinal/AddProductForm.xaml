@@ -46,21 +46,23 @@
                 Height="40" BorderBrush="#EA5C2B"
                 Background="#EA5C2B" FontSize="14" Content="NHẬP" FontFamily="{StaticResource boldFont}" Margin="640,98,40,442" Click="button_them_Click"/>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Mã phiếu" Margin="52,155,32,396" RenderTransformOrigin="0.845,0.596"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Nhân viên" Margin="198,155,442,396" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Mã phiếu" Margin="72,155,565,396" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Nhân viên" Margin="209,155,431,396" RenderTransformOrigin="0.845,0.596"/>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="16" Text="Thời gian" Margin="419,155,242,396" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Thời gian" Margin="477,155,184,396" RenderTransformOrigin="0.845,0.596"/>
 
         <ListView x:Name="listview_show"
             Margin="0,193,0,15"
                   ItemsSource="{Binding imps}"
             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
-                    <!--<Grid>
+                    -->
+            <!--<Grid>
                         <TextBlock FontSize="50" Text="{Binding StaffID}"></TextBlock>
                     </Grid>-->
+            <!--
                     <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="0">
                         <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
                         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="36,15,607,12" Text="{Binding ImportID }"/>
@@ -81,7 +83,32 @@
                         </Button>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
+            <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="0">
+                <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="29,15,565,12" Text="NH001"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="163,15,278,12" Text="QL001 Trần Thanh Hiền"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="431,15,155,12" Text="12/12/2022"/>
+                <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>
+            <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="0">
+                <Border CornerRadius="5" BorderThickness="2" Height="50" BorderBrush="#e6ebf7" Background="White" Margin="6,0,8,5" />
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="30,15,562,12" Text="NH001"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="163,15,293,12" Text="QL001 Trần Thanh Hiền"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="431,15,155,12" Text="12/12/2022"/>
+                <Button  HorizontalAlignment="Left" Margin="612,14,0,0" VerticalAlignment="Top" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>
+
         </ListView>
         <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,71,669,486" RenderTransformOrigin="0.845,0.596"/>
         <ComboBox

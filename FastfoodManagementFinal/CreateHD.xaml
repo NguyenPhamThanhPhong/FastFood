@@ -127,16 +127,16 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" Grid.ColumnSpan="2" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="77,209,351,212" Text="STT"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="125,209,296,212" Text="Tên SP"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="208,209,208,212" Text="Đơn giá"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="297,209,109,212" Text="Số lượng"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="398,209,110,212" Text="Thành tiền" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="86,209,342,212" Text="STT"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="139,209,282,212" Text="Tên SP"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="233,209,183,212" Text="Đơn giá"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="305,209,101,212" Text="Số lượng"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="388,209,7,212" Text="Thành tiền"/>
 
 
         <ListView
             x:Name ="listviewBill"
-            ItemsSource="{Binding odrs}" Grid.ColumnSpan="2" Margin="60,233,54,73">
+            ItemsSource="{Binding odrs}" Grid.ColumnSpan="2" Margin="60,226,54,80">
             <!--<ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -157,7 +157,7 @@
                     <Button Content="Button"/>
                 </Button>
             </Grid>-->
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid  Margin="4,0,1,0" Grid.Row="4">
                         <Border CornerRadius="1" Height="18" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White" Margin="1,0,4,2"/>
@@ -168,7 +168,26 @@
                         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="328,3,37,7" Text="{Binding Order_Total}"/>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
+
+            <Grid  Margin="4,0,1,0" Grid.Row="0">
+
+                <Border CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White"  Margin="1,2,4,2" Height="22"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,8,366,5" Text="DH001"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="69,8,294,5" Text="Burger Tôm"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="162,8,201,5" Text="45.000"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="250,8,143,5" Text="1"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="318,8,47,5" Text="45.000"/>
+            </Grid>
+            <Grid  Margin="4,0,1,0" Grid.Row="0">
+
+                <Border CornerRadius="1"  BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White"  Margin="1,2,4,2" Height="22" />
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,8,366,5"  Text="DH001"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="69,8,294,5" Text="Burger Tôm"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="162,8,201,5" Text="45.000"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="250,8,143,5" Text="1"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="318,8,47,5" Text="45.000"/>
+            </Grid>
         </ListView>
         <!--<ScrollViewer Grid.ColumnSpan="2" Margin="70,234,55,95" >
             <Grid>

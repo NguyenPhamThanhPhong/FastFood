@@ -299,17 +299,17 @@
             <TextBlock FontSize="12" Text="XÓA"/>
         </Button>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="85,278,343,143" Text="STT"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="133,278,288,143" Text="Tên SP"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="216,278,200,143" Text="Đơn giá"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="305,278,101,143" Text="Số lượng"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="406,278,102,143" Text="Thành tiền" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="103,275,384,230" Text="STT"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="144,275,321,230" Text="Tên SP"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="226,275,238,230" Text="Đơn giá"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="297,275,159,225" Text="Số lượng"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="370,275,79,230" Text="Thành tiền"/>
 
         <ListView 
             x:Name="ListView_order"
-            Grid.ColumnSpan="2" Margin="78,303,107,93"
+            Grid.ColumnSpan="2" Margin="78,291,107,105"
             ItemsSource="{Binding odrs,IsAsync=True}">
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid  Margin="4,0,1,0" Grid.Row="0">
 
@@ -328,8 +328,37 @@
                         </Button>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
+            <Grid  Margin="4,0,1,0" Grid.Row="0">
 
+                <Border CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White"  Margin="1,2,4,2" Height="22"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,8,366,5" Text="DH001"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,8,276,5" Text="Burger Tôm"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="138,8,223,5" Text="45.000"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="225,8,168,5" Text="1"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="282,8,83,5" Text="45.000"/>
+                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"  HorizontalAlignment="Left" Margin="369,0,0,0" VerticalAlignment="Center" Height="14" Width="19" BorderBrush="#00711B1B" Click="button_cong_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="IMAGE/minus-2-128.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>
+            <Grid  Margin="4,0,1,0" Grid.Row="0">
+
+                <Border CornerRadius="1"  BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White"  Margin="1,2,4,2" Height="22" />
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="12,8,366,5"  Text="DH001"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="55,8,276,5" Text="Burger Tôm"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="138,8,225,5" Text="45.000"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="225,8,168,5" Text="1"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="282,8,83,5" Text="45.000"/>
+                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"  HorizontalAlignment="Left" Margin="369,0,0,0" VerticalAlignment="Center" Height="14" Width="19" BorderBrush="#00711B1B" Click="button_cong_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="IMAGE/minus-2-128.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>
 
         </ListView>
 
@@ -466,7 +495,7 @@
             x:Name="button_thanhtoan"
             Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 Height="28" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="10" Content="Thanh toán" FontFamily="{StaticResource boldFont}" Margin="222,447,168,45" Click="button_thanhtoan_Click"/>
+                Background="#EA5C2B" FontSize="10" Content="THANH TOÁN" FontFamily="{StaticResource boldFont}" Margin="222,447,168,45" Click="button_thanhtoan_Click"/>
 
         <!--Tổng tiền-->
         <TextBlock x:Name="txtbox_tongtien" Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="436,424,106,1" Text="Tổng tiền" Grid.ColumnSpan="2"/>

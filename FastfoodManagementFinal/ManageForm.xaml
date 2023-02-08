@@ -87,7 +87,7 @@
 
         <Grid Margin="0,153,0,7"/>
         <ListView   x:Name="listview_show"
-                    ItemsSource="{Binding List_acc,Mode=TwoWay}" Margin="0,153,0,7"
+                    ItemsSource="{Binding List_acc,Mode=TwoWay}" Margin="38,153,0,7"
                    ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -95,11 +95,13 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
 
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
-                    <!--<Grid>
+                    -->
+            <!--<Grid>
                         <TextBlock FontSize="50" Text="{Binding StaffID}"></TextBlock>
                     </Grid>-->
+            <!--
                     <Grid Height="170" Width="320" Margin="4,5,6,5" Grid.Column="1">
                         <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
 
@@ -125,7 +127,53 @@
                         </Button>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
+            <Grid Height="170" Width="320" Margin="4,5,6,5" Grid.Column="1">
+                <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
+                <Image Source="/IMAGE/Hình Hiền.png" Margin="18,21,208,62" />
+                <Image Source="/IMAGE/Giá.png" Margin="37,113,227,26" RenderTransformOrigin="0.556,1.263" />
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="44,121,236,37" Text="NV01"/>
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,47,121" Text="Trần Thanh Hiền"/>
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,27,96" Text="0398285020"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,14,33"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run/></TextBlock>
+                <Button  
+                    HorizontalAlignment="Left" Margin="278,16,0,0" 
+                    VerticalAlignment="Top" Height="24" 
+                    Width="28" BorderBrush="#00711B1B" 
+                    RenderTransformOrigin="4.667,1.717" 
+                    Click="eye1_Click">
+
+                    <Button.Background>
+                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>
+            <Grid Height="170" Width="320" Margin="4,5,6,5" Grid.Column="1">
+                <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
+                <Image Source="/IMAGE/Hình Hiền.png" Margin="18,21,208,62" />
+                <Image Source="/IMAGE/Giá.png" Margin="37,113,227,26" RenderTransformOrigin="0.556,1.263" />
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="11" Margin="44,121,236,37" Text="NV01"/>
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,47,121" Text="Trần Thanh Hiền"/>
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,56,159,98" Text="SĐT:"/>
+                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,78,159,76" Text="ĐC:"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,58,27,96" Text="0398285020"/>
+                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="162,80,14,33"><Run Text="KP6, P.Linh Trung, Thủ Đức"/><LineBreak/><Run/></TextBlock>
+                <Button  
+                    HorizontalAlignment="Left" Margin="278,16,0,0" 
+                    VerticalAlignment="Top" Height="24" 
+                    Width="28" BorderBrush="#00711B1B" 
+                    RenderTransformOrigin="4.667,1.717" 
+                    Click="eye1_Click">
+
+                    <Button.Background>
+                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
+                    </Button.Background>
+                    <Button Content="Button"/>
+                </Button>
+            </Grid>
         </ListView>
         <!--<ScrollViewer Margin="0,153,0,7">
             <StackPanel x:Name="stack_panel_quanly">
