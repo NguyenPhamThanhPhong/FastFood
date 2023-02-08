@@ -114,23 +114,6 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="240,319,416,241" Text="Mã xác nhận"/>
-
-        <TextBox 
-                                Height="40"
-                                Margin="236,343,318,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="#9B9CA3"
-                                FontFamily="{StaticResource boldFont}"
-                                FontSize="13.5"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
-
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="464,248,218,292" Text="Email"/>
         <TextBox
@@ -151,15 +134,15 @@
 
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                Height="50" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="15" Content="CẬP NHẬT" FontFamily="{StaticResource boldFont}" Margin="478,337,113,193"/>
+                Height="50" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B" Background="#EA5C2B" FontSize="15" Content="CẬP NHẬT" FontFamily="{StaticResource boldFont}" Margin="368,337,223,193"/>
 
         <Image Source="/IMAGE/Cài đặt3.png" Margin="58,417,57,1" />
 
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="103,455,544,103" Text="Tên đăng nhập"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="103,447,544,111" Text="Tên đăng nhập"/>
         <TextBox
                                 Height="40"
-                                Margin="97,481,489,0"
+                                Margin="97,473,525,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -172,10 +155,10 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="298,455,359,98" Text="Mật khẩu"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="258,447,399,106" Text="Mật khẩu"/>
         <TextBox
                                 Height="40"
-                                Margin="293,481,293,0"
+                                Margin="253,473,390,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -187,12 +170,30 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
+
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="394,447,263,106" Text="Mã xác nhận"/>
+        <TextBox
+                                Height="40"
+                                Margin="389,473,254,0"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="#9B9CA3"
+                                FontFamily="{StaticResource boldFont}"
+                                FontSize="13.5"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,-6,0,0"
+                                BorderThickness="2"
+                                VerticalAlignment="Top" CaretBrush="Gray" />
+
 
         <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}"
                 Height="40" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="498,481,97,59" />
+                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="525,473,97,67" />
 
 
+        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource mainFont}" FontSize="9" Margin="232,524,226,34" Text="Vui lòng kiểm tra Email vừa nhập để lấy mã xác nhận bạn nhé!"/>
 
 
     </Grid>
