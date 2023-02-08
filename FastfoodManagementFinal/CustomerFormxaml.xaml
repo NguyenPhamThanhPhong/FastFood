@@ -54,7 +54,7 @@
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
-                                FontFamily="{StaticResource mainFont}"
+                                FontFamily="{StaticResource boldFont}"
                                 FontSize="12"
                                 materialDesign:HintAssist.Foreground="White"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
