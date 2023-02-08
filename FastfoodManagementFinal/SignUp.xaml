@@ -136,11 +136,26 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
                                 BorderThickness="2" CaretBrush="Gray" />
 
+        <TextBox
+           
+            Height="33"
+                                Margin="296,268,228,231"
+                                BorderBrush="#e6ebf7"
+                                Background="White"
+                                Foreground="Black"
+                                FontFamily="{StaticResource mainFont}"
+                                FontSize="12"
+                                materialDesign:HintAssist.Foreground="White"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
+                                BorderThickness="2" CaretBrush="Gray" />
+
         <DatePicker x:Name="datepicker_NgaySinh"
-                    FontSize="11"     Foreground="#9B9CA3" Background="#e6ebf7"
-            FontFamily="{StaticResource boldFont}"            Margin="296,266,230,0" 
+                    FontSize="11"     Foreground="#9B9CA3" Background="White"
+            FontFamily="{StaticResource boldFont}"            Margin="311,272,236,0" 
             VerticalAlignment="Top" 
-            Height="37" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" SelectedDateFormat="Short" BorderBrush="White" />
+            Height="25" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" SelectedDateFormat="Short" BorderBrush="White" />
 
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="543,183,96,324" Text="Giới tính" RenderTransformOrigin="0.535,2.68"/>
