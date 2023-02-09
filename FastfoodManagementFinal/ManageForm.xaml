@@ -4,7 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
- 
+                 xmlns:converters="clr-namespace:FastfoodManagementFinal.Converters"
+
       xmlns:local="clr-namespace:FastfoodManagementFinal"
       mc:Ignorable="d" 
       d:DesignHeight="580" d:DesignWidth="765"
@@ -12,6 +13,9 @@
       x:Name="_this"
       DataContext="{Binding ElementName=_this}">
 
+    <Page.Resources>
+        <converters:Account_to_Avatar x:Key="toAvatar"/>
+    </Page.Resources>
 
     <!--<Button  
                     HorizontalAlignment="Left" Margin="278,16,0,0" 
@@ -101,7 +105,7 @@
                     <Grid Height="170" Width="320" Margin="4,5,6,5" Grid.Column="1">
                         <Image Source="/IMAGE/Quản lý.png" Margin="-8,-8,-8,-9" />
 
-                        <Image x:Name="avt_img"  Source="{Binding AvatarImg, IsAsync=True}" Margin="18,24,208,59" />
+                        <Image x:Name="avt_img"  Source="{Binding Avatar,Converter={StaticResource toAvatar}, IsAsync=True}" Margin="18,24,208,59" />
                         <Image Source="/IMAGE/Giá.png" Margin="37,118,234,29" RenderTransformOrigin="0.556,1.263" />
                         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="45,120,235,38"  Text="{Binding StaffID}"/>
                         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="127,33,68,121" Text="{Binding Name}"/>

@@ -16,69 +16,7 @@
         <converters:toVND_Converter x:Key="toVND"/>
         <converters:Product_to_Avatar x:Key="toAvatar"/>
         <converters:ProductQuantity_to_Visible x:Key="toVisible"/>
-        <!--<Style x:Key="grid_food" TargetType="Grid">
-            <Setter Property="Height" Value="190"></Setter>
-            <Setter Property="Width" Value="165"></Setter>
-            <Setter Property="Margin" Value="0,3,5,7"></Setter>
 
-        </Style>
-
-        <Style x:Key="image1" TargetType="Image">
-            <Setter Property="Source" Value="/IMAGE/white.png"></Setter>
-            <Setter Property="Margin" Value="2,-2,2,-9"></Setter>
-        </Style>
-
-        <Style x:Key="image2" TargetType="Image">
-            <Setter Property="Source" Value="/IMAGE/white.png"></Setter>
-            <Setter Property="Margin" Value="8,9,8,1"></Setter>
-        </Style>
-
-        <Style x:Key="image_food" TargetType="Image">
-            -->
-        <!--<Setter Property="Source" Value="/IMAGE/burger_bulgogi-burger.png"></Setter>-->
-        <!--
-            <Setter Property="Margin" Value="22,17,24,80"></Setter>
-        </Style>
-        <Style x:Key="image_price" TargetType="Image">
-            <Setter Property="Source" Value="/IMAGE/Giá.png"></Setter>
-            <Setter Property="Margin" Value="32,140,90,29"></Setter>
-            <Setter Property="RenderTransformOrigin" Value="0.556,1.2630"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_foodname" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="Margin" Value="36,109,24,60"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_price" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="FontSize" Value="8"></Setter>
-            <Setter Property="Margin" Value="39,145,92,32"></Setter>
-        </Style>
-
-        <Style x:Key="txtblock_chitiet" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="{StaticResource boldFont}"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="FontSize" Value="8"></Setter>
-            <Setter Property="Margin" Value="94,145,37,32"></Setter>
-        </Style>
-
-        <Style x:Key="button_chitiet" 
-               
-               BasedOn="{StaticResource MaterialDesignFlatMidBgButton}" 
-               TargetType="Button">
-            <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="10" ></Setter>
-            <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth0"></Setter>
-            <Setter Property="Width" Value="46"></Setter>
-            <Setter Property="Height" Value="22"></Setter>
-            <Setter Property="BorderBrush" Value="#F87D32"></Setter>
-            <Setter Property="Background" Value="#F87D32"></Setter>
-            <Setter Property="Margin" Value="86,140,33,28"></Setter>
-            <Setter Property="RenderTransformOrigin" Value="0.397,0.938"></Setter>
-        </Style>-->
     </Page.Resources>
 
     <Grid  Height="580" Width="765">

@@ -27,6 +27,22 @@ namespace FastfoodManagementFinal.Converters
             throw new NotImplementedException();
         }
     }
+    public class Account_to_Avatar : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string avt = value as string;
+            Account a = new Account();
+            a.Avatar = avt;
+            return a.FindAvatar();
+            throw new NotImplementedException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public class ProductQuantity_to_Visible : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

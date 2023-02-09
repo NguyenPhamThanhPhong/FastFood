@@ -30,7 +30,7 @@ namespace FastfoodManagementFinal
         {
             InitializeComponent();
             //List_acc = Xu_Ly_SQL.Select_all_Account();
-            FindAvatar();
+            //FindAvatar();
             
         }
         public List<Account> List_acc { get; set; } = Xu_Ly_SQL.Select_all_Account();
@@ -75,7 +75,7 @@ namespace FastfoodManagementFinal
                     {
                         List_acc.Add(aa);
                     }
-                    FindAvatar();
+                    //FindAvatar();
                     listview_show.Items.Refresh();
 
 
@@ -118,7 +118,7 @@ namespace FastfoodManagementFinal
             {
                 List_acc.Add(a);
             }
-            FindAvatar();
+            //FindAvatar();
             listview_show.Items.Refresh();
         }
 

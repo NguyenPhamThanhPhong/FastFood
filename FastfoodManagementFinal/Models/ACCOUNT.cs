@@ -86,6 +86,13 @@ namespace FastfoodManagementFinal.Models
             this.AvatarImg = BitmapFrame.Create(
                       ImageUri, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
         }
+        public ImageSource FindAvatar()
+        {
+            string path = Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, this.Avatar);
+            Uri ImageUri = new Uri(path);
+            return BitmapFrame.Create(
+                      ImageUri, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+        }
         public bool Is_valid()
         {
             int try_parse;

@@ -54,7 +54,7 @@
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Mã KH" Margin="57,155,27,396" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Khách hàng" Margin="138,155,130,396" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Ngày" Margin="153,155,32,396" RenderTransformOrigin="0.845,0.596" Grid.Column="1"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="SĐT" Margin="30,155,303,396" RenderTransformOrigin="0.845,0.596" Grid.Column="2"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Giảm giá" Margin="30,155,263,396" RenderTransformOrigin="0.845,0.596" Grid.Column="2"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Trị Giá" Margin="171,155,141,396" RenderTransformOrigin="0.845,0.596" Grid.Column="2"/>
 
         <ListView
@@ -86,7 +86,7 @@
                         <Border CornerRadius="5" BorderThickness="2" Height="55" BorderBrush="#e6ebf7" Background="White" Margin="4,0,5,0"/>
                         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="35,17,615,10" Text="{Binding Bill_ID}"/>
                         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="101,17,445,10" Text="{Binding CustomerName}"/>
-                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="262,17,330,6" Text="{Binding Bill_Time}"/>
+                        <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="260,17,335,6" Text="{Binding Bill_Time}"/>
                         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="376,17,195,6" Text="{Binding Bill_Discount,Converter={StaticResource toVND}}"/>
                         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="518,17,80,16" Text="{Binding Bill_Total,Converter={StaticResource toVND}}"/>
                         <Button  HorizontalAlignment="Left" Margin="622,0,0,0" VerticalAlignment="Center" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
@@ -98,7 +98,7 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
+            
         </ListView>
         <!--Bộ lọc-->
         <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,57,480" RenderTransformOrigin="0.845,0.596"/>

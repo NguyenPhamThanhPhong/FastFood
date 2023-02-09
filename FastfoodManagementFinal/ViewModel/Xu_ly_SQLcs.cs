@@ -48,7 +48,6 @@ namespace FastfoodManagementFinal.ViewModel
                         "values ('" + c.CustomerID + "',N'" + c.CustomerName + "',N'" + c.CustomerSex + "'," +
                         "'" + c.CustomerPhone + "','" + c.CustomerTotal + "',N'" + c.CustomerRank + "',N'" + c.Address + "', 1 )";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    MessageBox.Show(sql);
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
@@ -135,7 +134,6 @@ namespace FastfoodManagementFinal.ViewModel
         }
         public static void Insert_Staff(Account a)
         {
-            MessageBox.Show(System.Configuration.ConfigurationManager.ConnectionStrings["FastFoodDataBase"].ConnectionString);
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -145,7 +143,6 @@ namespace FastfoodManagementFinal.ViewModel
                     "N'" + a.address + "', '"+a.Visible+"')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 int check = cmd.ExecuteNonQuery();
-                MessageBox.Show(check.ToString());
                 con.Close();
             }
         }
