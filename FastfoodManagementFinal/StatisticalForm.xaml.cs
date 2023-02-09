@@ -33,7 +33,7 @@ namespace FastfoodManagementFinal
             txtbox_sdt.Text = Selected.LoggedIn.Phone_Number;
             txtbox_diachi.Text = Selected.LoggedIn.address;
             txtbox_mail.Text= Selected.LoggedIn.Email;
-
+            txtbox_tenDN.Text = Selected.LoggedIn.Username;
             datepicker_ngaysinh.SelectedDate = Selected.LoggedIn.DateOfBirth;
             //this.avt_img.Source = null;
             //GC.Collect();
@@ -124,13 +124,14 @@ namespace FastfoodManagementFinal
                 a.StaffID = Selected.LoggedIn.StaffID;
                 a.Avatar = a.StaffID + ".png";
                 Xu_Ly_SQL.Update_Staff(a);
+                Dashboard db = (Dashboard)Window.GetWindow(this);
+                db.txtBlock_Acc_Name.Text = txtbox_hoten.Text;
                 if (avatar_path.Length > 0 && avatar_path != null)
                 {
                     FileInfo fi = new FileInfo(avatar_path);
                     if (fi.Exists)
                     {
                         Xu_ly_Anh.LuuAnh(avatar_path, Xu_ly_Anh.AccountAvatar, a.Avatar);
-                        Dashboard db = (Dashboard)Window.GetWindow(this);
                         BitmapImage _image = new BitmapImage();
                         _image.BeginInit();
                         _image.CacheOption = BitmapCacheOption.None;
@@ -140,6 +141,7 @@ namespace FastfoodManagementFinal
                         _image.UriSource = new Uri(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, Selected.LoggedIn.Avatar), UriKind.RelativeOrAbsolute);
                         _image.EndInit();
                         db.logged_in_avatar.Source = _image;
+                        
                     }
                 }
                 
@@ -151,6 +153,13 @@ namespace FastfoodManagementFinal
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             Mailcode = Xu_ly_Mail.SendMail(txtbox_mail.Text.Trim());
+        }
+
+        private void button_QL_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult check = MessageBox.Show("Bạn có muốn lưu mã quản lý là '" + txtbox_maQL.Text.Trim() + "'","",MessageBoxButton.YesNo,MessageBoxImage.Question);
+            if(check==MessageBoxResult.Yes)
+                Xu_ly_File.WriteToTextFile(txtbox_maQL.Text.Trim());
         }
     }
 }

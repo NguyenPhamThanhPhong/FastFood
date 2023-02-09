@@ -53,7 +53,7 @@ namespace FastfoodManagementFinal
             Account a = new Account();
             a.AccessRight = access_right;
             a.StaffID = Xu_ly_ID.GetStaffID(access_right);
-            a.Avatar = a.StaffID + new FileInfo(Avatar_path).Extension;
+            a.Avatar = a.StaffID + ".png";
             a.Username = txtĐK_TK.Text;
             a.Pass = txtĐK_Pass.Text;
             a.Name = txtĐK_Name.Text;
@@ -66,7 +66,7 @@ namespace FastfoodManagementFinal
             if (a.Is_valid())
             {
 
-                if (txtKey.Visibility == Visibility.Visible && txtKey.Text != "QL_VIP_PRO")
+                if (txtKey.Visibility == Visibility.Visible && txtKey.Text != Xu_ly_File.ReadFromTextFile())
                 {
                     MessageBox.Show("Sai mã key quản lý! " +
                         "   \n Vui lòng chọn đúng quyền hạn hoặc nhập đúng mã Key!");
@@ -143,6 +143,7 @@ namespace FastfoodManagementFinal
         {
             string x = txtĐK_Email.Text.Trim();
             Xu_ly_Mail.SendMail(x);
+            Mailcode = x;
             //Xu_ly_Mail.SendEmail(txtĐK_Email.Text.Trim());
             //Mailcode = ;
         }

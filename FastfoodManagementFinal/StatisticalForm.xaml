@@ -147,9 +147,9 @@
 
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="103,447,544,111" Text="Tên đăng nhập"/>
-        <TextBox
+        <TextBox x:Name="txtbox_tenDN"
                                 Height="40"
-                                Margin="97,473,525,0"
+                                Margin="97,473,453,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -162,26 +162,11 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="258,447,399,106" Text="Mật khẩu"/>
-        <TextBox
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" 
+                   FontSize="14" Margin="332,447,325,106" Text="Mã Quản lý"/>
+        <TextBox x:Name="txtbox_maQL"
                                 Height="40"
-                                Margin="253,473,390,0"
-                                BorderBrush="#e6ebf7"
-                                Background="White"
-                                Foreground="#9B9CA3"
-                                FontFamily="{StaticResource boldFont}"
-                                FontSize="13.5"
-                                materialDesign:HintAssist.Foreground="White"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,3.5,0,0"
-                                BorderThickness="2"
-                                VerticalAlignment="Top" CaretBrush="Gray" />
-
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="394,447,275,106" Text="Mã xác nhận"/>
-        <TextBox
-                                Height="40"
-                                Margin="389,473,254,0"
+                                Margin="325,473,259,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -195,9 +180,9 @@
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
 
-        <Button  Style="{StaticResource MaterialDesignFlatMidBgButton}"
+        <Button x:Name="button_QL" Style="{StaticResource MaterialDesignFlatMidBgButton}"
                 Height="40" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="525,473,97,67" />
+                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="525,473,97,67" Click="button_QL_Click" />
 
 
         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource mainFont}" FontSize="9" Margin="232,524,226,34" Text="Vui lòng kiểm tra Email vừa nhập để lấy mã xác nhận bạn nhé!"/>
@@ -226,7 +211,6 @@
                 Gửi mã
             </Hyperlink>
         </TextBlock>
-        <TextBlock Margin="495,449,230,111"  FontSize="12"><Hyperlink Click="Hyperlink_Click"><Run Text="Gửi mã"/></Hyperlink></TextBlock>
 
     </Grid>
 </Page>
