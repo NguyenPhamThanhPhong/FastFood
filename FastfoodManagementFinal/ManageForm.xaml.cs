@@ -140,5 +140,10 @@ namespace FastfoodManagementFinal
             FindAvatar();
             listview_show.Items.Refresh();
         }
+
+        private void eye1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

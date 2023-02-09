@@ -337,7 +337,7 @@
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="138,8,223,5" Text="45.000"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="225,8,168,5" Text="1"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="282,8,83,5" Text="45.000"/>
-                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"  HorizontalAlignment="Left" Margin="369,0,0,0" VerticalAlignment="Center" Height="14" Width="19" BorderBrush="#00711B1B" Click="button_cong_Click">
+                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"  HorizontalAlignment="Left" Margin="369,0,0,0" VerticalAlignment="Center" Height="14" Width="19" BorderBrush="#00711B1B">
                     <Button.Background>
                         <ImageBrush ImageSource="IMAGE/minus-2-128.png"/>
                     </Button.Background>
@@ -352,7 +352,7 @@
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="138,8,225,5" Text="45.000"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="225,8,168,5" Text="1"/>
                 <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="282,8,83,5" Text="45.000"/>
-                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"  HorizontalAlignment="Left" Margin="369,0,0,0" VerticalAlignment="Center" Height="14" Width="19" BorderBrush="#00711B1B" Click="button_cong_Click">
+                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"  HorizontalAlignment="Left" Margin="369,0,0,0" VerticalAlignment="Center" Height="14" Width="19" BorderBrush="#00711B1B">
                     <Button.Background>
                         <ImageBrush ImageSource="IMAGE/minus-2-128.png"/>
                     </Button.Background>
