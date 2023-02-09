@@ -74,7 +74,7 @@
                     <Button Content="Button"/>
                 </Button>
             </Grid>-->
-            <!--<ListView.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="2">
                         <Border CornerRadius="5" BorderThickness="2" Height="55" BorderBrush="#e6ebf7" Background="White" Margin="4,0,5,0"/>
@@ -91,35 +91,8 @@
                         </Button>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>-->
-            <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="0">
-                <Border CornerRadius="5" BorderThickness="2" Height="55" BorderBrush="#e6ebf7" Background="White" Margin="4,0,5,0"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="17,17,593,10" Text="HD001"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="90,17,423,10" Text="Trần Thanh Hiền"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="264,17,328,6" Text="12/12/2022"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="377,17,194,6" Text="0398285020"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="518,17,80,16" Text="500.000"/>
-                <Button  HorizontalAlignment="Left" Margin="622,0,0,0" VerticalAlignment="Center" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                    </Button.Background>
-                    <Button Content="Button"/>
-                </Button>
-            </Grid>
-            <Grid Height="55" Width="670" Margin="40,0,-670,0" Grid.Row="0">
-                <Border CornerRadius="5" BorderThickness="2" Height="55" BorderBrush="#e6ebf7" Background="White" Margin="4,0,5,0"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="17,17,593,10" Text="HD001"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="90,17,423,10" Text="Trần Thanh Hiền"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="264,17,328,6" Text="12/12/2022"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="377,17,194,6" Text="0398285020"/>
-                <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="518,17,80,16" Text="500.000"/>
-                <Button  HorizontalAlignment="Left" Margin="622,0,0,0" VerticalAlignment="Center" Height="24" Width="28" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Click="Button_Click_1">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/IMAGE/eye-2-128.png"/>
-                    </Button.Background>
-                    <Button Content="Button"/>
-                </Button>
-            </Grid>
+            </ListView.ItemTemplate>
+
         </ListView>
         <!--Bộ lọc-->
         <TextBlock Foreground="#C6C7E0" FontFamily="{StaticResource boldFont}" FontSize="14" Text="Bộ lọc" Margin="52,76,57,480" RenderTransformOrigin="0.845,0.596"/>

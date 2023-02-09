@@ -144,21 +144,21 @@
         <!--Thêm Scroll Viewer-->
 
         <ListView x:Name="listview_show"
-                Margin="24,153,0,7" ItemsSource="{Binding pros}" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Width="741">
+                Margin="20,150,0,10" ItemsSource="{Binding pros}" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Width="745">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
-            <!--<ListView.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
-                        <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
-                        <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
-                        <Image Source="{Binding Avatar,Converter={StaticResource toAvatar},IsAsync=True}" Margin="22,17,24,80" ButtonBase.Click="Button_view_ChiTiet" />
-                        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="36,109,24,60" Text="{Binding Name}"/>
-                        <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="31,141,84,29" Text="{Binding Price}">
+                    <Grid Height="190" Width="160" Margin="0,3,5,7" Grid.Column="2">
+                        <Image Source="/IMAGE/white.png" Margin="-100,-2,-100,-9" />
+                        <Image Source="/IMAGE/white.png" Margin="-31,5,-31,1" />
+                        <Image Source="{Binding Avatar,Converter={StaticResource toAvatar},IsAsync=True}" Margin="20,12,20,76" ButtonBase.Click="Button_view_ChiTiet" />
+                        <TextBlock TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="30,115,30,56" Text="{Binding Name}"/>
+                        <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="20,138,69,26" Text="{Binding Price}">
                             <TextBlock.Background>
                                 <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
                             </TextBlock.Background>
@@ -167,11 +167,10 @@
 
                         </Image>
                         <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
-                Width="46" Height="22" BorderBrush="#F87D32"
+                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#F87D32"
                         Padding="-1"
-                Background="#F87D32" Margin="88,140,31,28" RenderTransformOrigin="0.397,0.938"
-                        Click="Button_view_ChiTiet">
+                Background="#F87D32" Margin="92,138,21,26" RenderTransformOrigin="0.397,0.938"
+                        Click="Button_view_ChiTiet" Height="25">
                             <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Text="Chi tiết" Width="31" >
 
                             </TextBlock>
@@ -181,57 +180,35 @@
                     </Grid>
                 </DataTemplate>
 
-            </ListView.ItemTemplate>-->
-            <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
-                <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
-                <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
-                <Image Source="/MON_AN/RICE_NOODLE/rice-spaghetti-534x374px._com-gasoth_s.png" Margin="22,17,24,80" />
-                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="36,109,24,60" Text="Burger Bulgogi"/>
-                <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="31,141,84,29" Text="45.000">
+            </ListView.ItemTemplate>
+
+            <!--<Grid Height="190" Width="165" Margin="0,0,0,0" Grid.Column="2">
+                <Image Source="/IMAGE/white.png" Margin="-35,-2,-30,-9" />
+                <Image Source="/IMAGE/white.png" Margin="-21,5,-15,1" />
+                <Image Source="{Binding Avatar,Converter={StaticResource toAvatar},IsAsync=True}" Margin="18,12,23,71" ButtonBase.Click="Button_view_ChiTiet" />
+                <TextBlock TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="14" Margin="27,111,33,57" Text="{Binding Name}"/>
+                <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="10" Margin="20,138,78,32" Text="{Binding Price}">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
                     </TextBlock.Background>
                 </TextBlock>
+                -->
+            <!--<Image Visibility="{Binding Remaining_quantity,Converter={StaticResource toVisible}}" Source="/IMAGE/hethang.png" Margin="-21,-17,12,-1" RenderTransformOrigin="0.505,0.514">
+
+                </Image>-->
+            <!--
                 <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
-                Width="46" Height="22" BorderBrush="#F87D32"
+                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="22" BorderBrush="#F87D32"
                         Padding="-1"
-                Background="#F87D32" Margin="88,140,31,28" RenderTransformOrigin="0.397,0.938">
+                Background="#F87D32" Margin="87,138,26,30" RenderTransformOrigin="0.397,0.938"
+                        Click="Button_view_ChiTiet">
                     <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Text="Chi tiết" Width="31" >
 
                     </TextBlock>
                 </Button>
-                <Image Source="/IMAGE/hethang.png" Margin="-21,-17,12,-1" RenderTransformOrigin="0.505,0.514">
-
-                </Image>
 
 
-            </Grid>
-            <Grid Height="190" Width="165" Margin="0,3,5,7" Grid.Column="2">
-                <Image Source="/IMAGE/white.png" Margin="2,-2,2,-9" />
-                <Image Source="/IMAGE/white.png" Margin="8,9,8,1" />
-                <Image Source="/MON_AN/RICE_NOODLE/rice-spaghetti-534x374px._com-gasoth_s.png" Margin="22,17,24,80" />
-                <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="36,109,24,60" Text="Burger Bulgogi"/>
-                <TextBlock Padding="0 3" TextAlignment="Center" Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="8" Margin="31,141,84,29" Text="45.000">
-                    <TextBlock.Background>
-                        <ImageBrush ImageSource="/IMAGE/Giá.png" ></ImageBrush>
-                    </TextBlock.Background>
-                </TextBlock>
-                <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-                materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0"
-                Width="46" Height="22" BorderBrush="#F87D32"
-                        Padding="-1"
-                Background="#F87D32" Margin="88,140,31,28" RenderTransformOrigin="0.397,0.938">
-                    <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="8" Text="Chi tiết" Width="31" >
-
-                    </TextBlock>
-                </Button>
-                <Image Source="/IMAGE/hethang.png" Margin="-21,-17,12,-1" RenderTransformOrigin="0.505,0.514">
-
-                </Image>
-
-
-            </Grid>
+            </Grid>-->
 
 
         </ListView>
