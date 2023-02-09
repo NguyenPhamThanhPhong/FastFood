@@ -24,6 +24,27 @@ namespace FastfoodManagementFinal.ViewModel
             Workbook wb = excel.Workbooks.Open(source);
             Worksheet ws = wb.Worksheets[1];
             //excel.Application.Workbooks.Add(Type.Missing);
+
+            string rangetop = "C5:C5";
+            string[] content = new[] { b.Bill_Time.ToString("dd/MM/yyyy") };
+            Range rangingtop = ws.Range[rangetop];
+            rangingtop.set_Value(XlRangeValueDataType.xlRangeValueDefault, content);
+
+            rangetop = "C6:C6";
+            content = new[] { b.StaffID };
+            rangingtop = ws.Range[rangetop];
+            rangingtop.set_Value(XlRangeValueDataType.xlRangeValueDefault, content);
+            
+            rangetop = "F4:F4";
+            content = new[] { b.CustomerID };
+            rangingtop = ws.Range[rangetop];
+            rangingtop.set_Value(XlRangeValueDataType.xlRangeValueDefault, content);
+
+            rangetop = "F5:F5";
+            content = new[] { b.CustomerID };
+            rangingtop = ws.Range[rangetop];
+            rangingtop.set_Value(XlRangeValueDataType.xlRangeValueDefault, content);
+
             int RowIndex = 11;
             foreach(Order o in b.orders)
             {

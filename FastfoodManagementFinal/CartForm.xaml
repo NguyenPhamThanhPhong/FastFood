@@ -51,7 +51,7 @@
                 Height="40" BorderBrush="#EA5C2B"
                 Background="#EA5C2B" FontSize="20" Content="TẠO" FontFamily="{StaticResource boldFont}" Margin="227,100,60,440" Grid.Column="2" Click="Button_Click"/>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Mã KH" Margin="57,155,27,396" RenderTransformOrigin="0.845,0.596"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Mã DH" Margin="57,155,27,396" RenderTransformOrigin="0.845,0.596"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Khách hàng" Margin="138,155,130,396" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Ngày" Margin="153,155,32,396" RenderTransformOrigin="0.845,0.596" Grid.Column="1"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="15" Text="Giảm giá" Margin="30,155,263,396" RenderTransformOrigin="0.845,0.596" Grid.Column="2"/>

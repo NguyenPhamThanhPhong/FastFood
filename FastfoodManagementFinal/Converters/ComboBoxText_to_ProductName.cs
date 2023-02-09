@@ -130,11 +130,11 @@ namespace FastfoodManagementFinal.Converters
             int price_amount;
             if(int.TryParse(sell,out sell_amount) && int.TryParse(price,out price_amount))
             {
-                return (sell_amount * price_amount).ToString();
+                return Xu_ly_chuoi.ToVND(sell_amount * price_amount).ToString();
             }
             else
             {
-                return "0";
+                return "0 d";
             }
             throw new NotImplementedException();
         }

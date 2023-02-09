@@ -105,7 +105,7 @@
                         <Border Margin="0,0,10,4" Height="25" CornerRadius="1" BorderThickness="1.5" BorderBrush="#e6ebf7" Background="White"  />
                         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="10,4,377,9" Text="{Binding ImportProductID}"/>
                         <TextBlock TextAlignment="Center" Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="61,4,285,9" Text="{Binding ImportProductName}" />
-                        <TextBlock x:Name="txtblock_price" Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="153,4,195,9" Text="{Binding ImportProductPrice}"/>
+                        <TextBlock x:Name="txtblock_price" TextAlignment="Center" Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="153,4,195,9" Text="{Binding ImportProductPrice}"/>
                         <TextBlock x:Name="txtblock_quantity" TextAlignment="Center" Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="249,4,142,9" Text="{Binding ImportQuantity}"/>
                         <TextBlock TextAlignment="Center" Foreground="#9B9CA3" FontFamily="{StaticResource boldFont}" FontSize="12" Margin="306,4,21,9" >
                             <TextBlock.Text>
@@ -119,6 +119,7 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            
         </ListView>
         <!--<ScrollViewer Grid.ColumnSpan="2" Margin="70,270,55,80" >
             <Grid>
