@@ -18,26 +18,26 @@
 
     <Grid>
 
-        <Image Source="/IMAGE/Đăng ký.png" Margin="0,0,-80,0" />
-        <Image Cursor="Hand" x:Name="image_avatar" Source="/IMAGE/Thêm Ảnh.png" Margin="74,146,459,203" RenderTransformOrigin="0.606,0.649" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+        <Image Source="/IMAGE/Đăng ký.png" Margin="-32,8,-48,-8" />
+        <Image Cursor="Hand" x:Name="image_avatar" Source="/IMAGE/Thêm Ảnh.png" Margin="42,154,491,195" RenderTransformOrigin="0.606,0.649" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
 
 
         <!--Tên ĐN-->
 
         <TextBlock  Foreground="#FF6633" FontFamily="{StaticResource boldFont}" 
-                    HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="35" Text="ĐĂNG KÝ" Margin="352,8,0,0" Width="191"/>
-        <Button HorizontalAlignment="Left" Margin="697,22,0,0" VerticalAlignment="Top" Height="25" Width="24" BorderBrush="#00711B1B">
+                    HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="35" Text="ĐĂNG KÝ" Margin="320,18,0,0" Width="191"/>
+        <Button HorizontalAlignment="Left" Margin="665,30,0,0" VerticalAlignment="Top" Height="25" Width="24" BorderBrush="#00711B1B">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>
             <Button Content="Button"/>
         </Button>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="301,65,317,436" Text="Tên đăng nhập"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="269,73,349,428" Text="Tên đăng nhập"/>
         <TextBox
             x:Name="txtĐK_TK"
                                 Height="33"
-                                Margin="296,90,230,0"
+                                Margin="264,98,262,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -50,11 +50,11 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="543,65,97,442" Text="Mật khẩu"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="511,73,129,434" Text="Mật khẩu"/>
         <TextBox
             x:Name="txtĐK_Pass"
                                 Height="33"
-                                Margin="538,90,10,0"
+                                Margin="506,98,42,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -69,25 +69,25 @@
 
         <TextBlock Foreground="Black" 
                    FontFamily="{StaticResource boldFont}" 
-                   FontSize="13" Margin="296,127,323,382" Text="Quyền truy cập"/>
+                   FontSize="13" Margin="264,135,355,374" Text="Quyền truy cập"/>
         <RadioButton
             x:Name="radio_button_quanly" 
                     
                     Foreground="Black" 
                    FontFamily="{StaticResource boldFont}" 
-                   FontSize="13" Margin="408,152,228,360" Checked="radio_button_nhanvien_Checked" Background="#FFFF6633" BorderBrush="#FFFF6633">
+                   FontSize="13" Margin="376,160,260,352" Checked="radio_button_nhanvien_Checked" Background="#FFFF6633" BorderBrush="#FFFF6633">
             Quản lý
         </RadioButton>
         <RadioButton x:Name="radio_button_nhanvien"
                     Foreground="Black" 
                    FontFamily="{StaticResource boldFont}" 
-                   FontSize="13" Margin="301,150,328,357" Checked="radio_button_quanly_Checked" BorderBrush="#FFFF6633" Background="#FFFF6633">
+                   FontSize="13" Margin="269,158,360,349" Checked="radio_button_quanly_Checked" BorderBrush="#FFFF6633" Background="#FFFF6633">
             Nhân viên
         </RadioButton>
 
         <TextBox x:Name="txtbox_maEmail"
             Height="37"
-                                Margin="296,395,230,99"
+                                Margin="264,404,262,91"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -100,12 +100,12 @@
                                 BorderThickness="2" CaretBrush="Gray" />
 
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" 
-                   FontSize="13" Margin="543,128,146,381" Text="Key"/>
+                   FontSize="13" Margin="511,136,178,373" Text="Key"/>
 
         <TextBox
             x:Name="txtKey"
             Height="36"
-            Margin="538,147,10,0"
+            Margin="506,155,42,0"
             BorderBrush="#e6ebf7"
             Background="White"
                                 Foreground="#9B9CA3"
@@ -120,11 +120,11 @@
             VerticalAlignment="Top" CaretBrush="Gray" />
 
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="301,183,363,327" Text="Họ và tên" RenderTransformOrigin="1.503,0.705"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="269,191,395,319" Text="Họ và tên" RenderTransformOrigin="1.503,0.705"/>
         <TextBox
             x:Name="txtĐK_Name"
             Height="33"
-                                Margin="296,205,228,294"
+                                Margin="264,213,260,286"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -139,7 +139,7 @@
         <TextBox
            
             Height="33"
-                                Margin="296,268,228,231"
+                                Margin="264,276,260,223"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="Black"
@@ -153,16 +153,16 @@
 
         <DatePicker x:Name="datepicker_NgaySinh"
                     FontSize="11"     Foreground="#9B9CA3" Background="White"
-            FontFamily="{StaticResource boldFont}"            Margin="311,272,236,0" 
+            FontFamily="{StaticResource boldFont}"            Margin="279,280,268,0" 
             VerticalAlignment="Top" 
             Height="25" SelectedDateChanged="datepicker_NgaySinh_SelectedDateChanged" SelectedDateFormat="Short" BorderBrush="White" />
 
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="543,183,96,324" Text="Giới tính" RenderTransformOrigin="0.535,2.68"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="511,191,128,316" Text="Giới tính" RenderTransformOrigin="0.535,2.68"/>
         <TextBox
             x:Name="txtĐK_Sex"
                                 Height="33"
-                                Margin="538,205,10,0"
+                                Margin="506,213,42,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -176,13 +176,13 @@
                                 VerticalAlignment="Top" CaretBrush="Gray" KeyDown="txtĐK_Sex_KeyDown" />
 
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="301,243,358,268" Text="Ngày sinh"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="269,251,390,260" Text="Ngày sinh"/>
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="543,243,112,266" Text="SĐT"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="511,251,144,258" Text="SĐT"/>
         <TextBox
             x:Name="txtĐK_Phone"
                                 Height="37"
-                                Margin="538,266,10,0"
+                                Margin="506,274,42,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -194,11 +194,11 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" KeyDown="txtĐK_Phone_KeyDown" />
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="301,308,365,198" Text="Email"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="269,316,397,190" Text="Email"/>
         <TextBox
             x:Name="txtĐK_Email"
                                 Height="33"
-                                Margin="296,334,230,0"
+                                Margin="264,342,262,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -210,11 +210,11 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,3,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="546,308,115,199" Text="Địa chỉ"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="514,316,147,191" Text="Địa chỉ"/>
         <TextBox
             x:Name="txtĐK_Address"
                                 Height="95"
-                                Margin="538,338,10,0"
+                                Margin="506,346,42,0"
                                 BorderBrush="#e6ebf7"
                                 Background="White"
                                 Foreground="#9B9CA3"
@@ -235,13 +235,11 @@
                  FontSize="17" Content="ĐĂNG KÝ" 
                  FontFamily="{StaticResource boldFont}" 
                  Height="40"
-                 Margin="422,455,167,37" Click="Button_Click"/>
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="301,375,300,131" Text="Mã xác nhận Email"/>
+                 Margin="390,463,199,29" Click="Button_Click"/>
+        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="13" Margin="269,383,332,123" Text="Mã xác nhận Email"/>
 
         <Button x:Name="button_guima" VerticalAlignment="Bottom"
-                BorderBrush="AliceBlue" Background="#EA5C2B" Margin="207,0,440,100" Height="32" Click="button_guima_Click">
-            Gửi mã
-        </Button>
+                BorderBrush="AliceBlue" Background="#EA5C2B" Margin="274,0,373,34" Height="32" Click="button_guima_Click" Content="GỬI MÃ"/>
 
     </Grid>
 </Window>
