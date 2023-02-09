@@ -30,7 +30,7 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 con.Open();
                 string sql = "insert into bill (billID,staffid,customerID,BillDate,Discount,Total) " +
-                    "values ('" + b.Bill_ID + "','" + b.StaffID + "','" + b.CustomerID + "','" + b.Bill_Time + "'," +
+                    "values ('" + b.Bill_ID + "','" + b.StaffID + "','" + b.CustomerID + "','" + b.Bill_Time.ToString("MM/dd/yyyy") + "'," +
                     "'" + b.Bill_Discount + "','" + b.Bill_Total + "')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
@@ -76,7 +76,7 @@ namespace FastfoodManagementFinal.ViewModel
                 {
                     con.Open();
                     string sql = "insert into import values" +
-                        " ('" + i.ImportID + "','" + i.AdminID + "','" + i.ImportDate + "')";
+                        " ('" + i.ImportID + "','" + i.AdminID + "','" + i.ImportDate.ToString("MM/dd/yyyy") + "')";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -139,7 +139,7 @@ namespace FastfoodManagementFinal.ViewModel
                 con.Open();
                 string sql = "insert into staff values ('" + a.StaffID + "',N'" + a.Avatar + "'," +
                     "N'" + a.AccessRight + "',N'" + a.Username + "',N'" + a.Pass + "',N'" + a.Name + "'," +
-                    "N'" + a.Sex + "','" + a.DateOfBirth + "','" + a.Phone_Number + "',N'" + a.Email + "'," +
+                    "N'" + a.Sex + "','" + a.DateOfBirth.ToString("MM/dd/yyyy") + "','" + a.Phone_Number + "',N'" + a.Email + "'," +
                     "N'" + a.address + "', '"+a.Visible+"')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 int check = cmd.ExecuteNonQuery();
@@ -610,7 +610,7 @@ namespace FastfoodManagementFinal.ViewModel
                     con.Open();
                     string sql = "update staff set " +
                         "avatar = N'"+a.Avatar+"',acessRight = N'"+a.AccessRight+"'," +
-                        "fullname = N'"+a.Name+"',sex = N'"+a.Sex+"', dob = '"+a.DateOfBirth+"'," +
+                        "fullname = N'"+a.Name+"',sex = N'"+a.Sex+"', dob = '"+a.DateOfBirth.ToString("MM/dd/yyyy") + "'," +
                         "phone = N'"+a.Phone_Number+"',email=N'"+a.Email+"',addr = N'"+a.address+"'" +
                         " where ID=N'"+a.StaffID+"'";
                     SqlCommand cmd = new SqlCommand(sql, con);
