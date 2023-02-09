@@ -48,7 +48,6 @@ namespace FastfoodManagementFinal.ViewModel
             {
                 prefix = "QL";
             }
-
             for (int i=0; i< acc.Count - 1;i++)
             {
                 int pre = int.Parse(acc[i].StaffID.Substring(2, 3));

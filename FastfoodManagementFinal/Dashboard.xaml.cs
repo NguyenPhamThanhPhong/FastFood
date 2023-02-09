@@ -33,14 +33,15 @@ namespace FastfoodManagementFinal
             txtBlock_Acc_Name.Text = logged_in_acc.Name;
             txtBlock_AccessRight.Text = logged_in_acc.AccessRight;
             //MessageBox.Show(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar));
-
+            
             if(Selected.LoggedIn.AccessRight == "Nhân viên")
             {
                 button_quanly.Visibility= Visibility.Collapsed;
                 button_nhaphang.Visibility = Visibility.Collapsed;
                 img_nhaphang.Visibility = Visibility.Collapsed;
                 img_quanly.Visibility = Visibility.Collapsed;
-
+                //Thickness margin = new Thickness(56, 34, 196, 228);
+                //button_caidat.Margin = margin;
             }
 
             if (new FileInfo(Xu_ly_Anh.GetAnh(Xu_ly_Anh.AccountAvatar, a.Avatar)).Exists)

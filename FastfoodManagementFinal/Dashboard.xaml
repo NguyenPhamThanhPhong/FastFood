@@ -233,7 +233,7 @@
 
 
 
-        <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+        <Button x:Name="button_caidat" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
                 Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="CÀI ĐẶT" 

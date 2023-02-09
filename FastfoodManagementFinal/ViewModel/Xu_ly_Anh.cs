@@ -16,6 +16,8 @@ namespace FastfoodManagementFinal.ViewModel
 
         public static void LuuAnh(string path,string store_to,string ID)
         {
+            if (path == null || path.Length < 0)
+                return;
             FileInfo fileInfo = new FileInfo(path);
             store_to = Path.Combine(store_to, ID);
             if (fileInfo.Exists)

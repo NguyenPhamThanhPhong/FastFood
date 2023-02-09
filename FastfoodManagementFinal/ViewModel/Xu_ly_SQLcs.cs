@@ -146,6 +146,36 @@ namespace FastfoodManagementFinal.ViewModel
                 con.Close();
             }
         }
+        public static bool Check_Existed_Account(string username)
+        {
+            Account a = new Account();
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+                string sql = "select * from staff where username='" + username + "' and avail = '1'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    a.StaffID = reader.GetString(0);
+                    a.Avatar = reader.GetString(1);
+                    a.AccessRight = reader.GetString(2);
+                    a.Username = reader.GetString(3);
+                    a.Pass = reader.GetString(4);
+                    a.Name = reader.GetString(5);
+                    a.Sex = reader.GetString(6);
+                    a.DateOfBirth = reader.GetDateTime(7);
+                    a.Phone_Number = reader.GetString(8);
+                    a.Email = reader.GetString(9);
+                    a.address = reader.GetString(10);
+                }
+                con.Close();
+            }
+            if (a.StaffID != null)
+                return true;
+            else
+                return false;
+        }
         public static Account Select_LoggedIn_Account(string username, string password)
         {
             Account a = new Account();

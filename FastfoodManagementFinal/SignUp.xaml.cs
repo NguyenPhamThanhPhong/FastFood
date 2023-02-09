@@ -63,6 +63,10 @@ namespace FastfoodManagementFinal
             a.Email = txtĐK_Email.Text;
             a.address = txtĐK_Address.Text;
             a.Visible = true;
+            if(Xu_Ly_SQL.Check_Existed_Account(a.Username))
+            {
+                MessageBox.Show("Tên đăng nhập đã tồn tại!","Cảnh báo",MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             if (a.Is_valid())
             {
 
@@ -78,6 +82,7 @@ namespace FastfoodManagementFinal
                     return;
                 }
                 Xu_Ly_SQL.Insert_Staff(a);
+                MessageBox.Show("Đăng ký thành công");
                 if (Avatar_path != "")
                 {
                     Xu_ly_Anh.LuuAnh(Avatar_path, Xu_ly_Anh.AccountAvatar, a.Avatar);
@@ -142,10 +147,8 @@ namespace FastfoodManagementFinal
         private void button_guima_Click(object sender, RoutedEventArgs e)
         {
             string x = txtĐK_Email.Text.Trim();
-            Xu_ly_Mail.SendMail(x);
-            Mailcode = x;
-            //Xu_ly_Mail.SendEmail(txtĐK_Email.Text.Trim());
-            //Mailcode = ;
+            Mailcode =  Xu_ly_Mail.SendMail(x);
+
         }
 
         private void button_x_Click(object sender, RoutedEventArgs e)

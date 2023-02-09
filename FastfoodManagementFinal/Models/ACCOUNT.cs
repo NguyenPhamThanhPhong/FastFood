@@ -100,7 +100,7 @@ namespace FastfoodManagementFinal.Models
                 Username.Trim()=="" || Pass ==""|| Sex.Trim()==""||
                 Phone_Number.Trim()=="")
             {
-                MessageBox.Show("điền đủ thông tin, please!");
+                MessageBox.Show("Vui lòng điền đủ thông tin");
                 return false;
             }
             if(Xu_ly_chuoi.Is_Vietnamese(Username))
