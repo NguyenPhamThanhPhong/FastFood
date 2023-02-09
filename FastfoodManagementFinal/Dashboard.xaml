@@ -233,43 +233,11 @@
 
 
 
-
-
-        <Button x:Name="button_nhaphang" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
-     materialDesign:ButtonAssist.CornerRadius="15"
-     Height="48" BorderBrush="#F8FAFF"
-     Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="           NHẬP HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,96,196,166" Click="Button_Click_6" Grid.ColumnSpan="2" Grid.Row="1">
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation 
-                     Storyboard.TargetProperty="(UIElement.Opacity)" 
-                     To="0.5" 
-                     Duration="0:0:0.1" 
-                     AutoReverse="False"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation 
-                     Storyboard.TargetProperty="(UIElement.Opacity)" 
-                     To="1" 
-                     Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Image x:Name="img_nhaphang" Source="/IMAGE/add-list-256.png" Margin="69,164,138,106" Grid.Row="1" />
-
         <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                 materialDesign:ButtonAssist.CornerRadius="15"
                 Height="48" BorderBrush="#F8FAFF"
                 Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="CÀI ĐẶT" 
-                FontFamily="{StaticResource boldFont}" Margin="56,158,196,104" 
+                FontFamily="{StaticResource boldFont}" Margin="56,156,196,106" 
                 Click="Button_Click_5" Grid.ColumnSpan="2" Grid.Row="1">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
@@ -295,9 +263,39 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="/IMAGE/settings-5-256.png" Margin="69,100,138,170" Grid.Row="1" />
+        <Image Source="/IMAGE/settings-5-256.png" Margin="69,160,138,110" Grid.Row="1" />
 
-    <Image  Source="/IMAGE/add-list-256.png" Margin="69,164,138,106" Grid.Row="1" />
+
+
+        <Button x:Name="button_nhaphang" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+     materialDesign:ButtonAssist.CornerRadius="15"
+     Height="48" BorderBrush="#F8FAFF"
+     Background="#F8FAFF" FontSize="16" Foreground="#EA5C2B" Content="           NHẬP HÀNG" FontFamily="{StaticResource boldFont}" Margin="56,95,196,167" Click="Button_Click_6" Grid.ColumnSpan="2" Grid.Row="1">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                     Storyboard.TargetProperty="(UIElement.Opacity)" 
+                     To="0.5" 
+                     Duration="0:0:0.1" 
+                     AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                     Storyboard.TargetProperty="(UIElement.Opacity)" 
+                     To="1" 
+                     Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Image x:Name="img_nhaphang" Source="/IMAGE/add-list-256.png" Margin="69,101,138,169" Grid.Row="1" />
 
 
         <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"
