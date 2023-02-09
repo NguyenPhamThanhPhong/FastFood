@@ -39,6 +39,15 @@ namespace FastfoodManagementFinal
             //GC.Collect();
             //Uri u = new Uri());
 
+            if(Selected.LoggedIn.AccessRight=="Nhân viên")
+            {
+                txtbox_maQL.Visibility = Visibility.Collapsed;
+                txtblock_QL.Visibility= Visibility.Collapsed;
+                button_QL.Visibility= Visibility.Collapsed;
+            }
+                
+            
+
             BitmapImage _image = new BitmapImage();
             _image.BeginInit();
             _image.CacheOption = BitmapCacheOption.None;

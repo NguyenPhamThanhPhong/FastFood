@@ -162,7 +162,7 @@
                                 BorderThickness="2"
                                 VerticalAlignment="Top" CaretBrush="Gray" />
 
-        <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" 
+        <TextBlock x:Name="txtblock_QL" Foreground="Black" FontFamily="{StaticResource boldFont}" 
                    FontSize="14" Margin="332,447,325,106" Text="Mã Quản lý"/>
         <TextBox x:Name="txtbox_maQL"
                                 Height="40"
@@ -182,7 +182,7 @@
 
         <Button x:Name="button_QL" Style="{StaticResource MaterialDesignFlatMidBgButton}"
                 Height="40" materialDesign:ButtonAssist.CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="#EA5C2B"
-                Background="#EA5C2B" FontSize="14" Content="ĐỔI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Margin="525,473,97,67" Click="button_QL_Click" />
+                Background="#EA5C2B" FontSize="14" Content="ĐỔI MÃ QUẢN LÝ" FontFamily="{StaticResource boldFont}" Margin="525,473,87,67" Click="button_QL_Click" />
 
 
         <TextBlock Foreground="#9B9CA3" FontFamily="{StaticResource mainFont}" FontSize="9" Margin="232,524,226,34" Text="Vui lòng kiểm tra Email vừa nhập để lấy mã xác nhận bạn nhé!"/>
