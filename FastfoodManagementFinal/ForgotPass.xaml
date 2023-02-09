@@ -20,7 +20,7 @@
             <RowDefinition Height="102*"/>
         </Grid.RowDefinitions>
         <materialDesign:Card UniformCornerRadius="5" materialDesign:ShadowAssist.ShadowDepth="Depth2"  Background="White" Margin="25,25,25,25" Grid.RowSpan="2"/>
-        <Button HorizontalAlignment="Left" Margin="382,33,0,0" VerticalAlignment="Top" Height="22" Width="25" BorderBrush="#00711B1B" RenderTransformOrigin="-0.315,0.646">
+        <Button HorizontalAlignment="Left" Margin="382,33,0,0" VerticalAlignment="Top" Height="22" Width="25" BorderBrush="#00711B1B" RenderTransformOrigin="-0.315,0.646" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>

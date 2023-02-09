@@ -57,5 +57,10 @@ namespace FastfoodManagementFinal
                 MessageBox.Show("Tên đăng nhập không đúng!");
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

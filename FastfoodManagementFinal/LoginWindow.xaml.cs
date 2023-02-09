@@ -75,5 +75,10 @@ namespace FastfoodManagementFinal
                 e.Handled= false;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

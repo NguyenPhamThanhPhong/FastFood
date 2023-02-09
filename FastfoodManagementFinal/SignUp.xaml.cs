@@ -147,6 +147,11 @@ namespace FastfoodManagementFinal
             //Xu_ly_Mail.SendEmail(txtĐK_Email.Text.Trim());
             //Mailcode = ;
         }
+
+        private void button_x_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

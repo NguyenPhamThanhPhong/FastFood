@@ -144,6 +144,7 @@ namespace FastfoodManagementFinal
                 }
                 
                 MessageBox.Show("đã thêm mới");
+                this.Close();
             }
         }
 
@@ -177,16 +178,21 @@ namespace FastfoodManagementFinal
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Close();
+        //}
 
         private void button_Xoa_Click(object sender, RoutedEventArgs e)
         {
             if(Xu_Ly_SQL.Delete_product(txt_maSP.Text.Trim()))
                 MessageBox.Show("xóa thành công");
 
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

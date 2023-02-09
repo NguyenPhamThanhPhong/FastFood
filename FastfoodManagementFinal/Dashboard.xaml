@@ -298,8 +298,8 @@
         <Image x:Name="img_nhaphang" Source="/IMAGE/add-list-256.png" Margin="69,101,138,169" Grid.Row="1" />
 
 
-        <Button Style="{StaticResource MaterialDesignFlatMidBgButton}"
-     Background="{x:Null}" FontSize="16" Foreground="White" Content="THOÁT" FontFamily="{StaticResource boldFont}" Margin="44,235,36,43" BorderBrush="{x:Null}" Grid.Row="1">
+        <Button x:Name="button_thoat" Style="{StaticResource MaterialDesignFlatMidBgButton}"
+     Background="{x:Null}" FontSize="16" Foreground="White" Content="THOÁT" FontFamily="{StaticResource boldFont}" Margin="44,235,36,43" BorderBrush="{x:Null}" Grid.Row="1" Click="button_thoat_Click">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -326,6 +326,11 @@
         </Button>
         <Image Source="/IMAGE/logout-512.png" Margin="63,234,150,44" Grid.Row="1" />
 
-
+        <Button HorizontalAlignment="Left" Margin="224,40,0,0" VerticalAlignment="Top" Height="32" Width="31" BorderBrush="#00711B1B" Grid.Column="4" Click="Button_Click_7">
+            <Button.Background>
+                <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
+            </Button.Background>
+            <Button Content="Button"/>
+        </Button>
     </Grid>
 </Window>

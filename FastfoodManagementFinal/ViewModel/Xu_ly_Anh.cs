@@ -18,8 +18,6 @@ namespace FastfoodManagementFinal.ViewModel
         {
             FileInfo fileInfo = new FileInfo(path);
             store_to = Path.Combine(store_to, ID);
-            MessageBox.Show(store_to);
-
             if (fileInfo.Exists)
             {
                 File.Copy(fileInfo.FullName, store_to, true);

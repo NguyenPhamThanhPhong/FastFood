@@ -26,7 +26,7 @@
         <materialDesign:Card UniformCornerRadius="20" materialDesign:ShadowAssist.ShadowDepth="Depth2"  Background="#FFF9F5" Margin="25,25,25,25" Grid.RowSpan="4" Grid.ColumnSpan="2">
             <Image Source="/IMAGE/LOGIN.png" Margin="500,23,-2,11"/>
         </materialDesign:Card>
-        <Button  HorizontalAlignment="Left" Margin="461,37,0,0" VerticalAlignment="Top" Height="31" Width="32" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Grid.Column="1">
+        <Button  HorizontalAlignment="Left" Margin="461,37,0,0" VerticalAlignment="Top" Height="31" Width="32" BorderBrush="#00711B1B" RenderTransformOrigin="4.667,1.717" Grid.Column="1" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>

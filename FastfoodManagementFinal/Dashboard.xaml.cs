@@ -138,14 +138,19 @@ namespace FastfoodManagementFinal
 
         }
 
-        private void Button_setting_click(object sender, RoutedEventArgs e)
-        {
+        //private void Button_setting_click(object sender, RoutedEventArgs e)
+        //{
             
-        }
+        //}
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void button_thoat_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -26,7 +26,7 @@
 
         <TextBlock  Foreground="#FF6633" FontFamily="{StaticResource boldFont}" 
                     HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="35" Text="ĐĂNG KÝ" Margin="320,18,0,0" Width="191"/>
-        <Button HorizontalAlignment="Left" Margin="665,30,0,0" VerticalAlignment="Top" Height="25" Width="24" BorderBrush="#00711B1B">
+        <Button x:Name="button_x" HorizontalAlignment="Left" Margin="665,30,0,0" VerticalAlignment="Top" Height="25" Width="24" BorderBrush="#00711B1B" Click="button_x_Click">
             <Button.Background>
                 <ImageBrush ImageSource="IMAGE/x-mark-128.png"/>
             </Button.Background>

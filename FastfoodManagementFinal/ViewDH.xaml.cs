@@ -98,6 +98,7 @@ namespace FastfoodManagementFinal
                         ListView_order.Items.Refresh();
 
                         txtbox_tongtien.Text = Xu_ly_chuoi.ToVND(oo.Order_Total);
+
                         string current = txtbox_soluong.Text;
                         txtbox_soluong.Text = "";
                         txtbox_soluong.Text = current;
@@ -106,6 +107,8 @@ namespace FastfoodManagementFinal
                 }
                 Order o = new Order(txtbox_soHD.Text.Trim(),odrs.Count,p,sell_amount);
                 odrs.Add(o);
+                txtbox_tongtien.Text = Xu_ly_chuoi.ToVND(o.Order_Total);
+
                 ListView_order.Items.Refresh();
                 string currenttxt = txtbox_soluong.Text;
                 txtbox_soluong.Text = "";
