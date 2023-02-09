@@ -28,7 +28,7 @@
         </Button>
         <TextBlock Foreground="#FF6633" FontFamily="{StaticResource boldFont}" FontSize="34" Text="QUÊN MẬT KHẨU" Margin="68,42,81,309" Grid.RowSpan="2"/>
         <TextBlock Foreground="Black" FontFamily="{StaticResource boldFont}" FontSize="21" Margin="40,47,0,248" Text="Tên đăng nhập" Grid.Row="1" HorizontalAlignment="Left" Width="285"/>
-        <TextBox
+        <TextBox x:Name="txtbox_username"
                                 Height="60"
                                 Margin="40,89,41,0"
                                 BorderBrush="#e6ebf7"
@@ -47,7 +47,7 @@
                 materialDesign:ButtonAssist.CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth0"
                 Height="65"
                 Background="#FF6633" BorderBrush="#FF6633" BorderThickness="1" Margin="39,194,37,67"
-                FontSize="24" Content="LẤY LẠI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Grid.Row="1"/>
+                FontSize="24" Content="LẤY LẠI MẬT KHẨU" FontFamily="{StaticResource boldFont}" Grid.Row="1" Click="QMK_Btn_Click"/>
 
     </Grid>
 </Window>

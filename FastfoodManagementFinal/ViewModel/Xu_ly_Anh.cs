@@ -18,7 +18,7 @@ namespace FastfoodManagementFinal.ViewModel
         {
             FileInfo fileInfo = new FileInfo(path);
             store_to = Path.Combine(store_to, ID);
-            
+            MessageBox.Show(store_to);
 
             if (fileInfo.Exists)
             {
@@ -32,9 +32,10 @@ namespace FastfoodManagementFinal.ViewModel
                 return Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "IMAGE", "Thêm Ảnh.png");
             }
             FileInfo fileInfo = new FileInfo(Path.Combine(directory,filename));
-
+            
             if (fileInfo.Exists)
             {
+                
                 return fileInfo.FullName;
             }
             return Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "IMAGE", "Thêm Ảnh.png");

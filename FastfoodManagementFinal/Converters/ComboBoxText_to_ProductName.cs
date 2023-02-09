@@ -1,4 +1,5 @@
 ﻿using FastfoodManagementFinal.Models;
+using FastfoodManagementFinal.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -150,6 +151,62 @@ namespace FastfoodManagementFinal.Converters
             string text = value as string;
             string ID = text.Substring(6);
             return ID;
+            throw new NotImplementedException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Customer_toDiscount : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            string cus_parameter = values[0] as string;
+            Customer c = Customer.FindAbsolute_ID(cus_parameter);
+
+            string money = values[1] as string;
+            int total = Xu_ly_chuoi.ConvertVNDCurrencyToInt(money);
+            if (c.CustomerRank == "Bạc")
+                return Xu_ly_chuoi.ToVND(total * 5 / 100);
+            if (c.CustomerRank == "Vàng")
+                return Xu_ly_chuoi.ToVND(total * 7/100);
+            if (c.CustomerRank == "VIP")
+                return Xu_ly_chuoi.ToVND(total * 7 / 100);
+            return "0 d";
+            throw new NotImplementedException();
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class Minus : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            int first = Xu_ly_chuoi.ConvertVNDCurrencyToInt((string)values[0]);
+            int second = Xu_ly_chuoi.ConvertVNDCurrencyToInt(((string)values[1]));
+
+            return Xu_ly_chuoi.ToVND(first-second);
+            throw new NotImplementedException();
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class toVND_Converter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            int outparse = (int)value;
+            return Xu_ly_chuoi.ToVND(outparse);
+
             throw new NotImplementedException();
         }
 

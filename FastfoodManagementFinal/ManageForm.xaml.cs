@@ -45,25 +45,6 @@ namespace FastfoodManagementFinal
             }
         }
 
-        private void Load_stack_panel(List<Account> accounts)
-        {
-            //this.stack_panel_quanly.Children.Clear();
-            //foreach (StackPanel stk in stack_panel_quanly.Children)
-            //{
-            //    stk.Children.Clear();
-            //}
-            //StackPanel ss = new StackPanel();
-            //for (int i=0;i<accounts.Count; i++)
-            //{
-            //    if(i%2==0)
-            //    {
-            //        ss = new StackPanel();
-            //        ss.Orientation = Orientation.Horizontal;
-            //        stack_panel_quanly.Children.Add(ss);
-            //    }
-            //    ss.Children.Add(Load_Grid(accounts[i]));
-            //}
-        }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -81,8 +62,8 @@ namespace FastfoodManagementFinal
             {
                 if (a.StaffID == tt.Text)
                 {
-                    //((Image)VisualTreeHelper.GetChild(p, 1)).Source = null;
-                    //GC.Collect();
+                    ((Image)VisualTreeHelper.GetChild(p, 1)).Source = null;
+                    GC.Collect();
 
                     InfoNV ff = new InfoNV(a);
                     ff.ShowDialog();

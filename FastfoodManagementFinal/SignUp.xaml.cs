@@ -141,7 +141,10 @@ namespace FastfoodManagementFinal
 
         private void button_guima_Click(object sender, RoutedEventArgs e)
         {
-            Mailcode = Xu_ly_Mail.SendMail(txtbox_maEmail.Text.Trim());
+            string x = txtĐK_Email.Text.Trim();
+            Xu_ly_Mail.SendMail(x);
+            //Xu_ly_Mail.SendEmail(txtĐK_Email.Text.Trim());
+            //Mailcode = ;
         }
     }
 

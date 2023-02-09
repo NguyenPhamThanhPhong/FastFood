@@ -127,6 +127,27 @@ namespace FastfoodManagementFinal.ViewModel
             return kq.ToString();
 
         }
+        public static string ToVND(int amount)
+        {
+            string s = amount.ToString();
+            int l = s.Length;
+            string result = "";
+            for (int i = 0; i < l; i++)
+            {
+                result = s[l - i - 1] + result;
+                if ((i + 1) % 3 == 0 && i != l - 1)
+                {
+                    result = "." + result;
+                }
+            }
+            return result + " d";
+        }
 
+        public static int ConvertVNDCurrencyToInt(string vndCurrency)
+        {
+            string cleanedString = vndCurrency.Replace(".", "").Replace(" d", "");
+            return int.Parse(cleanedString);
+        }
     }
+    
 }

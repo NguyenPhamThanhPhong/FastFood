@@ -94,9 +94,10 @@ namespace FastfoodManagementFinal
                     if(oo.Order_Product_ID == p.ProductId)
                     {
                         oo.Order_Sell_Quantity += sell_amount;
-                        oo.Order_Total += (sell_amount * p.Price * (1 - oo.Order_Discount));
+                        oo.Order_Total += (sell_amount * p.Price );
                         ListView_order.Items.Refresh();
 
+                        txtbox_tongtien.Text = Xu_ly_chuoi.ToVND(oo.Order_Total);
                         string current = txtbox_soluong.Text;
                         txtbox_soluong.Text = "";
                         txtbox_soluong.Text = current;
@@ -164,16 +165,18 @@ namespace FastfoodManagementFinal
                 b.StaffID = txtbox_maNV.Text.Substring(0,5);
                 b.StaffName = txtbox_maNV.Text.Substring(5);
                 b.Bill_Time = datepicker_billtime.SelectedDate.Value;
-                b.Bill_Discount = 0;
-                b.Bill_Total = 180000;
+                b.Bill_Discount = Xu_ly_chuoi.ConvertVNDCurrencyToInt(txtblock_giamgia.Text.Trim());
+                b.Bill_Total = Xu_ly_chuoi.ConvertVNDCurrencyToInt(txtbox_tongtien.Text.Trim());
                 b.orders = this.odrs;
                 Xu_Ly_SQL.Insert_Bill(b);
                 foreach(Order o in odrs)
                 {
                     Xu_Ly_SQL.Insert_Orders(o);
                 }
+                txtbox_soHD.Text = Xu_ly_ID.GetBillID();
                 button_reset_Click(sender, e);
                 Button_Click(sender, e);
+                txtbox_tongtien.Text = "0 d";
             }
         }
         private void Button_Delete_Element(object sender, RoutedEventArgs e)

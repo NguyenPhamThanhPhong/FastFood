@@ -134,6 +134,7 @@
     <Compile Include="Converters\ComboBoxText_to_ProductName.cs" />
     <Compile Include="Converters\ImportProductConverter.cs" />
     <Compile Include="Converters\Product_to_Avatar.cs" />
+    <Compile Include="Converters\SettingCoverter.cs" />
     <Compile Include="CreateHD.xaml.cs">
       <DependentUpon>CreateHD.xaml</DependentUpon>
     </Compile>

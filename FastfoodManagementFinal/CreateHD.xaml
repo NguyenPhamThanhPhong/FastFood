@@ -156,8 +156,6 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            <Grid/>
-            <Grid/>
 
 
             <!--<Grid  Margin="4,-4,1,-8" Grid.Row="0" Width="463">
