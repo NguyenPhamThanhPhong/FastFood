@@ -66,6 +66,7 @@ namespace FastfoodManagementFinal
             if(Xu_Ly_SQL.Check_Existed_Account(a.Username))
             {
                 MessageBox.Show("Tên đăng nhập đã tồn tại!","Cảnh báo",MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
             if (a.Is_valid())
             {

@@ -60,7 +60,7 @@
             </Border.Background>
         </Border>
 
-        <Image Cursor="Hand" x:Name="logged_in_avatar" Source="/IMAGE/Hiền.png" Margin="42,57,119,238" />
+        <Image x:Name="logged_in_avatar" Source="/IMAGE/Hiền.png" Margin="42,57,119,238" />
 
         <TextBlock x:Name="txtBlock_Acc_Name" Foreground="#F87D32" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="123,72,190,273" RenderTransformOrigin="0.845,0.596" Grid.ColumnSpan="2"><Run Text="Thanh Hiền"/><LineBreak/><Run Text=" ấdgdfghg"/></TextBlock>
         <TextBlock x:Name="txtBlock_AccessRight" Foreground="#F87D32" FontFamily="{StaticResource boldFont}" FontSize="13" Text="Nhân Viên" Margin="131,100,32,248" RenderTransformOrigin="0.845,0.596"/>

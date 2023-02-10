@@ -87,12 +87,12 @@
         </Border>
 
         <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="35" Margin="112,98,528,-101" Grid.RowSpan="4" Grid.ColumnSpan="2"><Run Text="PHẦN MỀM "/><LineBreak/><Run Text="QUẢN LÝ BÁN HÀNG"/></TextBlock>
-        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="112,11,-112,-222" Text="EMAIL:" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="112,11,-112,-222" Text="TÊN ĐĂNG NHẬP:" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <TextBox Margin="112,45,84,334" x:Name="txtEmail" FontSize="20" FontFamily="{StaticResource boldFont}"
                  BorderThickness="1" Background="#FFFFFF"  Foreground="#9B9CA3"
                  BorderBrush="#C0C6E2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="2" Grid.RowSpan="2" KeyDown="txtEmail_KeyDown"/>
         <TextBlock Foreground="White" FontFamily="{StaticResource boldFont}" FontSize="20" Margin="112,79,-112,-350" Text="MẬT KHẨU:" Grid.Row="3" Grid.ColumnSpan="2"/>
-        <TextBox Margin="112,115,84,204" x:Name="txtPass" FontSize="20" FontFamily="{StaticResource mainFont}"
+        <TextBox Margin="112,115,84,204" x:Name="txtPass" FontSize="20" FontFamily="{StaticResource boldFont}"
                  BorderThickness="1" Background="#FFFFFF" Foreground="#9B9CA3"
                  BorderBrush="#C0C6E2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Row="3"/>
 

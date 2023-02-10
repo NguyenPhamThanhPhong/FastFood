@@ -97,7 +97,9 @@ namespace FastfoodManagementFinal
                         oo.Order_Total += (sell_amount * p.Price );
                         ListView_order.Items.Refresh();
 
-                        txtbox_tongtien.Text = Xu_ly_chuoi.ToVND(oo.Order_Total);
+                        int display = Xu_ly_chuoi.ConvertVNDCurrencyToInt(txtbox_tongtien.Text);
+
+                        txtbox_tongtien.Text = Xu_ly_chuoi.ToVND(oo.Order_Total+display);
 
                         string current = txtbox_soluong.Text;
                         txtbox_soluong.Text = "";
@@ -105,9 +107,12 @@ namespace FastfoodManagementFinal
                         return;
                     }
                 }
+                
                 Order o = new Order(txtbox_soHD.Text.Trim(),odrs.Count,p,sell_amount);
                 odrs.Add(o);
-                txtbox_tongtien.Text = Xu_ly_chuoi.ToVND(o.Order_Total);
+
+                int add = Xu_ly_chuoi.ConvertVNDCurrencyToInt(txtbox_tongtien.Text);
+                txtbox_tongtien.Text = Xu_ly_chuoi.ToVND(o.Order_Total+add);
 
                 ListView_order.Items.Refresh();
                 string currenttxt = txtbox_soluong.Text;
@@ -180,6 +185,7 @@ namespace FastfoodManagementFinal
                 button_reset_Click(sender, e);
                 Button_Click(sender, e);
                 txtbox_tongtien.Text = "0 d";
+                txtbox_soHD.Text = Xu_ly_ID.GetBillID();
             }
         }
         private void Button_Delete_Element(object sender, RoutedEventArgs e)
@@ -226,6 +232,7 @@ namespace FastfoodManagementFinal
                 Xu_ly_excel.Xuat_excel_HoaDon(b);
                 button_reset_Click(sender, e);
                 Button_Click(sender, e);
+                txtbox_soHD.Text = Xu_ly_ID.GetBillID();
             }
         }
 
