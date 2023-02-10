@@ -35,6 +35,7 @@ namespace FastfoodManagementFinal
             txtbox_mail.Text= Selected.LoggedIn.Email;
             txtbox_tenDN.Text = Selected.LoggedIn.Username;
             datepicker_ngaysinh.SelectedDate = Selected.LoggedIn.DateOfBirth;
+            txtbox_maQL.Text = Xu_ly_File.ReadFromTextFile();
             //this.avt_img.Source = null;
             //GC.Collect();
             //Uri u = new Uri());
